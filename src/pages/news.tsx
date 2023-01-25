@@ -14,11 +14,11 @@ export default function News() {
             pick it up again?
             <br /> <br />
             Well, we have the solution for you! Introducing AREBA, the one-stop shop for all your car repair needs. Our
-            website makes it easy for you to request a specialist to take a look at your car, and then we'll take it to
-            the appropriate car mechanic for you. Once it's fixed, we'll bring it back to you - all for just 20Gel !
+            website makes it easy for you to request a specialist to take a look at your car, and then we`ll take it to
+            the appropriate car mechanic for you. Once it`s fixed, we`ll bring it back to you - all for just 20Gel !
             <br /> <br />
             Not only do you save time and hassle by not having to go to the shop yourself, but you can also put up on our
-            website what parts of the car you want to sell and what parts you're looking to buy.
+            website what parts of the car you want to sell and what parts you`re looking to buy.
             <br /> <br />
             We are a marketplace that is geared towards making the process of buying and selling parts of the car easy and
             fast.
