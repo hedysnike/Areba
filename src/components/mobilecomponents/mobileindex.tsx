@@ -7,7 +7,7 @@ export function MobileIndex() {
     const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div className="min-h-screen h-auto w-full">
+    <div className="min-h-screen h-auto w-full pt-[50px]">
       <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
       <div>
         <img src="https://i.imgur.com/sfB255D.png" className="w-full" alt="" />

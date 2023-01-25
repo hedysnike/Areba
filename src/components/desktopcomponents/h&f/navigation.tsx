@@ -14,7 +14,7 @@ export function Navigation() {
       <div className="w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
         <div className="pl-2 p-1 absolute hidden sm:block">
           <Link href="/">
-            <img className="w-auto h-[43px] cursor-pointer " src="https://areba.ge/images/logoicon.png" />
+            <img className="w-auto h-[43px] cursor-pointer " src="https://i.imgur.com/K5vhBw4.png" />
           </Link>
         </div>
         <div className="flex h-full items-center text-sm justify-end text-black gap-2">
