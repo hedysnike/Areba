@@ -18,7 +18,7 @@ export function MobileIndex() {
           onClick={() => setOpenModal(true)}
           className=" bg-[#FF7600] hover:bg-[#ff8c27] text-white text-base p-4 px-5 flex items-center gap-2 rounded"
         >
-          <Icon icon="material-symbols:send-rounded" color="white" width="30" height="25" />
+          <Icon icon="ic:baseline-send" color="white" width="30" height="25" />
           <h1>სპეციალისტის გამოძახება</h1>
         </button>
       </div>
