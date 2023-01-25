@@ -53,7 +53,7 @@ export function MobileIndex() {
           </span>
         </div>
       </div>
-      <div className="w-full grid grid-cols-2 text-center items-center my-10">
+      <div className="w-full grid grid-cols-2 text-center items-center mt-10 mb-14">
         <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">იხილეთ სიახლეები</Link>
         <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">იხილეთ პარტნიორები</Link>
       </div>
