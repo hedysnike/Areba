@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { MobileLayout } from "@/hooks/MLayout";
 import { SpecialistModal } from "../desktopcomponents/h&f/specialistmodal";
+import Link from "next/link";
 
 export function MobileIndex() {
     const [openModal, setOpenModal] = useState(false);
@@ -52,9 +53,9 @@ export function MobileIndex() {
           </span>
         </div>
       </div>
-      <div className="justify-center w-full flex items-center flex-col">
-        <div className="text-4xl font-normal mb-80 mt-10">სიახლეები</div>
-        <div className="text-4xl font-normal mb-10 pb-52">პარტნიორები</div>
+      <div className="w-full grid grid-cols-2 text-center items-center my-10">
+        <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">იხილეთ სიახლეები</Link>
+        <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">იხილეთ პარტნიორები</Link>
       </div>
     </div>
   );
