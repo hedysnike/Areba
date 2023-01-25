@@ -8,10 +8,10 @@ export function MobileTop() {
   return (
     <div className="bg-white h-[50px] fixed w-full">
       <Drawer opened={opened} onClose={() => setOpened(false)} size="65%" withCloseButton={false}>
-        <div className="">
+        <div className="w-full">
           <div className="flex items-center flex-col w-full h-auto">
-            <div  className="h-[150px] w-[255px] overflow-hidden bg-[url('https://areba.ge/images/bg-l-t.jpg')] flex items-center justify-center">
-            <div><button className="bg-[#FF7600] py-2 px-7 shadow-md shadow-[#00000077]  text-white flex text-sm flex-col items-center rounded"><Icon icon="ic:baseline-person" color="white" width="24" height="24" /> LOGIN / REGISTER</button></div>
+            <div  className="h-[150px] w-full bg-cover bg-center overflow-hidden bg-[url('https://areba.ge/images/bg-l-t.jpg')] flex items-center justify-center">
+            <div><button className="bg-[#FF7600] py-2 px-7 shadow-md shadow-[#00000077]  text-white flex text-sm flex-col items-center rounded outline-none"><Icon icon="ic:baseline-person" color="white" width="24" height="24" /> LOGIN / REGISTER</button></div>
             </div>
             <div>Language</div>
             <div>about</div>
