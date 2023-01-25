@@ -14,11 +14,6 @@ export default function Profile(){
             <div className="">
                 <div className="border border-solid border-black w-full p-3 text-sm mt-5">ქვეყანა</div>
                 <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-
             </div>
             </div>
             </div>
