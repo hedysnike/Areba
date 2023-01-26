@@ -11,10 +11,10 @@ export function Menuicon() {
       </Menu.Target>
 
       <Menu.Dropdown>
-          <Link href="/about">  <Menu.Item> ჩვენს შესახებ</Menu.Item></Link>
+          <Link href="/about">  <Menu.Item><h1>ჩვენს შესახებ</h1></Menu.Item></Link>
         <Link href="/contact">  <Menu.Item
         >
-        კონტაქტი
+       <h1>კონტაქტი</h1>
         </Menu.Item></Link>
       </Menu.Dropdown>
     </Menu>

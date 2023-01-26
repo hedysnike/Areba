@@ -6,14 +6,18 @@
 @font-face {
   font-family: 'name';
   src: url("../assets/Roboto/Roboto-Light.ttf")
-  
 }
+
+@font-face {
+  font-family: 'bpg';
+  src: url(../assets/bpg_banner_caps.ttf) format("truetype");
+}
+
 
 body {
   font-family: 'name', sans-serif;
 }
 
-@font2 {
-  font-family: 'roboto';
-  @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+h1 {
+  font-family: 'bpg', sans-serif;
 }
