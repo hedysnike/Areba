@@ -5,10 +5,15 @@
 
 @font-face {
   font-family: 'name';
-  src: url("../assets/bpg_banner_caps.ttf");  
+  src: url("../assets/Roboto/Roboto-Light.ttf")
   
 }
 
 body {
-  font-family: 'name';
+  font-family: 'name', sans-serif;
+}
+
+@font2 {
+  font-family: 'roboto';
+  @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 }
