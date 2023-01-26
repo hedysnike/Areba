@@ -1,5 +1,6 @@
 import { LLogin } from "@/components/desktopcomponents/registertoggle";
 import { Layout } from "@/hooks/Layout";
+import { TextField } from "@mui/material";
 
 export default function Login() {
   return (
@@ -10,25 +11,22 @@ export default function Login() {
           <div className="relative group m-4 mb-16">
             <input
               type="text"
-              className="pt-6 pb-2 pl-1 w-full font-normal peer text-sm leading-6 absolute outline-none border border-solid border-black placeholder-shown:z-0 z-20"
+              className="pt-5 pb-2 pl-1 w-full font-normal peer text-sm leading-6 absolute outline-none border border-solid border-black placeholder-shown:z-0 z-20"
               placeholder=" "
             />
-
-            <label className="pl-1 pt-2 absolute pointer-events-none peer-placeholder-shown:translate-y-4 peer-placeholder-shown:z-0 z-20 text-black m-[1px] text-xs peer-placeholder-shown:text-base">ელ ფოსტა *</label>
-            <label className="pl-1 absolute pointer-events-none peer-focus:bg-white pt-6 text-transparent m-[1px] z-1">ელ ფოსტა *</label>
-            <label className="pl-1 pt-2 absolute pointer-events-none peer-focus:text-black m-[1px] text-transparent peer-placeholder-shown:text-transparent z-1 text-xs">ელ ფოსტა *</label>
+            <label className="pl-1 pt-4 peer-focus:-translate-y-[11px] absolute pointer-events-none m-[1px]  transition-all delay-75 text-base peer-focus:text-xs  peer-focus:text-black">ელ ფოსტა *</label>
+            <label className="absolute peer-placeholder-shown:text-transparent z-20 text-black pl-1 pt-[5px] text-xs m-[1px] ">ელ ფოსტა *</label>
           </div>
-          <div className="relative group m-4">
+          <div className="relative group m-4 mb-16">
             <input
               type="text"
-              className="pt-6 pb-2 pl-1 w-full font-normal peer text-sm leading-6 absolute outline-none border border-solid border-black placeholder-shown:z-0 z-20"
+              className="pt-5 pb-2 pl-1 w-full font-normal peer text-sm leading-6 absolute outline-none border border-solid border-black placeholder-shown:z-0 z-20"
               placeholder=" "
             />
-
-            <label className="pl-1 pt-2 absolute pointer-events-none peer-placeholder-shown:translate-y-5 peer-placeholder-shown:z-0 z-20 text-black m-[1px] text-xs">პაროლი *</label>
-            <label className="pl-1 absolute pointer-events-none peer-focus:bg-white pt-6 text-transparent m-[1px] z-1">პაროლი *</label>
-            <label className="pl-1 pt-2 absolute pointer-events-none peer-focus:text-black m-[1px] text-transparent peer-placeholder-shown:text-transparent z-1 text-xs">პაროლი *</label>
+            <label className="pl-1 pt-4 peer-focus:-translate-y-[11px] absolute pointer-events-none m-[1px]  transition-all delay-75 text-base peer-focus:text-xs  peer-focus:text-black">პაროლი *</label>
+            <label className="absolute peer-placeholder-shown:text-transparent z-20 text-black pl-1 pt-[5px] text-xs m-[1px] ">პაროლი *</label>
           </div>
+          <div className="mt-20"></div>
         </div>
       </div>
     </div>
