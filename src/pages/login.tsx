@@ -15,7 +15,7 @@ export default function Login() {
               placeholder=" "
             />
             <label className="pl-1 pt-4 peer-focus:-translate-y-[11px] absolute pointer-events-none m-[1px]  transition-all text-base peer-focus:text-xs text-[#9b9b9b]  peer-focus:text-[#9b9b9b]">ელ ფოსტა *</label>
-            <label className="absolute peer-placeholder-shown:text-transparent z-20 text-[#9b9b9b] pl-1 pt-[5px] text-xs m-[1px] ">ელ ფოსტა *</label>
+            <label className="absolute peer-placeholder-shown:text-transparent pointer-events-none z-20 text-[#9b9b9b] pl-1 pt-[5px] text-xs m-[1px] ">ელ ფოსტა *</label>
           </div>
           <div className="relative group m-4 mb-16">
             <input
@@ -24,7 +24,7 @@ export default function Login() {
               placeholder=" "
             />
             <label className="pl-1 pt-4 peer-focus:-translate-y-[11px] absolute pointer-events-none m-[1px]  transition-all text-base peer-focus:text-xs text-[#9b9b9b]  peer-focus:text-[#9b9b9b]">პაროლი *</label>
-            <label className="absolute peer-placeholder-shown:text-transparent z-20 text-[#9b9b9b] pl-1 pt-[5px] text-xs m-[1px] ">პაროლი ფოსტა *</label>
+            <label className="absolute peer-placeholder-shown:text-transparent pointer-events-none z-20 text-[#9b9b9b] pl-1 pt-[5px] text-xs m-[1px] ">პაროლი *</label>
           </div>
           <div className="mt-20"></div>
         </div>
