@@ -51,8 +51,8 @@ export function DesktopIndex() {
         </div>
       </div>
       <div className="justify-center w-full flex items-center flex-col">
-        <div className="text-4xl font-normal mb-80 mt-10">სიახლეები</div>
-        <div className="text-4xl font-normal mb-10 pb-52">პარტნიორები</div>
+        <h1 className="text-4xl font-normal mb-80 mt-10">სიახლეები</h1>
+        <h1 className="text-4xl font-normal mb-10 pb-52">პარტნიორები</h1>
       </div>
     </div>
   );
