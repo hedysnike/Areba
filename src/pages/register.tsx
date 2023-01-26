@@ -13,7 +13,6 @@ export default function Register() {
           <input className="mx-6  bg-white border border-solid border-[#C2C2C2] outline-none px-3 pb-1 pt-6 rounded text-sm mt-5" type="text" />
           <input className="mx-6  bg-white border border-solid border-[#C2C2C2] outline-none px-3 pb-1 pt-6 rounded text-sm mt-5" type="text" />
           <input className="mx-6  bg-white border border-solid border-[#C2C2C2] outline-none px-3 pb-1 pt-6 rounded text-sm mt-5" type="text" />
-
           </div>
         </div>
       </div>
