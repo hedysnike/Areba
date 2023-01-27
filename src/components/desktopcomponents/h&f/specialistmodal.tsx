@@ -1,7 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-
 interface ModalProps {
   open: boolean;
   onClose: () => void;
@@ -9,11 +8,7 @@ interface ModalProps {
 }
 
 function Modal({ open, onClose, children }: ModalProps) {
-  
-  
   return (
-    
-
     <Transition appear show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
         <Transition.Child
@@ -53,34 +48,59 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
   return (
     <Modal open={openModal} onClose={onClose}>
       <div className="mb-3 text-black flex flex-col items-center justify-center w-full">
-        Icon 1
-        Icon 2
-        Icon 3
+        Icon 1 Icon 2 Icon 3
         <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm">სპეციალისტის გამოძახება - 20 ლარი</h1>
         <div className="flex flex-col w-full">
-          <input
-            type="text"
-            className="mt-6 mx-9 p-2 border border-solid border-black border-opacity-80"
-            placeholder="ჩაწერეთ რისი გაკეთება გსურთ მანქანაზე?"
-          />
-          <input
-            type="text"
-            className="mt-6 mx-9 p-2 border border-solid border-black border-opacity-80"
-            placeholder="ჩაწერეთ სად მოვიდეს სპეციალისტი"
-          />        </div>
-            <div className="w-full">
-          <input
-            type="text"
-            className="mt-6 mx-9 py-2 border border-solid border-black border-opacity-80 w-[290px]"
-            placeholder="წელი/თვე/რიცხვი"
-          />
-          <input type="text" className="mt-6 mx-9 py-2 border border-solid border-black border-opacity-80 w-[183px]" placeholder=" საათი:წუთი" />
+          <div className="relative rounded-[4px] group m-4 pb-11">
+            <input
+              type="text"
+              className="pt-5 rounded-md pb-3 pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"
+              placeholder=" "
+            />
+            <label className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+              ჩაწერეთ რისი გაკეთება გსურთ მანქანაზე?
+            </label>
           </div>
-          <div className="justify-start px-9 mb-7 w-full">
-        <button className="bg-[#FF7600] text-white p-2 rounded mt-10 flex" ><h1>გაგრძელება</h1></button>
+          <div className="relative rounded-[4px] group m-4 pb-11">
+            <input
+              type="text"
+              className="pt-5 rounded-md pb-3 pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"
+              placeholder=" "
+            />
+            <label className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+              ჩაწერეთ სად მოვიდეს სპეციალისტი
+            </label>
+          </div>
+        <div className="w-full flex ">
+          <div className="relative rounded-[4px] group m-4 mr-0 pb-16 w-[60%]">
+            <input
+              type="text"
+              className="pt-5 rounded-md pb-3 pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"
+              placeholder=" "
+            />
+            <label className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+              წელი/თვე/რიცხვი
+            </label>
+          </div>
+          <div className="relative rounded-[4px] group m-4 ml-2  pb-16 w-[40%]">
+            <input
+              type="text"
+              className="pt-5 rounded-md pb-3 pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"
+              placeholder=" "
+            />
+            <label className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+              საათი:წუთი
+            </label>
+          </div>{" "}
+        </div>
+        <div className="justify-start px-9 mb-7 w-full">
+          <button className="bg-[#FF7600] text-white p-2 rounded mt-10 flex">
+            <h1>გაგრძელება</h1>
+          </button>
         </div>
       </div>
+      </div>
+
     </Modal>
   );
 }
-
