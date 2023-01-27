@@ -56,7 +56,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
         Icon 1
         Icon 2
         Icon 3
-        <div className="bg-[#FF7600] w-full text-center text-white py-2">სპეციალისტის გამოძახება - 20 ლარი</div>
+        <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm">სპეციალისტის გამოძახება - 20 ლარი</h1>
         <div className="flex flex-col w-full">
           <input
             type="text"
@@ -76,8 +76,8 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
           />
           <input type="text" className="mt-6 mx-9 py-2 border border-solid border-black border-opacity-80 w-[183px]" placeholder=" საათი:წუთი" />
           </div>
-          <div className="justify-start flex items-left">
-        <button className="bg-[#FF7600] text-white p-2 rounded mt-10 flex" >გაგრძელება</button>
+          <div className="justify-start px-9 mb-7 w-full">
+        <button className="bg-[#FF7600] text-white p-2 rounded mt-10 flex" ><h1>გაგრძელება</h1></button>
         </div>
       </div>
     </Modal>
