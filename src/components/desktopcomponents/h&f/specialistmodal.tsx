@@ -35,7 +35,7 @@ function Modal({ open, onClose, children }: ModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full md:max-w-2xl max-w-md shadow-xl  transform overflow-hidden bg-white text-left text-white align-middle transition-all">
+              <Dialog.Panel className="w-full md:max-w-2xl max-w-md shadow-xl  transform overflow-hidden bg-white text-left text-white align-middle rounded-md transition-all">
                 {children}
               </Dialog.Panel>
             </Transition.Child>
@@ -53,8 +53,8 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
 
   return (
     <Modal open={openModal} onClose={onClose}>
-      <div className="mb-3 text-black flex flex-col items-center justify-center w-full z-30">
-        <div className="w-full">
+      <div className="text-black flex flex-col items-center justify-center w-full z-30">
+        <div className="w-full mt-3 ">
           <Stepper
             iconSize={24}
             color="#ff7600"
@@ -65,7 +65,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
             onStepClick={setActive}
             breakpoint="sm"
           >
-            <Stepper.Step className="px-2 py-3">
+            <Stepper.Step className="pl-5 py-3">
               <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm">
                 სპეციალისტის გამოძახება - 20 ლარი
               </h1>
@@ -179,7 +179,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-            <Stepper.Step>
+            <Stepper.Step className="pr-5 py-3">
             <div>
                 <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm">
                   სპეციალისტის გამოძახება - 20 ლარი
