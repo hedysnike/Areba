@@ -1,11 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { MobileLayout } from "@/hooks/MLayout";
-import { SpecialistModal } from "../desktopcomponents/h&f/specialistmodal";
+import { SpecialistModal } from "../desktopcomponents/specialistmodal/specialistmodal";
 import Link from "next/link";
 
 export function MobileIndex() {
-    const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="min-h-screen h-auto w-full pt-[50px]">
@@ -54,8 +54,12 @@ export function MobileIndex() {
         </div>
       </div>
       <div className="w-full grid grid-cols-2 text-center items-center mt-10 mb-14">
-        <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">იხილეთ სიახლეები</Link>
-        <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">იხილეთ პარტნიორები</Link>
+        <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">
+          იხილეთ სიახლეები
+        </Link>
+        <Link href="/contact" className="p-2 text-lg font-normal border border-solid border-[#FF7600] text-black">
+          იხილეთ პარტნიორები
+        </Link>
       </div>
     </div>
   );

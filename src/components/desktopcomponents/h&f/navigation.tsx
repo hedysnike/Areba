@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { SpecialistModal } from "./specialistmodal";
+import { SpecialistModal } from "../specialistmodal/specialistmodal";
 import { useState } from "react";
-import { LanguageMenu } from "./languagemodal"; 
+import { LanguageMenu } from "./languagemodal";
 import { Menuicon } from "./Menu";
 
 export function Navigation() {
@@ -31,15 +31,15 @@ export function Navigation() {
           </Link>
           <Link href="/login">
             <button className="flex flex-col sm:flex-row  sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] py-[6px] px-2 rounded-[4px]">
-            <Icon icon="material-symbols:person" className="text-orange-500 h-6 w-6" />
-            <h1>შესვლა</h1>
+              <Icon icon="material-symbols:person" className="text-orange-500 h-6 w-6" />
+              <h1>შესვლა</h1>
             </button>
-            </Link>
+          </Link>
           <div className="border-l border-[#bbbbbb] border-solid py-2 px-4 ml-2">
             <LanguageMenu />
           </div>
           <div className="p-2 ml-2">
-          <Menuicon />
+            <Menuicon />
           </div>
         </div>
       </div>
