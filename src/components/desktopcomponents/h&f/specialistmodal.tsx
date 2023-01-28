@@ -12,14 +12,6 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-const people = [
-  { id: 1, name: "Durward Reynolds" },
-  { id: 2, name: "Kenton Towne" },
-  { id: 3, name: "Therese Wunsch" },
-  { id: 4, name: "Benedict Kessler" },
-  { id: 5, name: "Katelyn Rohan" },
-];
-
 function Modal({ open, onClose, children }: ModalProps) {
   return (
     <Transition appear show={open} as={Fragment}>
@@ -59,7 +51,6 @@ function Modal({ open, onClose, children }: ModalProps) {
 
 export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
   const [active, setActive] = useState(0);
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(Makes[0]);
 
@@ -72,13 +63,6 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
 
   const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-
-  const filteredPeople =
-    query === ""
-      ? people
-      : people.filter((person) => {
-          return person.name.toLowerCase().includes(query.toLowerCase());
-        });
 
   return (
     <Modal open={openModal} onClose={onClose}>
@@ -238,16 +222,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 <div className="m-4">
                   <div className="flex flex-col w-full">
                     <div className="relative rounded-[4px] group m-4 pb-11 border border-solid border-black">
-                      <Combobox value={selectedPerson} onChange={setSelectedPerson}>
-                        <Combobox.Input className="pt-5 pb-3 pl-2" onChange={(event) => setQuery(event.target.value)} />
-                        <Combobox.Options>
-                          {filteredPeople.map((person) => (
-                            <Combobox.Option key={person.id} value={person} className="">
-                              <div className="py-1 text-black">{person.name}</div>
-                            </Combobox.Option>
-                          ))}
-                        </Combobox.Options>
-                      </Combobox>
+                      fddhdth
                     </div>
                   </div>
                 </div>
