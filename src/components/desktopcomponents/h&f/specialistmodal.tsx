@@ -38,7 +38,7 @@ function Modal({ open, onClose, children }: ModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md overflow-hidden text-left text-white align-middle transition-all transform bg-white rounded-md shadow-xl md:max-w-2xl">
+              <Dialog.Panel className="w-full max-w-md text-left text-white align-middle transition-all transform bg-white rounded-md shadow-xl md:max-w-2xl">
                 {children}
               </Dialog.Panel>
             </Transition.Child>
@@ -139,9 +139,11 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                   სპეციალისტის გამოძახება - 20 ლარი
                 </h1>
                 <div className="flex flex-col w-full px-4">
+                  <div className="flex items-center justify-center text-center ">
+                  <div className="w-[50%]">
                   <Combobox value={selected} onChange={setSelected}>
                     <div className="relative mt-1">
-                      <div className="relative w-full overflow-hidden text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+                      <div className="relative w-full overflow-hidden text-sm text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300">
                         <Combobox.Input
                           className="w-full py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 border border-black focus:ring-0"
                           displayValue={(m: typeof Makes[0]) => m.title}
@@ -164,7 +166,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                         leaveTo="opacity-0"
                         afterLeave={() => setQuery("")}
                       >
-                        <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                        <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-96 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                           {filteredMakes.length === 0 && query !== "" ? (
                             <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">
                               Nothing found.
@@ -201,6 +203,8 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                       </Transition>
                     </div>
                   </Combobox>
+                  </div><div className="w-[50%]">drhdhrdrh</div>
+                  </div>
 
                   <div className="flex w-full "></div>
                   <div className="flex justify-start w-full px-4 mb-7">
