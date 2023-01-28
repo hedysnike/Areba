@@ -58,7 +58,7 @@ function Modal({ open, onClose, children }: ModalProps) {
 }
 
 export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const [selectedPerson, setSelectedPerson] = useState(people[0]);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(Makes[0]);
@@ -149,39 +149,6 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-            <Stepper.Step className="px-2 py-3">
-              <div>
-                <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm">
-                  სპეციალისტის გამოძახება - 20 ლარი
-                </h1>
-                <div className="m-4">
-                  <div className="flex flex-col w-full">
-                    <div className="relative rounded-[4px] group m-4 pb-11 border border-solid border-black">
-                      <Combobox value={selectedPerson} onChange={setSelectedPerson}>
-                        <Combobox.Input className="pt-5 pb-3 pl-2" onChange={(event) => setQuery(event.target.value)} />
-                        <Combobox.Options>
-                          {filteredPeople.map((person) => (
-                            <Combobox.Option key={person.id} value={person} className="">
-                              <div className="py-1 text-black">{person.name}</div>
-                            </Combobox.Option>
-                          ))}
-                        </Combobox.Options>
-                      </Combobox>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col w-full">
-                  <div className="flex justify-start w-full px-4 mb-7">
-                    <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex text-sm" onClick={nextStep}>
-                      <h1>გაგრძელება</h1>
-                    </button>
-                    <button className="p-2 ml-2 mt-7 text-[#FF7600] text-sm" onClick={prevStep}>
-                      <h1>უკან</h1>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Stepper.Step>
             <Stepper.Step className="py-3 pr-5">
               <div>
                 <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm mb-">
@@ -197,7 +164,13 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                           onChange={(event) => setQuery(event.target.value)}
                         />
                         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                          <Icon icon="material-symbols:10k" color="black" width="20" height="20" aria-hidden="true" />
+                          <Icon
+                            icon="ic:baseline-arrow-drop-down"
+                            color="black"
+                            width="20"
+                            height="20"
+                            aria-hidden="true"
+                          />
                         </Combobox.Button>
                       </div>
                       <Transition
@@ -233,8 +206,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                                         className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
                                           active ? "text-white" : "text-teal-600"
                                         }`}
-                                      >
-                                      </span>
+                                      ></span>
                                     ) : null}
                                   </>
                                 )}
@@ -258,7 +230,44 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-            <Stepper.Completed>Completed, click back button to get to previous step</Stepper.Completed>
+            <Stepper.Step className="px-2 py-3">
+              <div>
+                <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm">
+                  სპეციალისტის გამოძახება - 20 ლარი
+                </h1>
+                <div className="m-4">
+                  <div className="flex flex-col w-full">
+                    <div className="relative rounded-[4px] group m-4 pb-11 border border-solid border-black">
+                      <Combobox value={selectedPerson} onChange={setSelectedPerson}>
+                        <Combobox.Input className="pt-5 pb-3 pl-2" onChange={(event) => setQuery(event.target.value)} />
+                        <Combobox.Options>
+                          {filteredPeople.map((person) => (
+                            <Combobox.Option key={person.id} value={person} className="">
+                              <div className="py-1 text-black">{person.name}</div>
+                            </Combobox.Option>
+                          ))}
+                        </Combobox.Options>
+                      </Combobox>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className="flex justify-start w-full px-4 mb-7">
+                    <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex text-sm" onClick={nextStep}>
+                      <h1>გაგრძელება</h1>
+                    </button>
+                    <button className="p-2 ml-2 mt-7 text-[#FF7600] text-sm" onClick={prevStep}>
+                      <h1>უკან</h1>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Stepper.Step>
+            <Stepper.Completed>
+              <div className="flex justify-center w-full px-16 text-center">
+                მალე ჩვენი ოპერატორი დაგიკავშირდებათ .!
+              </div>
+            </Stepper.Completed>
           </Stepper>
           <div className="flex items-center justify-center m-2"></div>
         </div>
