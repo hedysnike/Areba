@@ -126,10 +126,10 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                     </label>
                   </div>{" "}
                 </div>
-                <div className="justify-start w-full px-4 mb-7">
-                  <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex" onClick={nextStep}>
-                    <h1>გაგრძელება</h1>
-                  </button>
+                <div className="flex justify-start w-full px-4 mb-7">
+                    <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex text-sm" onClick={nextStep}>
+                      <h1>გაგრძელება</h1>
+                    </button>
                 </div>
               </div>
             </Stepper.Step>
