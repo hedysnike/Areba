@@ -36,10 +36,10 @@ export function SpecialistModal2() {
                   className="pt-5 rounded-[2px] pb-[7px] w-full py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 border border-black  focus:ring-0"
                   displayValue={(m: typeof Makes[0]) => m.title}
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="a "
+                  placeholder=" "
                 />
-                <label className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
-                  მანქანის ნომერი
+                <label className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+                  აირჩიეთ მარკა
                 </label>
 
                 <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -98,7 +98,7 @@ export function SpecialistModal2() {
                   displayValue={(m: typeof Models[0]) => m.title}
                   onChange={(event) => setQuery(event.target.value)}
                 />
-                                <label className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+                <label className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
                   აირჩიეთ მოდელი
                 </label>
 
