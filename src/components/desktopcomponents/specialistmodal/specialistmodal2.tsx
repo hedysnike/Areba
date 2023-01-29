@@ -38,9 +38,9 @@ export function SpecialistModal2() {
                   onChange={(event) => setQuery(event.target.value)}
                   placeholder=" "
                 />
-                <label className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+                <h2 className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
                   აირჩიეთ მარკა
-                </label>
+                </h2>
 
                 <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                   <Icon icon="ic:baseline-arrow-drop-down" color="black" width="20" height="20" />
@@ -98,9 +98,9 @@ export function SpecialistModal2() {
                   displayValue={(m: typeof Models[0]) => m.title}
                   onChange={(event) => setQuery(event.target.value)}
                 />
-                <label className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+                <h2 className="left-0 pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
                   აირჩიეთ მოდელი
-                </label>
+                </h2>
 
                 <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                   <Icon icon="ic:baseline-arrow-drop-down" color="black" width="20" height="20" aria-hidden="true" />
@@ -210,9 +210,9 @@ export function SpecialistModal2() {
           className="pt-5 rounded-[2px] pb-[7px] pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"
           placeholder=" "
         />
-        <label className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+        <h2 className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
           მანქანის ნომერი
-        </label>
+        </h2>
       </div>
       <div className="relative m-4 group pb-11">
         <input
@@ -220,9 +220,9 @@ export function SpecialistModal2() {
           className="pt-5 rounded-[2px] pb-[7px] pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"
           placeholder=" "
         />
-        <label className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
+        <h2 className="pl-2 pt-3 text-xs -translate-y-[10px] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-focus:-translate-y-[10px] m-[1px] transition-all peer-focus:text-xs text-[#9b9b9b] peer-focus:text-[#9b9b9b] absolute pointer-events-none z-20">
           პრომო კოდი
-        </label>
+        </h2>
       </div>
 
       <div className="flex w-full "></div>

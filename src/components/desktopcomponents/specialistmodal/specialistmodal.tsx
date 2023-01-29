@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { Combobox } from "@headlessui/react";
 import { Makes } from "@/assets/makes";
-import { SpecialistModal2 } from "./specialistassistant2";
+import { SpecialistModal2 } from "./specialistmodal2";
 import { SpecialistModal1 } from "./specialistmodal1";
 import { SpecialistModal3 } from "./specialistmodal3";
 
@@ -63,14 +63,19 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
       <div className="z-30 flex flex-col items-center justify-center w-full text-black">
         <div className="w-full mt-3 ">
           <Stepper
+            color="#FF7600"
+            sx={{
+              ".mantine-Stepper-stepIcon": {
+                backgroundColor: "#424242",
+              },
+            }}
             iconSize={24}
-            color="#ff7600"
             completedIcon={
-              <Icon className="bg-[#transparent]" icon="material-symbols:check" color="#fff" width="14" height="14" />
+              <Icon className="bg-transparent" icon="material-symbols:check" color="#fff" width="14" height="14" />
             }
             progressIcon={
               <Icon
-                className="bg-[#424242] w-6 h-6 p-[3px] rounded-full"
+                className="w-6 h-6 p-[3px] rounded-full bg-transparent"
                 icon="ic:sharp-edit"
                 color="#fff"
                 width="14"
@@ -83,15 +88,11 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
           >
             <Stepper.Step
               className="py-3 pl-5"
-              color="#424242"
-              completedIcon={
-                <Icon className="bg-[#transparent]" icon="material-symbols:check" color="#fff" width="14" height="14" />
-              }
+              completedIcon={<Icon className="" icon="material-symbols:check" color="#fff" width="14" height="14" />}
             >
               <h1 className="bg-[#FF7600] w-full text-center text-white py-3 text-sm outline-none">
                 სპეციალისტის გამოძახება - 20 ლარი
               </h1>
-
               <div className="flex flex-col w-full">
                 <SpecialistModal1 />
                 <div className="flex justify-start w-full px-4 mb-7">

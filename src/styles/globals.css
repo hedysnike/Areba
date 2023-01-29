@@ -13,6 +13,10 @@
   src: url(../assets/bpg_banner_caps.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: 'Noto';
+  src: url("../assets/Noto/Noto_Sans_Georgian/static/NotoSansGeorgian/NotoSansGeorgian-Regular.ttf");
+}
 
 body {
   font-family: 'name', sans-serif;
@@ -20,4 +24,8 @@ body {
 
 h1 {
   font-family: 'bpg', sans-serif;
+}
+
+h2 {
+  font-family: 'Noto';
 }
