@@ -12,22 +12,43 @@ export function ProfileMenu() {
             <h1>ჩემი გვერდი</h1>
           </button>
         </Menu.Target>
-
-        <Menu.Dropdown>
+        <Menu.Dropdown className="p-0">
           <Link href="/profile">
             <Menu.Item>
               <h1 className="text-[#FF7600] text-xl text-center">ზაზა გუგავა</h1>
               <h1 className="text-[#FFAB00] text-xs text-center">test@mail.com</h1>
             </Menu.Item>
           </Link>
-          <Link href="/contact">
+          <Menu.Divider />
+          <Menu.Item>
+            <div className="flex items-center justify-start px-3">
+              <Icon icon="ic:outline-plus" width={24} height={24} className="text-[#616161] " />
+              <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">დამატება </h1>
+            </div>
+          </Menu.Item>
+          <Menu.Item>
+            <div className="flex items-center justify-start px-3">
+              <Icon icon="mdi:clipboard-outline" width={24} height={24} className="text-[#616161] " />
+              <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">ჩემი მოთხოვნები </h1>
+            </div>
+          </Menu.Item>
+          <Menu.Divider />
+          <Link href="/profile">
             <Menu.Item>
-              <div className="flex justify-start px-4">
-                <Icon icon="material-symbols:person" width={24} height={24} className="text-[#FF7600] " />
-                <h1 className="pl-[52px] text-sm font-semibold text-[#616161] text-left ">დამატება  </h1>
+              <div className="flex items-center justify-start px-3">
+                <Icon icon="material-symbols:person" width={24} height={24} className="text-[#616161] " />
+                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">პროფილი </h1>
               </div>
             </Menu.Item>
-          </Link>
+            </Link>
+            <Menu.Divider />
+            <Menu.Item>
+              <div className="flex items-center justify-start px-3">
+                <Icon icon="ic:baseline-logout" width={24} height={24} className="text-[#616161] " />
+                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">გასვლა </h1>
+              </div>
+            </Menu.Item>
+
         </Menu.Dropdown>
       </Menu>
     </>
