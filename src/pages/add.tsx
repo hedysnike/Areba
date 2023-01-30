@@ -1,3 +1,5 @@
+import { Layoutlogged } from "@/hooks/Layoutlogged";
+
 export default function Add() {
   return (
     <div className="mx-56 mt-56">
@@ -5,3 +7,6 @@ export default function Add() {
     </div>
   );
 }
+
+
+Add.Layout = Layoutlogged;

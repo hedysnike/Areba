@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { SpecialistModal } from "@/components/desktopcomponents/specialistmodal/specialistmodal";
-import asistant from "@/assets/images/asistant.png";
-import Image from "next/image";
 
 export function Assistant() {
   const [openModal, setOpenModal] = useState(false);

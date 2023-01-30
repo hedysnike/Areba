@@ -102,7 +102,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-            <Stepper.Step className="py-3 pr-5">
+            <Stepper.Step className="py-3">
               <div>
               <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                 სპეციალისტის გამოძახება - 20 ლარი

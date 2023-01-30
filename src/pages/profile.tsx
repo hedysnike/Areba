@@ -1,4 +1,7 @@
 import { Layout } from "@/hooks/Layout";
+import { Layoutlogged } from "@/hooks/Layoutlogged";
+
+
 
 export default function Profile(){
     return (
@@ -12,7 +15,7 @@ export default function Profile(){
             <div className="w-[74%] h-full bg-white min-h-[80vh]"> 
             <div className="bg-[#EEEEEE] p-4 text-sm shadow-b shadow-md shadow-[#b2b2b2]">Icon პირადი ინფორმაცია</div>
             <div className="">
-                <div className="border border-solid border-black w-full p-3 text-sm mt-5">ქვეყანა</div>
+                <div className="w-full p-3 mt-5 text-sm border border-black border-solid">ქვეყანა</div>
                 <div></div>
             </div>
             </div>
@@ -21,4 +24,4 @@ export default function Profile(){
     );
 }
 
-Profile.Layout = Layout;
+Profile.Layout = Layoutlogged;
