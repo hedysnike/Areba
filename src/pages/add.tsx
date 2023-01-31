@@ -2,8 +2,8 @@ import { Layoutlogged } from "@/hooks/Layoutlogged";
 
 export default function Add() {
   return (
-    <div className="mx-56 mt-56">
-      <h1>Add</h1>
+    <div className="w-3/4 max-w-[1140px] ml-auto mr-auto">
+      <h1 className="flex">Add</h1>
     </div>
   );
 }

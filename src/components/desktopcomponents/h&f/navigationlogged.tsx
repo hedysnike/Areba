@@ -12,7 +12,7 @@ export function NavigationLogged() {
   return (
     <div className="border-b border-bottom">
       <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
-      <div className="w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
+      <div className="lg:w-3/4 w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
         <div className="absolute hidden p-1 pl-2 sm:block">
           <Link href="/">
             <img className="w-auto h-[43px] cursor-pointer " src="https://i.imgur.com/K5vhBw4.png" />
@@ -31,9 +31,7 @@ export function NavigationLogged() {
             <h1>სიახლეები</h1>
           </Link>
           <div className="border-l border-[#bbbbbb] border-solid py-[18px] mx-2"></div>
-          <Link href="/profile">
             <ProfileMenu />
-          </Link>
           <Link href="/add">
             <button className="flex px-[13px] text-white flex-col sm:flex-row bg-[#FF7600] sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FD8824] py-[6px] rounded-[4px]">
               <Icon icon="material-symbols:add-circle" color="white" width="24" height="24" />
