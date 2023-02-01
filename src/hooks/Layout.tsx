@@ -4,6 +4,7 @@ import { Assistant } from "@/components/desktopcomponents/h&f/assistant";
 import { Footer } from "@/components/desktopcomponents/h&f/Footer";
 
 export function Layout({ children }: PropsWithChildren) {
+  
   return (
     <div>
       <Navigation />
