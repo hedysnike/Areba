@@ -1,47 +1,56 @@
 import * as React from "react";
-import dayjs, { Dayjs } from "dayjs";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { Layout } from "@/hooks/Layout";
-import { MobileDatePicker } from "@mui/x-date-pickers";
+import { makeStyles } from "@mui/styles";
+import { Select, FormControl, InputLabel, MenuItem, createTheme, ThemeProvider } from "@mui/material";
+import { Models } from "@/assets/models";
+import { Makes } from "@/assets/makes";
+
+const theme = createTheme({
+  components: {
+    MuiSelect: {
+      variants: [
+        {
+          props: { variant: "filled" },
+          style: {
+            border: "1px solid #E0E0E0",
+            backgroundColor: "transparent",
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
+          },
+        },
+      ],
+    },
+  },
+});
 
 export default function Examplecomponents() {
-  const [value, setValue] = React.useState<Dayjs | null>(dayjs("2014-08-18T21:11:54"));
-
-  const handleChange = (newValue: Dayjs | null) => {
-    setValue(newValue);
-  };
-
   return (
-    <div className="mx-56 mt-56">
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DesktopDatePicker
-          label="Date desktop"
-          inputFormat="MM/DD/YYYY"
-          value={value}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        />
-        <MobileDatePicker
-          label="Date mobile"
-          inputFormat="MM/DD/YYYY"
-          value={value}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        />
+    <ThemeProvider theme={theme}>
+      <div className="flex flex-col items-center justify-center w-full min-h-screen">
+        <FormControl variant="filled" sx={{ width: "80%", marginLeft: "auto", marginRight: "auto" }}>
+          <InputLabel>Select</InputLabel>
+          <Select variant="filled">
+            {Models.map((i) => (
+              <MenuItem key={i.id} value={i.title}>
+                {i.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <FormControl variant="filled" sx={{ width: "80%", marginLeft: "auto", marginRight: "auto" }}>
+          <InputLabel>Select</InputLabel>
+          <Select variant="filled">
+            {Models.map((i) => (
+              <MenuItem key={i.id} value={i.title}>
+                {i.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
 
-        <TimePicker
-          label="Time"
-          value={value}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        />
-      </LocalizationProvider>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -52,7 +52,7 @@ export function SpecialistModal2() {
                 leaveTo="opacity-0"
                 afterLeave={() => setQuery("")}
               >
-                  <Combobox.Options className="absolute z-50 w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-96 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                <Combobox.Options className="absolute z-50 w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-96 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                   {filteredMakes.length === 0 && query !== "" ? (
                     <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">Nothing found.</div>
                   ) : (
@@ -91,7 +91,7 @@ export function SpecialistModal2() {
         <div className="w-[50%] mt-6 mb-5">
           <Combobox value={selectedModel} onChange={setSelectedModel}>
             <div className="relative mt-1">
-            <div className="relative w-full text-sm text-left bg-white rounded-lg shadow-md cursor-default group ">
+              <div className="relative w-full text-sm text-left bg-white rounded-lg shadow-md cursor-default group ">
                 <Combobox.Input
                   className="pt-5 rounded-[3px] pl-[5px] pb-[7px] w-full text-sm leading-5 text-gray-900 ring-1 focus:ring-2 ring-[#C2C2C2] focus:ring-[#383838] hover:ring-[#383838] "
                   displayValue={(m: typeof Models[0]) => m.title}
@@ -157,9 +157,9 @@ export function SpecialistModal2() {
                 className="w-full py-2 pt-5 rounded-[2px] pb-[7px] text-sm leading-5 text-gray-900 ring-1 focus:ring-2 ring-[#C2C2C2] focus:ring-[#383838] hover:ring-[#383838]"
                 onChange={(event) => setQuery(event.target.value)}
               />
-                              <h2 className="text-xs left-[5px] top-[4px] text-[#9b9b9b] group-focus-within:text-[#383838] absolute pointer-events-none z-20">
-                                წელი
-</h2>
+              <h2 className="text-xs left-[5px] top-[4px] text-[#9b9b9b] group-focus-within:text-[#383838] absolute pointer-events-none z-20">
+                წელი
+              </h2>
               <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                 <Icon icon="ic:baseline-arrow-drop-down" color="black" width="20" height="20" aria-hidden="true" />
               </Combobox.Button>
