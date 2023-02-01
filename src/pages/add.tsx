@@ -3,6 +3,7 @@ import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
 import { Layoutlogged } from "@/hooks/Layoutlogged";
 import { Autocomplete, Chip, createTheme, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { useState } from "react";
 
 const completetheme = createTheme({
   components: {
@@ -45,10 +46,14 @@ const theme = createTheme({
   },
 });
 
-const filteredModels = Models.filter((model) => model.make_id === selected?._id).filter((model) =>
-    model.title.toLowerCase().replace(/\s+/g, "").includes(query.toLowerCase().replace(/\s+/g, ""))
-  );
+  
 export default function Add() {
+const [selected, setSelected] = useState(null)
+
+
+  const filteredModels = Models.filter((model) => model.make_id === selected?._id)
+
+
   return (
     <div className="w-3/4 max-w-6xl min-h-[75vh] h-auto ml-auto mr-auto">
       <h1 className="flex flex-col items-center my-[52px]">
@@ -71,6 +76,10 @@ export default function Add() {
               <Chip variant="outlined" size="small" key={make.id} {...getTagProps({ index })} />
             ))
           }
+          onChange={(e, value) => {
+            const selectedMake = Makes.find((make) => make.title === value)
+            setSelected(selectedMake)
+          }}
           renderInput={(params) => (
             <TextField
               sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
@@ -85,11 +94,11 @@ export default function Add() {
         <Autocomplete
           id="tags-filled"
           sx={{ width: "95%", marginRight: "auto" }}
-          options={filtheredModels.map((make) => make.title)}
+          options={filteredModels.map((model) => model.title)}
           theme={completetheme}
           renderTags={(value, getTagProps) =>
-            value.map((make, index) => (
-              <Chip variant="outlined" size="small" key={make.id} {...getTagProps({ index })} />
+            value.map((model, index) => (
+              <Chip variant="outlined" size="small" key={model.id} {...getTagProps({ index })} />
             ))
           }
           renderInput={(params) => (
