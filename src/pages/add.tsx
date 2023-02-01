@@ -1,4 +1,3 @@
-import { Conditions } from "@/assets/condition";
 import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
 import { Layoutlogged } from "@/hooks/Layoutlogged";
@@ -7,6 +6,22 @@ import { useState } from "react";
 
 const completetheme = createTheme({
   components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiFilledInput-root": {
+            backgroundColor: "transparent",
+            border: "1px solid #E0E0E0",
+          },
+          "&:focus-within": {
+            backgroundColor: "transparent",
+          },
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+        },
+      },
+    },
     MuiAutocomplete: {
       styleOverrides: {
         root: {
@@ -20,7 +35,6 @@ const completetheme = createTheme({
           "&:hover": {
             backgroundColor: "transparent",
           },
-
         },
       },
     },
@@ -46,13 +60,10 @@ const theme = createTheme({
   },
 });
 
-  
 export default function Add() {
-const [selected, setSelected] = useState(null)
+  const [selected, setSelected] = useState(null);
 
-
-  const filteredModels = Models.filter((model) => model.make_id === selected?._id)
-
+  const filteredModels = Models.filter((model) => model.make_id === selected._id);
 
   return (
     <div className="w-3/4 max-w-6xl min-h-[75vh] h-auto ml-auto mr-auto">
@@ -66,52 +77,64 @@ const [selected, setSelected] = useState(null)
           </Select>
         </FormControl>
         <div className="w-full mt-5 hover:">
-        <Autocomplete
-          id="tags-filled"
-          sx={{ width: "95%", marginRight: "auto" }}
-          options={Makes.map((make) => make.title)}
-          theme={completetheme}
-          renderTags={(value, getTagProps) =>
-            value.map((make, index) => (
-              <Chip variant="outlined" size="small" key={make.id} {...getTagProps({ index })} />
-            ))
-          }
-          onChange={(e, value) => {
-            const selectedMake = Makes.find((make) => make.title === value)
-            setSelected(selectedMake)
-          }}
-          renderInput={(params) => (
-            <TextField
-              sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
-              {...params}
-              variant="filled"
-              label="აირჩიეთ მარკა"
-            />
-          )}
-        />
+          <Autocomplete
+            id="tags-filled"
+            sx={{ width: "95%", marginRight: "auto" }}
+            options={Makes.map((make) => make.title)}
+            theme={completetheme}
+            renderTags={(value, getTagProps) =>
+              value.map((make, index) => (
+                <Chip variant="outlined" size="small" key={make.id} {...getTagProps({ index })} />
+              ))
+            }
+            onChange={(e, value) => {
+              const selectedMake = Makes.find((make) => make.title === value);
+              setSelected(selectedMake);
+            }}
+            renderInput={(params) => (
+              <TextField
+                sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
+                {...params}
+                variant="filled"
+                label="აირჩიეთ მარკა"
+              />
+            )}
+          />
         </div>
         <div className="w-full mt-5 hover:">
-        <Autocomplete
-          id="tags-filled"
-          sx={{ width: "95%", marginRight: "auto" }}
-          options={filteredModels.map((model) => model.title)}
-          theme={completetheme}
-          renderTags={(value, getTagProps) =>
-            value.map((model, index) => (
-              <Chip variant="outlined" size="small" key={model.id} {...getTagProps({ index })} />
-            ))
-          }
-          renderInput={(params) => (
-            <TextField
-              sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
-              {...params}
-              variant="filled"
-              label="აირჩიეთ მარკა"
-            />
-          )}
-        />
+          <Autocomplete
+            id="tags-filled"
+            sx={{ width: "95%", marginRight: "auto" }}
+            options={filteredModels.map((model) => model.title)}
+            theme={completetheme}
+            renderTags={(value, getTagProps) =>
+              value.map((model, index) => (
+                <Chip variant="outlined" size="small" key={model.id} {...getTagProps({ index })} />
+              ))
+            }
+            renderInput={(params) => (
+              <TextField
+                sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
+                {...params}
+                variant="filled"
+                label="აირჩიეთ მოდელი"
+              />
+            )}
+          />
         </div>
-
+        <div className="w-full mt-5">
+          <TextField
+            theme={completetheme}
+            className="w-[95%]"
+            id="outlined-multiline-static"
+            label="დეტალური ინფორმაცია"
+            placeholder="შეიყვანეთ დეტალური ინფორმაცია ნაწილის შესახებ"
+            multiline
+            rows={4}
+            defaultValue="Default Value"
+            variant="filled"
+          />
+        </div>
       </h1>
     </div>
   );
