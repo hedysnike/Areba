@@ -30,12 +30,12 @@ export function Navigation() {
             <h1>სიახლეები</h1>
           </Link>
           <Link href="/login">
-            <button className="flex flex-col sm:flex-row sm:gap-[6px] items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] py-[3px] px-2 rounded-[4px]">
-              <Icon icon="material-symbols:person" width={30} height={30} color="FF7600" />
+            <button className="flex flex-col sm:flex-row sm:gap-[3px] items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] pt-[4px] pb-[7px] px-[14px] rounded-[4px]">
+              <Icon icon="material-symbols:person" width={24} height={24} color="FF7600" />
               <h1 className="text-[#616161]">შესვლა</h1>
             </button>
           </Link>
-          <div className="border-l border-[#bbbbbb] border-solid py-2 px-4 ml-2">
+          <div className="border-l border-[#bbbbbb] border-solid py-2 pl-4">
             <LanguageMenu />
           </div>
           <div className="p-2 ml-2">
