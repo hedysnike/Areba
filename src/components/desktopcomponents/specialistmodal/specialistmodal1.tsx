@@ -17,7 +17,7 @@ export function SpecialistModal1() {
   };
 
   return (
-    <div className="flex flex-col w-full mb-6">
+    <div className="flex flex-col w-full mb-6 duration-300 animate-in slide-in-from-left">
       <div className="relative mx-6 mt-6 mb-4 group pb-11">
         <input
           type="text"

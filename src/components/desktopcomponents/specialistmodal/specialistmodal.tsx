@@ -93,7 +93,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
               <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                 სპეციალისტის გამოძახება - 20 ლარი
               </h1>
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col w-full overflow-hidden">
                 <SpecialistModal1 />
                 <div className="flex justify-start w-full px-6 mb-7">
                   <button className="bg-[#FF7600] text-white py-2 px-4 rounded flex text-sm" onClick={nextStep}>
@@ -107,7 +107,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
               <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                 სპეციალისტის გამოძახება - 20 ლარი
               </h1>
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full overflow-hidden">
                   <SpecialistModal2 />
                   <div className="flex justify-start w-full px-4 mb-7">
                     <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex text-sm" onClick={nextStep}>
@@ -125,7 +125,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
               <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                 სპეციალისტის გამოძახება - 20 ლარი
               </h1>
-                <div className="ml-6 mr-[30px]">
+                <div className="ml-6 mr-[30px] overflow-hidden">
                   <SpecialistModal3 />
                 </div>
                 <div className="flex flex-col w-full">

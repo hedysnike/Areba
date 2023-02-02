@@ -3,7 +3,7 @@ import { Layout } from "@/hooks/Layout";
 
 export function SpecialistModal3() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full slide-in-from-right animate-in">
       <div className="flex mt-6">
         <div className="relative rounded-[4px] group mb-[34px] mr-[5px] pb-11 w-[50%]">
           <input
