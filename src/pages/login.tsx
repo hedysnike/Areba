@@ -3,10 +3,10 @@ import { Layout } from "@/hooks/Layout";
 
 export default function Login() {
   return (
-    <div className="min-h-[84vh] h-full">
-      <div className="w-3/4  mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf]">
+    <div className="min-h-[84vh] h-full bg-[#FFFDF7]">
+      <div className="w-3/4 px-44 mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
         <div className="h-auto">{LLogin()}</div>
-        <div className="grid grid-cols-1 h-auto bg-white w-full">
+        <div className="grid w-full h-auto grid-cols-1 bg-white">
           <div className="relative rounded-[4px] group m-4 pb-16">
             <input
               type="text"
@@ -18,7 +18,7 @@ export default function Login() {
             </label>
           </div>
 
-          <div className="relative group m-4 pb-16">
+          <div className="relative pb-16 m-4 group">
             <input
               type="text"
               className="pt-5 rounded-md pb-3 pl-2 w-full font-normal peer text-sm leading-6 absolute outline-none ring-1 ring-solid  ring-[#C2C2C2] hover:ring-1 focus:ring-2 hover:delay-[100ms] hover:transition-all ease-in focus:ring-black hover:ring-black placeholder-shown:z-0 z-20"

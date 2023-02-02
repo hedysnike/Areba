@@ -12,7 +12,7 @@ export function DesktopIndex() {
       <div>
         <img src="https://i.imgur.com/sfB255D.png" className="w-full h-96" alt="" />
       </div>
-      <div className="flex items-center justify-center my-7">
+      <div className="flex items-center justify-center mb-10 mt-7">
         <button
           onClick={() => setOpenModal(true)}
           className="p-3 pr-7 pl-6 rounded bg-[#FF7600] hover:bg-[#ff8c27] text-white text-2xl  flex items-center gap-5"
@@ -21,7 +21,7 @@ export function DesktopIndex() {
           <h1>სპეციალისტის გამოძახება</h1>
         </button>
       </div>
-      <h1 className="mb-8 text-4xl font-medium text-center">ჩვენ გთავაზობთ</h1>
+      <h1 className="mb-8 text-[34px] font-normal text-center">ჩვენ გთავაზობთ</h1>
       <div className="grid grid-cols-4 gap-3 w-5/6 ml-auto mr-auto text-center max-w-[1200px]">
         <div className="flex flex-col items-center justify-center bg-white">
           <img src="https://i.imgur.com/Y8Di5eV.png" alt="Service Image" />

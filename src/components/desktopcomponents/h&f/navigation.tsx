@@ -26,7 +26,7 @@ export function Navigation() {
             <h1>სპეციალისტი</h1>
           </div>
           <Link className="hover:bg-[#F0F0F0] hidden gap-2 h-full sm:flex items-center px-2" href="/news">
-          <Icon icon="fa-solid:newspaper" width={27} height={27} color="616161" />
+            <Icon icon="fa-solid:newspaper" width={27} height={27} color="616161" />
             <h1>სიახლეები</h1>
           </Link>
           <Link href="/login">

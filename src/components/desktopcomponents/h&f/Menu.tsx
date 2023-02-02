@@ -1,22 +1,33 @@
 import { Icon } from "@iconify/react";
-import { Menu } from "@mantine/core";
+import { Burger, Menu } from "@mantine/core";
 import Link from "next/link";
-
+import { useState } from "react";
 
 export function Menuicon() {
-  return (
-    <Menu shadow="md" width={150}>
-      <Menu.Target>
-      <Icon icon="material-symbols:menu-rounded" color="616161" width="24" height="24" />
-      </Menu.Target>
+  const [opene, setOpen] = useState(false);
+  const title = opene ? "Close menu" : "Open menu";
 
-      <Menu.Dropdown>
-          <Link href="/about">  <Menu.Item><h1>ჩვენს შესახებ</h1></Menu.Item></Link>
-        <Link href="/contact">  <Menu.Item
-        >
-       <h1>კონტაქტი</h1>
-        </Menu.Item></Link>
+  return (
+    <Menu shadow="md" width={150} opened={opene} onChange={(e) => setOpen(e)}>
+      <Menu.Target>
+        <Burger size={16} opened={opene} title={title} color="#616161" />
+      </Menu.Target>
+      <Menu.Dropdown className="p-0">
+        <Link href="/about">
+          <Menu.Item>
+            <h1 className="p-1 text-[#616161] font-semibold">ჩვენს შესახებ</h1>
+          </Menu.Item>
+        </Link>
+        <Link href="/contact">
+          <Menu.Item>
+            <h1 className="p-1 text-[#616161] font-semibold">კონტაქტი</h1>
+          </Menu.Item>
+        </Link>
       </Menu.Dropdown>
     </Menu>
   );
 }
+function useDispatch() {
+  throw new Error("Function not implemented.");
+}
+
