@@ -7,7 +7,7 @@ export function Menuicon() {
   return (
     <Menu shadow="md" width={150}>
       <Menu.Target>
-      <Icon icon="material-symbols:menu-rounded" color="black" width="28" height="30" />
+      <Icon icon="material-symbols:menu-rounded" color="616161" width="28" height="30" />
       </Menu.Target>
 
       <Menu.Dropdown>

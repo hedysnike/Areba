@@ -21,8 +21,8 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen h-auto bg-[#E0E0E0] text-black">
-      <div className="flex w-[75%] ml-auto mr-auto py-5 min-h-[80vh] ">
+    <div className="min-h-[90vh] h-auto bg-[#E0E0E0] text-black">
+      <div className="flex w-3/4 max-w-6xl ml-auto mr-auto py-5 min-h-[80vh] ">
         <div className="w-[26%] min-w-[270px] bg-white border-r border-solid border-opacity-20 border-black">
           <div className="flex-row flex items-center bg-[#F5F5F5] pt-[6px] pb-[8px]">
             <div className="w-[20%] justify-end flex">
@@ -57,7 +57,7 @@ export default function Profile() {
             <h2 className="pl-4">პირადი ინფორმაცია</h2>
           </div>
 
-          <div className="w-full p-3 mt-5 text-sm">
+          <div className="w-full p-[14px] text-sm">
             <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
               <InputLabel>ქვეყანა</InputLabel>
               <Select variant="filled" defaultChecked>

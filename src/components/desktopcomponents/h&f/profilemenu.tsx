@@ -7,7 +7,7 @@ export function ProfileMenu() {
     <>
       <Menu shadow="md" width={250}>
         <Menu.Target>
-          <button className="flex px-[13px] flex-col sm:flex-row  sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] py-[6px] rounded-[4px]">
+          <button className="flex text-black px-[13px] flex-col sm:flex-row  sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] py-[6px] rounded-[4px]">
             <Icon icon="material-symbols:person" className="w-6 h-6 text-[#FF7600]" />
             <h1>ჩემი გვერდი</h1>
           </button>

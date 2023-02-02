@@ -17,22 +17,22 @@ export function Navigation() {
             <img className="w-auto h-[43px] cursor-pointer " src="https://i.imgur.com/K5vhBw4.png" />
           </Link>
         </div>
-        <div className="flex items-center justify-end h-full gap-2 text-sm text-black">
+        <div className="flex items-center justify-end h-full gap-2 text-sm text-[#616161]">
           <div
             onClick={() => setOpenModal(true)}
             className="hover:bg-[#F0F0F0] gap-2 h-full flex flex-col sm:flex-row items-center px-2 mr-2 cursor-pointer"
           >
-            <Icon icon="fa-solid:hands-helping" className="w-8 h-8 text-zinc-600" />
+            <Icon icon="fa-solid:hands-helping" width={30} height={30} color="616161" />
             <h1>სპეციალისტი</h1>
           </div>
           <Link className="hover:bg-[#F0F0F0] hidden gap-2 h-full sm:flex items-center px-2" href="/news">
-            <Icon icon="fa-solid:newspaper" className="w-8 h-8 text-zinc-600" />
+          <Icon icon="fa-solid:newspaper" width={27} height={27} color="616161" />
             <h1>სიახლეები</h1>
           </Link>
           <Link href="/login">
-            <button className="flex flex-col sm:flex-row  sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] py-[6px] px-2 rounded-[4px]">
-              <Icon icon="material-symbols:person" className="w-6 h-6 text-orange-500" />
-              <h1>შესვლა</h1>
+            <button className="flex flex-col sm:flex-row sm:gap-[6px] items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FEF2E8] py-[3px] px-2 rounded-[4px]">
+              <Icon icon="material-symbols:person" width={30} height={30} color="FF7600" />
+              <h1 className="text-[#616161]">შესვლა</h1>
             </button>
           </Link>
           <div className="border-l border-[#bbbbbb] border-solid py-2 px-4 ml-2">
