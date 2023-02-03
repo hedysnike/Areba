@@ -8,6 +8,7 @@ import { Makes } from "@/assets/makes";
 import { SpecialistModal2 } from "./specialistmodal2";
 import { SpecialistModal1 } from "./specialistmodal1";
 import { SpecialistModal3 } from "./specialistmodal3";
+import { SpecialistModalVersion1 } from "./specialistmodalversion1";
 
 interface ModalProps {
   open: boolean;
@@ -102,6 +103,25 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
+            <Stepper.Step className="px-2 py-3">
+            <div>
+              <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
+                სპეციალისტის გამოძახება - 20 ლარი
+              </h1>
+                <div className="flex flex-col w-full overflow-hidden">
+                  <SpecialistModalVersion1 />
+                  <div className="flex justify-start w-full px-4 mb-7">
+                    <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex text-sm" onClick={nextStep}>
+                      <h1>გაგრძელება</h1>
+                    </button>
+                    <button className="p-2 ml-2 mt-7 text-[#FF7600] text-sm" onClick={prevStep}>
+                      <h1>უკან</h1>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </Stepper.Step>
             <Stepper.Step className="py-3">
               <div>
               <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
@@ -144,6 +164,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
+            
           </Stepper>
           <div className="flex items-center justify-center m-2"></div>
         </div>

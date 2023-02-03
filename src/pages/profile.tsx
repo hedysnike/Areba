@@ -1,3 +1,4 @@
+import { InputSelect } from "@/components/desktopcomponents/inputs";
 import { Layout } from "@/hooks/Layout";
 import { Layoutlogged } from "@/hooks/Layoutlogged";
 import { Icon } from "@iconify/react";
@@ -67,14 +68,15 @@ export default function Profile() {
               </Select>
             </FormControl>
             <div className="mt-5"></div>
-            <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
+            {/* <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
               <InputLabel>ქალაქი</InputLabel>
               <Select variant="filled">
                 <MenuItem selected disabled value="">
                   ქალაქი
                 </MenuItem>
               </Select>
-            </FormControl>
+            </FormControl> */}
+            <InputSelect  />
             <div className="mt-5"></div>
             <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
               <TextField required variant="filled" label="სახელი" />
