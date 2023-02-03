@@ -1,7 +1,5 @@
 import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
-import { Icon } from "@iconify/react";
-import { Fragment, useState } from "react";
 import { InputAutoComplete, InputText } from "../inputs";
 
 const years = Array.from({ length: 50 }, (_, i) => 2023 - i);

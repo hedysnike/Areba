@@ -114,6 +114,4 @@ export function InputText({ label }: InputTextFieldProps) {
   );
 }
 
-export function OButton() {
-  return <div></div>;
-}
+
