@@ -1,4 +1,4 @@
-import { Autocomplete, Chip, createTheme, Select, SxProps, TextField, ThemeProvider } from "@mui/material";
+import { Autocomplete, createTheme, Select, SxProps, TextField, ThemeProvider } from "@mui/material";
 
 interface InputAutoCompleteProps {
   sx?: SxProps;
@@ -10,9 +10,8 @@ interface InputAutoCompleteProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 interface InputTextFieldProps {
-    label?: string;
-  }
-  
+  label?: string;
+}
 
 export const Theme = createTheme({
   components: {
@@ -45,12 +44,12 @@ export const Theme = createTheme({
           "& .MuiFilledInput-underline:after": {
             borderBottom: "none",
           },
-            "& .MuiFilledInput-underline:hover:not(.Mui-disabled):before": {
+          "& .MuiFilledInput-underline:hover:not(.Mui-disabled):before": {
             borderBottom: "none",
-            },
-            ":-moz-focusring": {
+          },
+          ":-moz-focusring": {
             color: "transparent",
-            },
+          },
         },
       },
     },
@@ -70,16 +69,9 @@ export const Theme = createTheme({
   },
 });
 
-export function InputAutoComplete({
-  className,
-  options,
-  label,
-  onChange,
-  value,
-  key,
-}: InputAutoCompleteProps) {
+export function InputAutoComplete({ className, options, label, onChange, value, key }: InputAutoCompleteProps) {
   return (
-    <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded || ${divclassName}">
+    <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
       <ThemeProvider theme={Theme}>
         <Autocomplete
           className={className}
@@ -115,7 +107,7 @@ export function InputSelect({ className, options, label, value, onChange }: Inpu
 export function InputText({ label }: InputTextFieldProps) {
   return (
     <ThemeProvider theme={Theme}>
-      <div className="ring-1 ring-[#C2C2C2] hover:ring-1 hover:ring-black rounded">
+    <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
         <TextField className="w-[100%]" id="outlined-multiline-static" label={label} variant="filled"></TextField>
       </div>
     </ThemeProvider>
