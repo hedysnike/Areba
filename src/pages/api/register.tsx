@@ -1,11 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import crypto from "crypto";
+import { prisma } from "@/lib/db/prisma";
 
 function generateRandomString() {
   return crypto.randomBytes(64).toString("hex");
 }
 
-export default async function register(req: NextApiRequest, res: NextApiResponse) {
+export default async function register(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { email, password } = req.body;
 
   const token = generateRandomString();
@@ -13,9 +17,9 @@ export default async function register(req: NextApiRequest, res: NextApiResponse
   const user = await prisma.user.create({
     data: {
       email: email,
+
       password: password,
       token: token,
-      
     },
   });
 

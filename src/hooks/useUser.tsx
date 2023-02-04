@@ -23,17 +23,17 @@ export const useUser = () => useContext(UserContext);
 
 function useUserProvider() {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const fetchUser = async () => {
     try {
       const res = await fetch("/api/user");
       if (!res.ok) throw res;
       setUser(await res.json());
+      setIsLoggedIn(true);
     } catch (error) {
       setUser(null);
-    } finally {
-      setLoading(false);
+      setIsLoggedIn(false);
     }
   };
 
@@ -41,11 +41,15 @@ function useUserProvider() {
     fetchUser();
   }, []);
 
-  return { user, loading, retry: fetchUser };
+  return { user, isLoggedIn, retry: fetchUser };
 }
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-  const { user, retry } = useUserProvider();
+  const { user, isLoggedIn, retry } = useUserProvider();
 
-  return <UserContext.Provider value={{ user, isLoggedIn: !!user, retry }}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ user, isLoggedIn, retry }}>
+      {children}
+    </UserContext.Provider>
+  );
 }
