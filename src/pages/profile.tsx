@@ -1,6 +1,7 @@
 import { InputSelect } from "@/components/desktopcomponents/inputs";
 import { Layout } from "@/hooks/Layout";
 import { Layoutlogged } from "@/hooks/Layoutlogged";
+import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
 import {
   Box,
@@ -12,14 +13,21 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Profile() {
   const [age, setAge] = useState("");
+  const { user, isLoggedIn } = useUser();
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      window.location.href = "/login";
+    }
+  }, [isLoggedIn]);
 
   return (
     <div className="min-h-[90vh] h-auto bg-[#E0E0E0] text-black">
@@ -93,7 +101,7 @@ export default function Profile() {
                 }}
               />
               <div className="mt-5"></div>
-              <TextField variant="filled" label="areba@gmail.com" disabled />
+              <TextField variant="filled" label={user?.email} disabled />
             </FormControl>
           </div>
           <div className="pt-4">
