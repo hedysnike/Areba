@@ -15,7 +15,7 @@ export default function Register() {
   const { retry } = useUser();
 
   const register = () => {
-    api.register(email, password).then(retry);
+    api.register(email, password, name, surname, phone ).then(retry);
   };
 
   return (

@@ -53,7 +53,7 @@ export function Navigation() {
                   <Icon icon="material-symbols:add-circle" color="white" width="24" height="24" />
                   <h1>დამატება</h1>
                 </button>
-              </Link>{" "}
+              </Link>
               <hr className="h-10 w-[1px] ml-2 bg-[#bbbbbb]" />
             </>
           ) : (

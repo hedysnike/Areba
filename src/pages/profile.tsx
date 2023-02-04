@@ -87,12 +87,13 @@ export default function Profile() {
             <InputSelect />
             <div className="mt-5"></div>
             <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
-              <TextField required variant="filled" label="სახელი" />
+              <TextField required variant="filled" value={user?.name} label="სახელი" />
               <div className="mt-5"></div>
-              <TextField required variant="filled" label="გვარი" />
+              <TextField required variant="filled" value={user?.surname} label="გვარი" />
               <div className="mt-5"></div>
               <TextField
                 required
+                value={user?.phone}
                 variant="filled"
                 label="მობილური"
                 type="number"

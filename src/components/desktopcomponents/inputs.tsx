@@ -1,4 +1,4 @@
-import { Autocomplete, createTheme, Select, SxProps, TextField, ThemeProvider } from "@mui/material";
+import { Autocomplete, createTheme, Select, SxProps, TextField } from "@mui/material";
 
 interface InputAutoCompleteProps {
   sx?: SxProps;
