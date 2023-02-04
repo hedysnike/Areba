@@ -30,7 +30,7 @@ export function NavigationLogged() {
             <Icon icon="fa-solid:newspaper" width={27} height={27} color="616161" />
             <h1 className="ml-[2px]">სიახლეები</h1>
           </Link>
-          <div className="border-l border-[#bbbbbb] border-solid py-[18px] mx-2"></div>
+          <div className="border-l border-[#bbbbbb] border-solid py-[18px] mx-2"></div> 
           <ProfileMenu />
           <Link href="/add">
             <button className="flex px-[13px] text-white flex-col sm:flex-row bg-[#FF7600] sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FD8824] py-[6px] rounded-[4px]">

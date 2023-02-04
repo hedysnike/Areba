@@ -4,12 +4,24 @@ import { SpecialistModal } from "../specialistmodal/specialistmodal";
 import { useState } from "react";
 import { LanguageMenu } from "./languagemodal";
 import { Menuicon } from "./Menu";
+import { useUser } from "@/hooks/useUser";
 
 export function Navigation() {
   const [openModal, setOpenModal] = useState(false);
+  const { user } = useUser();
 
   return (
     <div className="border-b border-bottom">
+      {user && (
+        <div className="flex items-center justify-between w-full h-[50px]">
+          <div className="flex items-center gap-2">
+            <Menuicon />
+            <Link href="/">
+              <img className="w-auto h-[43px] cursor-pointer " src="https://i.imgur.com/K5vhBw4.png" />
+            </Link>
+          </div>
+        </div>
+      )}
       <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
       <div className="lg:w-3/4 w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
         <div className="absolute hidden p-1 pl-2 sm:block">

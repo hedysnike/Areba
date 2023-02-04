@@ -36,7 +36,7 @@ export default function Profile() {
               />
             </div>
             <div className="flex justify-center w-[80%]">
-            <h1 className="text-xl font-semi-bold">პირადი გვერდი</h1>
+              <h1 className="text-xl font-semi-bold">პირადი გვერდი</h1>
             </div>
           </div>
           <div className="p-4 text-sm hover:bg-[#F5F5F5] flex flex-row w-full">
@@ -76,7 +76,7 @@ export default function Profile() {
                 </MenuItem>
               </Select>
             </FormControl> */}
-            <InputSelect  />
+            <InputSelect />
             <div className="mt-5"></div>
             <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
               <TextField required variant="filled" label="სახელი" />

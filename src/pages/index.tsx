@@ -5,8 +5,6 @@ import { Layout } from "@/hooks/Layout";
 import { MobileLayout } from "@/hooks/MLayout";
 
 export default function Home({ isMobile }: { isMobile: boolean }) {
-  console.log(isMobile);
-
   return (
     <>
       {isMobile ? (
