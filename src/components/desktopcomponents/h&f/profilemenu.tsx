@@ -53,7 +53,7 @@ export function ProfileMenu() {
           </Link>
           <Menu.Divider />
           <Menu.Item>
-            <div className="flex items-center justify-start px-3" onClick={handleLogout}>
+            <div className="flex items-center justify-start px-3" >
               <Icon icon="ic:baseline-logout" width={24} height={24} className="text-[#616161] " />
               <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">გასვლა </h1>
             </div>
