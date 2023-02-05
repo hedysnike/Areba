@@ -7,14 +7,6 @@ import { useEffect } from "react";
 export function ProfileMenu() {
   const { user, isLoggedIn } = useUser();
 
-  console.log(user);
-
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    setUser(null);
-  };
-
 
   return (
     <>
