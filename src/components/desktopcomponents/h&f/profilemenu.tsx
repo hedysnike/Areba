@@ -1,8 +1,21 @@
 import { Icon } from "@iconify/react";
 import { Menu } from "@mantine/core";
 import Link from "next/link";
+import { useUser } from "@/hooks/useUser";
+import { useEffect } from "react";
 
 export function ProfileMenu() {
+  const { user, isLoggedIn } = useUser();
+
+  console.log(user);
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  };
+
+
   return (
     <>
       <Menu shadow="md" width={250}>
@@ -15,18 +28,18 @@ export function ProfileMenu() {
         <Menu.Dropdown className="p-0">
           <Link href="/profile">
             <Menu.Item>
-              <h1 className="text-[#FF7600] text-xl text-center">ზაზა გუგავა</h1>
-              <h1 className="text-[#FFAB00] text-xs text-center">test@mail.com</h1>
+              <h1 className="text-[#FF7600] text-xl text-center">{user?.name} {user?.surname}</h1>
+              <h1 className="text-[#FFAB00] text-xs text-center">{user?.email}</h1>
             </Menu.Item>
           </Link>
           <Menu.Divider />
           <Link href="/add">
-          <Menu.Item>
-            <div className="flex items-center justify-start px-3">
-              <Icon icon="ic:outline-plus" width={24} height={24} className="text-[#616161] " />
-              <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">დამატება </h1>
-            </div>
-          </Menu.Item>
+            <Menu.Item>
+              <div className="flex items-center justify-start px-3">
+                <Icon icon="ic:outline-plus" width={24} height={24} className="text-[#616161] " />
+                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">დამატება </h1>
+              </div>
+            </Menu.Item>
           </Link>
           <Link href="/requests">
             <Menu.Item>
@@ -48,7 +61,7 @@ export function ProfileMenu() {
           </Link>
           <Menu.Divider />
           <Menu.Item>
-            <div className="flex items-center justify-start px-3">
+            <div className="flex items-center justify-start px-3" onClick={handleLogout}>
               <Icon icon="ic:baseline-logout" width={24} height={24} className="text-[#616161] " />
               <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">გასვლა </h1>
             </div>

@@ -9,7 +9,6 @@ import { useUser } from "@/hooks/useUser";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const { retry } = useUser();
 
   const auth = () => {

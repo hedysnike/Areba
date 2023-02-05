@@ -13,11 +13,15 @@ interface InputTextFieldProps {
   placeholder?: string;
   multiline?: boolean;
   rows?: number;
+  defaultValue?: string;
+  requried?: boolean;
+  disabled?: boolean;
   label?: string;
+  value?: any;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function InputAutoComplete({ className, options, label, onChange, value, key }: InputAutoCompleteProps) {
+export function InputAutoComplete({ className, options, label, onChange, value, key,  }: InputAutoCompleteProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
       <Autocomplete
@@ -50,10 +54,14 @@ export function InputSelect({ className, options, label, value, onChange }: Inpu
   );
 }
 
-export function InputText({ onChange, label, multiline, rows, placeholder }: InputTextFieldProps) {
+export function InputText({ onChange, label, multiline, rows, placeholder, requried, value, disabled, defaultValue }: InputTextFieldProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
       <TextField
+        required={requried}
+        disabled={disabled}
+        value={value}
+        defaultValue={defaultValue}
         onChange={onChange}
         className="w-[100%]"
         id="outlined-multiline-static"

@@ -2,8 +2,7 @@ import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
 import { Buttons } from "@/components/desktopcomponents/buttons";
 import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inputs";
-import { Layoutlogged } from "@/hooks/Layoutlogged";
-import { ThemeProvider } from "@emotion/react";
+import { Layout } from "@/hooks/Layout";
 import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 export default function Add() {
@@ -47,4 +46,4 @@ export default function Add() {
   );
 }
 
-Add.Layout = Layoutlogged;
+Add.Layout = Layout;

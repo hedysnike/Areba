@@ -32,7 +32,10 @@ function useUserProvider() {
     try {
       const res = await fetch("/api/user");
       if (!res.ok) throw res;
-      setUser(await res.json());
+
+      const data = await res.json();
+
+      setUser(data.user);
       setIsLoggedIn(true);
     } catch (error) {
       setUser(null);
@@ -50,9 +53,5 @@ function useUserProvider() {
 export function UserProvider({ children }: { children: React.ReactNode }) {
   const { user, isLoggedIn, retry } = useUserProvider();
 
-  return (
-    <UserContext.Provider value={{ user, isLoggedIn, retry }}>
-      {children}
-    </UserContext.Provider>
-  );
+  return <UserContext.Provider value={{ user, isLoggedIn, retry }}>{children}</UserContext.Provider>;
 }

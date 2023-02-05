@@ -10,6 +10,7 @@ import { useUser } from "@/hooks/useUser";
 export function Navigation() {
   const [openModal, setOpenModal] = useState(false);
   const { user, isLoggedIn } = useUser();
+  
 
   return (
     <div className="border-b">
@@ -63,7 +64,9 @@ export function Navigation() {
           <div className="flex py-2">
             {isLoggedIn ? (
               <div className="ml-2 mr-[20px]">
+                <Link href="/requests">
                 <Icon icon="ic:baseline-message" color="#616161" width="24" height="24" />
+                </Link>
               </div>
             ) : (
               <div></div>

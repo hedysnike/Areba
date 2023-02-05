@@ -1,10 +1,8 @@
-import { InputSelect } from "@/components/desktopcomponents/inputs";
+import { InputSelect, InputText } from "@/components/desktopcomponents/inputs";
 import { Layout } from "@/hooks/Layout";
-import { Layoutlogged } from "@/hooks/Layoutlogged";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
 import {
-  Box,
   FormControl,
   InputAdornment,
   InputLabel,
@@ -18,6 +16,8 @@ import { useEffect, useState } from "react";
 export default function Profile() {
   const [age, setAge] = useState("");
   const { user, isLoggedIn } = useUser();
+  const [name, setName] = useState(user ? user.name : "");
+  const [surname, setSurname] = useState(user?.surname);
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
@@ -71,25 +71,24 @@ export default function Profile() {
               <InputLabel>ქვეყანა</InputLabel>
               <Select variant="filled" defaultChecked>
                 <MenuItem selected disabled value="">
-                  ქვეყანა
+                  საქართველო
                 </MenuItem>
               </Select>
             </FormControl>
             <div className="mt-5"></div>
-            {/* <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
+            <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
               <InputLabel>ქალაქი</InputLabel>
               <Select variant="filled">
                 <MenuItem selected disabled value="">
-                  ქალაქი
+                  თბილისი
                 </MenuItem>
               </Select>
-            </FormControl> */}
-            <InputSelect />
+            </FormControl>
             <div className="mt-5"></div>
-            <FormControl variant="filled" sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
-              <TextField required variant="filled" value={user?.name} label="სახელი" />
+            <FormControl sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}>
+              <InputText defaultValue={user?.name} label="სახელი" />
               <div className="mt-5"></div>
-              <TextField required variant="filled" value={user?.surname} label="გვარი" />
+              <InputText defaultValue={user?.surname} label="გვარი" />
               <div className="mt-5"></div>
               <TextField
                 required
@@ -102,7 +101,7 @@ export default function Profile() {
                 }}
               />
               <div className="mt-5"></div>
-              <TextField variant="filled" label={user?.email} disabled />
+              <InputText label={user?.email} disabled />
             </FormControl>
           </div>
           <div className="pt-4">
@@ -116,4 +115,4 @@ export default function Profile() {
   );
 }
 
-Profile.Layout = Layoutlogged;
+Profile.Layout = Layout;

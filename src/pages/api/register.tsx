@@ -10,14 +10,16 @@ export default async function register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { email, password } = req.body;
+  const { email, password, name, surname, phone } = req.body;
 
   const token = generateRandomString();
 
   const user = await prisma.user.create({
     data: {
       email: email,
-
+      name: name,
+      surname: surname,
+      phone: phone,
       password: password,
       token: token,
     },
