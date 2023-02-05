@@ -4,7 +4,7 @@ interface InputAutoCompleteProps {
   sx?: SxProps;
   key?: string;
   className?: string;
-  options?: string[];
+  options?: string[] 
   label?: string;
   value?: any;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
