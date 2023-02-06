@@ -1,5 +1,6 @@
+import { MenuActiveItems } from "@/components/desktopcomponents/menuActiveitems";
+import { MenuClosedItems } from "@/components/desktopcomponents/menucloseditems";
 import { Layout } from "@/hooks/Layout";
-import { Icon } from "@iconify/react";
 import { Tabs } from "@mantine/core";
 
 export default function Requests() {
@@ -9,10 +10,10 @@ export default function Requests() {
         <div className="w-full pt-5 pb-5">
           <Tabs defaultValue="first">
             <Tabs.List className="flex w-full">
-              <Tabs.Tab className="w-[50%]" value="first">
+              <Tabs.Tab className="w-[50%] text-[#B3B3B3]" color="orange" value="first">
                 <h1>ACTIVE REQUESTS</h1>
               </Tabs.Tab>
-              <Tabs.Tab className="w-[50%]" value="second">
+              <Tabs.Tab className="w-[50%] text-[#B3B3B3]" color="orange" value="second">
                 <h1>OLD/CLOSED</h1>
               </Tabs.Tab>
             </Tabs.List>
@@ -40,13 +41,7 @@ export default function Requests() {
                   </div>
                 </div>
                 <div className="flex items-center justify-center mr-3">
-                  <Icon
-                    icon="ic:round-more-vert"
-                    className="p-2 rounded-full hover:bg-[#E9DDCE]"
-                    color="#ff7600"
-                    width="42"
-                    height="42"
-                  />
+                  <MenuActiveItems />
                 </div>
               </div>
             </Tabs.Panel>
@@ -74,15 +69,9 @@ export default function Requests() {
                 </div>
                 <div className="flex flex-col items-center justify-center mr-3 text-xs text-white">
                   <button className="px-[6px] bg-[#E57373] pt-[1px] pb-[3px] rounded">
-                 <h1>Closed</h1>
+                    <h1>Closed</h1>
                   </button>
-                  <Icon
-                    icon="ic:round-more-vert"
-                    className="p-2 rounded-full hover:bg-[#E9DDCE]"
-                    color="#ff7600"
-                    width="42"
-                    height="42"
-                  />
+                  <MenuClosedItems />
                 </div>
               </div>
             </Tabs.Panel>

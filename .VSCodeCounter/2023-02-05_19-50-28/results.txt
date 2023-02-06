@@ -1,0 +1,119 @@
+Date : 2023-02-05 19:50:28
+Directory : c:\Users\Nikko\arebanextjs
+Total : 62 files,  28382 codes, 18 comments, 673 blanks, all 29073 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| TypeScript         |          5 |     12,100 |          3 |         11 |     12,114 |
+| JSON               |          2 |     11,328 |          0 |          2 |     11,330 |
+| YAML               |          1 |      3,132 |          0 |        452 |      3,584 |
+| TypeScript JSX     |         41 |      1,672 |          1 |        172 |      1,845 |
+| HTML               |          1 |         36 |          1 |          2 |         39 |
+| CSS                |          1 |         24 |          0 |          7 |         31 |
+| JavaScript         |          3 |         23 |          2 |          4 |         29 |
+| JSON with Comments |          2 |         23 |          5 |          1 |         29 |
+| Markdown           |          1 |         23 |          0 |         16 |         39 |
+| Prisma             |          1 |         16 |          2 |          4 |         22 |
+| XML                |          3 |          3 |          0 |          0 |          3 |
+| Properties         |          1 |          2 |          4 |          2 |          8 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                             | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                |         62 |     28,382 |         18 |        673 |     29,073 |
+| . (Files)                                                                                        |          9 |      3,245 |         11 |        476 |      3,732 |
+| analyze                                                                                          |          1 |         36 |          1 |          2 |         39 |
+| prisma                                                                                           |          1 |         16 |          2 |          4 |         22 |
+| public                                                                                           |          3 |          3 |          0 |          0 |          3 |
+| src                                                                                              |         48 |     25,082 |          4 |        191 |     25,277 |
+| src\assets                                                                                       |          3 |     23,324 |          0 |          3 |     23,327 |
+| src\components                                                                                   |         22 |        946 |          0 |         84 |      1,030 |
+| src\components\desktopcomponents                                                                 |         19 |        833 |          0 |         73 |        906 |
+| src\components\desktopcomponents (Files)                                                         |          7 |        260 |          0 |         23 |        283 |
+| src\components\desktopcomponents\h&f                                                             |          8 |        312 |          0 |         32 |        344 |
+| src\components\desktopcomponents\specialistmodal                                                 |          4 |        261 |          0 |         18 |        279 |
+| src\components\mobilecomponents                                                                  |          3 |        113 |          0 |         11 |        124 |
+| src\components\mobilecomponents (Files)                                                          |          1 |         65 |          0 |          4 |         69 |
+| src\components\mobilecomponents\Menu                                                             |          2 |         48 |          0 |          7 |         55 |
+| src\hooks                                                                                        |          5 |        118 |          0 |         22 |        140 |
+| src\lib                                                                                          |          2 |         29 |          3 |          6 |         38 |
+| src\lib (Files)                                                                                  |          1 |         18 |          0 |          2 |         20 |
+| src\lib\db                                                                                       |          1 |         11 |          3 |          4 |         18 |
+| src\pages                                                                                        |         15 |        641 |          1 |         69 |        711 |
+| src\pages (Files)                                                                                |         12 |        585 |          1 |         49 |        635 |
+| src\pages\api                                                                                    |          3 |         56 |          0 |         20 |         76 |
+| src\styles                                                                                       |          1 |         24 |          0 |          7 |         31 |
++--------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                         | language           | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Nikko\arebanextjs\.env                                                                  | Properties         |          2 |          4 |          2 |          8 |
+| c:\Users\Nikko\arebanextjs\.eslintrc.json                                                        | JSON with Comments |          3 |          0 |          1 |          4 |
+| c:\Users\Nikko\arebanextjs\README.md                                                             | Markdown           |         23 |          0 |         16 |         39 |
+| c:\Users\Nikko\arebanextjs\analyze\nodejs.html                                                   | HTML               |         36 |          1 |          2 |         39 |
+| c:\Users\Nikko\arebanextjs\next.config.js                                                        | JavaScript         |          4 |          1 |          2 |          7 |
+| c:\Users\Nikko\arebanextjs\package.json                                                          | JSON               |         42 |          0 |          1 |         43 |
+| c:\Users\Nikko\arebanextjs\pnpm-lock.yaml                                                        | YAML               |      3,132 |          0 |        452 |      3,584 |
+| c:\Users\Nikko\arebanextjs\postcss.config.js                                                     | JavaScript         |          6 |          0 |          1 |          7 |
+| c:\Users\Nikko\arebanextjs\prisma\schema.prisma                                                  | Prisma             |         16 |          2 |          4 |         22 |
+| c:\Users\Nikko\arebanextjs\public\next.svg                                                       | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Nikko\arebanextjs\public\thirteen.svg                                                   | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Nikko\arebanextjs\public\vercel.svg                                                     | XML                |          1 |          0 |          0 |          1 |
+| c:\Users\Nikko\arebanextjs\src\assets\makes.ts                                                   | TypeScript         |        752 |          0 |          1 |        753 |
+| c:\Users\Nikko\arebanextjs\src\assets\models.json                                                | JSON               |     11,286 |          0 |          1 |     11,287 |
+| c:\Users\Nikko\arebanextjs\src\assets\models.ts                                                  | TypeScript         |     11,286 |          0 |          1 |     11,287 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\buttons.tsx                          | TypeScript JSX     |         15 |          0 |          2 |         17 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\desktopIndex.tsx                     | TypeScript JSX     |         60 |          0 |          4 |         64 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\Footer.tsx                       | TypeScript JSX     |         25 |          0 |          2 |         27 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\Menu.tsx                         | TypeScript JSX     |         30 |          0 |          4 |         34 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\assistant.tsx                    | TypeScript JSX     |         11 |          0 |          3 |         14 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\languagemodal.tsx                | TypeScript JSX     |         13 |          0 |          4 |         17 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\modal.tsx                        | TypeScript JSX     |         43 |          0 |          3 |         46 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\navigation.tsx                   | TypeScript JSX     |         77 |          0 |          7 |         84 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\navigationlogged.tsx             | TypeScript JSX     |         52 |          0 |          4 |         56 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\h&f\profilemenu.tsx                  | TypeScript JSX     |         61 |          0 |          5 |         66 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\inputs.tsx                           | TypeScript JSX     |         72 |          0 |          5 |         77 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\menuActiveitems.tsx                  | TypeScript JSX     |         35 |          0 |          3 |         38 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\menucloseditems.tsx                  | TypeScript JSX     |         35 |          0 |          3 |         38 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\registertoggle.tsx                   | TypeScript JSX     |         18 |          0 |          3 |         21 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\specialistmodal\specialistmodal.tsx  | TypeScript JSX     |        153 |          0 |          7 |        160 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\specialistmodal\specialistmodal1.tsx | TypeScript JSX     |         54 |          0 |          5 |         59 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\specialistmodal\specialistmodal2.tsx | TypeScript JSX     |         27 |          0 |          3 |         30 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\specialistmodal\specialistmodal3.tsx | TypeScript JSX     |         27 |          0 |          3 |         30 |
+| c:\Users\Nikko\arebanextjs\src\components\desktopcomponents\steppermodal.tsx                     | TypeScript JSX     |         25 |          0 |          3 |         28 |
+| c:\Users\Nikko\arebanextjs\src\components\mobilecomponents\Menu\mobilebottom.tsx                 | TypeScript JSX     |         14 |          0 |          2 |         16 |
+| c:\Users\Nikko\arebanextjs\src\components\mobilecomponents\Menu\mobiletop.tsx                    | TypeScript JSX     |         34 |          0 |          5 |         39 |
+| c:\Users\Nikko\arebanextjs\src\components\mobilecomponents\mobileindex.tsx                       | TypeScript JSX     |         65 |          0 |          4 |         69 |
+| c:\Users\Nikko\arebanextjs\src\hooks\Layout.tsx                                                  | TypeScript JSX     |         14 |          0 |          3 |         17 |
+| c:\Users\Nikko\arebanextjs\src\hooks\Layoutlogged.tsx                                            | TypeScript JSX     |         14 |          0 |          1 |         15 |
+| c:\Users\Nikko\arebanextjs\src\hooks\MLayout.tsx                                                 | TypeScript JSX     |         12 |          0 |          2 |         14 |
+| c:\Users\Nikko\arebanextjs\src\hooks\types.ts                                                    | TypeScript         |         33 |          0 |          3 |         36 |
+| c:\Users\Nikko\arebanextjs\src\hooks\useUser.tsx                                                 | TypeScript JSX     |         45 |          0 |         13 |         58 |
+| c:\Users\Nikko\arebanextjs\src\lib\api.ts                                                        | TypeScript         |         18 |          0 |          2 |         20 |
+| c:\Users\Nikko\arebanextjs\src\lib\db\prisma.ts                                                  | TypeScript         |         11 |          3 |          4 |         18 |
+| c:\Users\Nikko\arebanextjs\src\pages\_app.tsx                                                    | TypeScript JSX     |         84 |          0 |          4 |         88 |
+| c:\Users\Nikko\arebanextjs\src\pages\_document.tsx                                               | TypeScript JSX     |         12 |          0 |          2 |         14 |
+| c:\Users\Nikko\arebanextjs\src\pages\about.tsx                                                   | TypeScript JSX     |         26 |          0 |          2 |         28 |
+| c:\Users\Nikko\arebanextjs\src\pages\add.tsx                                                     | TypeScript JSX     |         47 |          0 |          3 |         50 |
+| c:\Users\Nikko\arebanextjs\src\pages\api\login.tsx                                               | TypeScript JSX     |         14 |          0 |          6 |         20 |
+| c:\Users\Nikko\arebanextjs\src\pages\api\register.tsx                                            | TypeScript JSX     |         25 |          0 |          7 |         32 |
+| c:\Users\Nikko\arebanextjs\src\pages\api\user.tsx                                                | TypeScript JSX     |         17 |          0 |          7 |         24 |
+| c:\Users\Nikko\arebanextjs\src\pages\chat.tsx                                                    | TypeScript JSX     |         71 |          0 |          6 |         77 |
+| c:\Users\Nikko\arebanextjs\src\pages\contact.tsx                                                 | TypeScript JSX     |          9 |          0 |          3 |         12 |
+| c:\Users\Nikko\arebanextjs\src\pages\index.tsx                                                   | TypeScript JSX     |         29 |          0 |          4 |         33 |
+| c:\Users\Nikko\arebanextjs\src\pages\login.tsx                                                   | TypeScript JSX     |         34 |          1 |          6 |         41 |
+| c:\Users\Nikko\arebanextjs\src\pages\news.tsx                                                    | TypeScript JSX     |         35 |          0 |          3 |         38 |
+| c:\Users\Nikko\arebanextjs\src\pages\profile.tsx                                                 | TypeScript JSX     |        112 |          0 |          7 |        119 |
+| c:\Users\Nikko\arebanextjs\src\pages\register.tsx                                                | TypeScript JSX     |         44 |          0 |          5 |         49 |
+| c:\Users\Nikko\arebanextjs\src\pages\requests.tsx                                                | TypeScript JSX     |         82 |          0 |          4 |         86 |
+| c:\Users\Nikko\arebanextjs\src\styles\globals.css                                                | CSS                |         24 |          0 |          7 |         31 |
+| c:\Users\Nikko\arebanextjs\tailwind.config.js                                                    | JavaScript         |         13 |          1 |          1 |         15 |
+| c:\Users\Nikko\arebanextjs\tsconfig.json                                                         | JSON with Comments |         20 |          5 |          0 |         25 |
+| Total                                                                                            |                    |     28,382 |         18 |        673 |     29,073 |
++--------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

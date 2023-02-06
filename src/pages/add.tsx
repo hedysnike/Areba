@@ -17,10 +17,10 @@ export default function Add() {
             <MenuItem value={3}>ახალიც და მეორადიც</MenuItem>
           </Select>
         </FormControl>
-        <div className="w-full mt-5">
+        <div className="w-[95%] mt-5">
           <InputAutoComplete label="აირჩიეთ მარკა" options={Makes.map((make) => make.title)} />
         </div>
-        <div className="w-full mt-5">
+        <div className="w-[95%] mt-5">
           <InputAutoComplete label="აირჩიეთ მოდელი" options={Models.map((model) => model.title)} />
         </div>
         <div className="w-[95%] mr-auto ml-auto mt-5">
@@ -33,7 +33,12 @@ export default function Add() {
           </FormControl>
         </div>
         <div className="w-[95%] mt-5">
-          <InputText label="დეტალური ინფორმაცია" placeholder="შეიყვანეთ დეტალური ინფორმაცია ნაწილის შესახებ" />
+          <InputText
+            multiline
+            rows={4}
+            label="დეტალური ინფორმაცია"
+            placeholder="შეიყვანეთ დეტალური ინფორმაცია ნაწილის შესახებ"
+          />
         </div>
         <div className="w-[95%] mt-5">
           <InputText label="VIN კოდი" />
