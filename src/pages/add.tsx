@@ -45,7 +45,6 @@ export default function Add() {
           </FormControl>
         </div>
         <div className="w-[95%] mt-5">
-          <div></div>
           <InputText
             multiline
             rows={4}
