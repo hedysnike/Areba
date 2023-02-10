@@ -11,6 +11,7 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Profile() {
@@ -53,12 +54,13 @@ export default function Profile() {
               <Icon icon="ic:baseline-chevron-right" color="#757575" width="20" height="20" />
             </div>
           </div>
-          <div className="p-4 text-sm hover:bg-[#F5F5F5] flex flex-row">
+          <Link href="/requests" className="p-4 text-sm hover:bg-[#F5F5F5] flex flex-row">
+
             <h1 className="w-[85%]">ჩემი განცხადებები</h1>
             <div className="w-[15%] flex justify-center">
               <Icon icon="mdi:clipboard-outline" width={22} height={22} className="text-[#616161] " />
             </div>
-          </div>
+            </Link>
         </div>
         <div className="w-[74%] bg-white">
           <div className="bg-[#EEEEEE] px-4 py-[9px] text-sm shadow-b flex items-center flex-row shadow-md shadow-[#b2b2b2]">

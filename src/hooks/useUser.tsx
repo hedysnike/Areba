@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { MongoClient } from "@mongodb";
 
-export interface User {
-  id: number;
+interface User {
+  _id: string;
   email: string;
   password: string;
   name: string;
@@ -24,30 +25,36 @@ const UserContext = createContext<UserContext>({
 
 export const useUser = () => useContext(UserContext);
 
+async function fetchUser() {
+  try {
+    const client = await MongoClient.connect("mongodb://localhost:27017/areba/user");
+    const db = client.db("mydb");
+    const users = db.collection<User>("users");
+    const user = await users.findOne({});
+
+    return user;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 function useUserProvider() {
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-  const fetchUser = async () => {
-    try {
-      const res = await fetch("/api/user");
-      if (!res.ok) throw res;
-
-      const data = await res.json();
-
-      setUser(data.user);
-      setIsLoggedIn(true);
-    } catch (error) {
-      setUser(null);
-      setIsLoggedIn(false);
-    }
-  };
-
   useEffect(() => {
-    fetchUser();
+    const doFetchUser = async () => {
+      const data = await fetchUser();
+
+      setUser(data);
+      setIsLoggedIn(data != null);
+    };
+
+    doFetchUser();
   }, []);
 
-  return { user, isLoggedIn, retry: fetchUser };
+  return { user, isLoggedIn, retry: () => {} };
 }
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
