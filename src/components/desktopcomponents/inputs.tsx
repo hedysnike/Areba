@@ -4,10 +4,10 @@ interface InputAutoCompleteProps {
   sx?: SxProps;
   key?: string;
   className?: string;
-  options?: string[] 
+  options?: { id: string; label: string }[];
   label?: string;
   value?: any;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (item: { id: string; label: string } | null) => void;
 }
 interface InputTextFieldProps {
   placeholder?: string;
@@ -21,10 +21,11 @@ interface InputTextFieldProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function InputAutoComplete({ className, options, label, onChange, value, key,  }: InputAutoCompleteProps) {
+export function InputAutoComplete({ className, options, label, onChange, value, key }: InputAutoCompleteProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
       <Autocomplete
+        onChange={(e, newValue) => onChange?.(newValue)}
         className={className}
         id="tags-filled"
         sx={{ width: "100%" }}
@@ -32,7 +33,6 @@ export function InputAutoComplete({ className, options, label, onChange, value, 
         renderInput={(params) => (
           <TextField
             value={value}
-            onChange={onChange}
             key={key}
             sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
             {...params}
@@ -54,7 +54,17 @@ export function InputSelect({ className, options, label, value, onChange }: Inpu
   );
 }
 
-export function InputText({ onChange, label, multiline, rows, placeholder, requried, value, disabled, defaultValue }: InputTextFieldProps) {
+export function InputText({
+  onChange,
+  label,
+  multiline,
+  rows,
+  placeholder,
+  requried,
+  value,
+  disabled,
+  defaultValue,
+}: InputTextFieldProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
       <TextField

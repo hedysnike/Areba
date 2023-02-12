@@ -4,20 +4,23 @@ import { Buttons } from "@/components/desktopcomponents/buttons";
 import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inputs";
 import { Layout } from "@/hooks/Layout";
 import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Requests } from "@prisma/client";
+import { useUser } from "@/hooks/useUser";
 
-
-export default function Add() { 
+export default function Add() {
   const [selected, setSelected] = useState<typeof Makes[number]>();
-  const [selectedModel, setSelectedModel] = useState<typeof filteredModels[number]>();
+  const [selectedModels, setSelectedModels] = useState<typeof Models[number]>();
 
+  console.log("selected", selected);
 
-  
+  useEffect(() => {
+    console.log("selected", selected);
+  }, [selected]);
+
   const filterModels = Models as Array<typeof Models[number]>;
   const filteredModels = filterModels.filter((model) => model.make_id === selected?._id);
-  
 
-  
   return (
     <div className="w-3/4 max-w-6xl min-h-[75vh] h-auto ml-auto mr-auto">
       <h1 className="flex flex-col items-center my-[52px]">
@@ -30,7 +33,14 @@ export default function Add() {
           </Select>
         </FormControl>
         <div className="w-[95%] mt-5">
-          <InputAutoComplete label="აირჩიეთ მარკა"  options={Makes.map((make) => make.title)} value={selected} onChange={((e) => setSelected(e.target.value))} />
+          <InputAutoComplete
+            label="აირჩიეთ მარკა"
+            options={Makes.map((make) => ({ id: make._id, label: make.title }))}
+            value={selected}
+            onChange={(e) => {
+              setSelected(Makes.find((m) => m._id === e?.id));
+            }}
+          />
         </div>
         <div className="w-[95%] mt-5">
           <InputAutoComplete label="აირჩიეთ მოდელი" options={filteredModels.map((model) => model.title)} />
