@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { MongoClient } from "mongodb";
 
 export interface User {
   _id: string;
