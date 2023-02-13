@@ -1,4 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import {prisma} from "@/lib/db/prisma";  
+
 
 export default async function user(req: NextApiRequest, res: NextApiResponse) {
   const token = req.cookies.token;
