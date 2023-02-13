@@ -1,3 +1,5 @@
+import { Status } from "@prisma/client";
+
 export function login(email: string, password: string) {
   return fetch("/api/login", {
     method: "POST",
@@ -19,12 +21,12 @@ export function register(email: string, password: string, name: string, surname:
 }
 
 interface CreateRequestBody {
-  type: string
-  name: string
-  year: string
-  make: string
-  model:  string
-  userId: string
+  type: string;
+  details: string;
+  year: number;
+  make: string;
+  model: string;
+  userId: string;
 }
 
 export function createRequests(requestBody: CreateRequestBody) {
@@ -34,5 +36,34 @@ export function createRequests(requestBody: CreateRequestBody) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(requestBody),
+  });
+}
+
+export function getRequests() {
+  return fetch("/api/requests", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export function deleteRequest(id: string) {
+  return fetch(`/api/deleteRequests`, {
+    method: "DELETE",
+    body: JSON.stringify({ id }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export function closeRequests(id: string) {
+  return fetch(`/api/closeRequests`, {
+    method: "PUT",
+    body: JSON.stringify({ id }),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 }

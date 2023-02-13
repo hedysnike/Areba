@@ -5,8 +5,11 @@ import { useState } from "react";
 import * as api from "@/lib/api";
 import { useUser } from "@/hooks/useUser";
 import { InputText } from "@/components/desktopcomponents/inputs";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 export default function Register() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -15,7 +18,15 @@ export default function Register() {
   const { retry } = useUser();
 
   const register = () => {
-    api.register(email, password, name, surname, phone ).then(retry);
+    api
+      .register(email, password, name, surname, phone)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.user) {
+          retry();
+          router.push("/profile");
+        }
+      });
   };
 
   return (
@@ -24,19 +35,19 @@ export default function Register() {
         <div className="h-auto"> {LLogin()}</div>
         <div className="grid w-full h-auto grid-cols-1 bg-white">
           <div className="relative rounded-[4px] group m-4">
-          <InputText label="სახელი *" onChange={(e) => setName(e.target.value)}/>          
+            <InputText label="სახელი *" onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="relative rounded-[4px] group m-4">
-          <InputText label="გვარი *" onChange={(e) => setSurname(e.target.value)}/>
+            <InputText label="გვარი *" onChange={(e) => setSurname(e.target.value)} />
           </div>
           <div className="relative rounded-[4px] group p-4">
-          <InputText label="მობილური" onChange={(e) => setPhone(e.target.value)}/>
+            <InputText label="მობილური" onChange={(e) => setPhone(e.target.value)} />
           </div>
           <div className="relative rounded-[4px] group p-4">
-          <InputText label="ელ. ფოსტა *" onChange={(e) => setEmail(e.target.value)} />
+            <InputText label="ელ. ფოსტა *" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="relative rounded-[4px] group p-4">
-          <InputText label="პაროლი *" onChange={(e) => setPassword(e.target.value)} />
+            <InputText label="პაროლი *" onChange={(e) => setPassword(e.target.value)} />
           </div>
           <Buttons text="რეგისტრაცია" onClick={register} />
         </div>

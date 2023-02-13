@@ -18,16 +18,9 @@ export function MenuClosedItems() {
         />
       </Menu.Target>
       <Menu.Dropdown className="p-0">
-        <Link href="/about">
-          <Menu.Item>
-            <h1 className="p-[2px] font-light text-black">Mark As Bought</h1>
-          </Menu.Item>
-        </Link>
-        <Link href="/contact">
           <Menu.Item>
             <h1 className="p-[2px] font-light text-black">Delete</h1>
           </Menu.Item>
-        </Link>
       </Menu.Dropdown>
     </Menu>
   );

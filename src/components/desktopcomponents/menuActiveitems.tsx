@@ -1,9 +1,13 @@
+import { deleteRequest, closeRequests } from "@/lib/api";
 import { Icon } from "@iconify/react";
-import { Burger, Menu } from "@mantine/core";
-import Link from "next/link";
+import { Menu } from "@mantine/core";
 import { useState } from "react";
 
-export function MenuActiveItems() {
+interface Props {
+  id: string;
+}
+
+export function MenuActiveItems({ id } : Props) {
   const [opene, setOpen] = useState(false);
 
   return (
@@ -18,16 +22,12 @@ export function MenuActiveItems() {
         />
       </Menu.Target>
       <Menu.Dropdown className="p-0">
-        <Link href="/about">
-          <Menu.Item>
+          <Menu.Item onClick={(e) => closeRequests(id)}>
             <h1 className="p-[2px] font-light text-black">Mark As Bought</h1>
           </Menu.Item>
-        </Link>
-        <Link href="/contact">
-          <Menu.Item>
-            <h1 className="p-[2px] font-light text-black">Delete</h1>
+          <Menu.Item onClick={(e) => deleteRequest(id)}>
+              <h1 className="p-[2px] font-light text-black">Delete</h1>
           </Menu.Item>
-        </Link>
       </Menu.Dropdown>
     </Menu>
   );

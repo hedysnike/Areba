@@ -14,17 +14,23 @@ model User {
   surname  String
   phone    String     @unique
   password String
-  token    String
+  token    String     @unique
   requests Requests[]
 }
 
+enum Status {
+  Open
+  Old
+  Closed
+}
 model Requests {
-  id     String @id @default(uuid()) @map("_id")
-  type   String?
-  year   String?
-  make   String?
-  model  String?
-  name   String
-  user   User   @relation(fields: [userId], references: [id])
-  userId String
+  id      String  @id @default(uuid()) @map("_id")
+  type    String?
+  year    Int?
+  make    String?
+  model   String?
+  details String
+  status  Status  @default(Open)
+  user    User    @relation(fields: [userId], references: [id])
+  userId  String
 }

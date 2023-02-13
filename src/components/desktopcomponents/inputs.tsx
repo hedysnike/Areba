@@ -4,7 +4,7 @@ interface InputAutoCompleteProps {
   sx?: SxProps;
   key?: string;
   className?: string;
-  options?: { id: string; label: string }[];
+  options?: { id: string; label: string }[] 
   label?: string;
   value?: any;
   onChange?: (item: { id: string; label: string } | null) => void;

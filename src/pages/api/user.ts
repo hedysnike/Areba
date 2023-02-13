@@ -3,8 +3,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function user(req: NextApiRequest, res: NextApiResponse) {
   const token = req.cookies.token;
 
-  console.log(token);
-
   if (!token) {
     res.status(401).json({ message: "Not authorized" });
     return;
