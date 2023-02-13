@@ -1,5 +1,3 @@
-import { Status } from "@prisma/client";
-
 export function login(email: string, password: string) {
   return fetch("/api/login", {
     method: "POST",
