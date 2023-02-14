@@ -18,6 +18,8 @@ interface InputTextFieldProps {
   disabled?: boolean;
   label?: string;
   value?: any;
+  type?: string;
+  error?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -64,6 +66,8 @@ export function InputText({
   value,
   disabled,
   defaultValue,
+  type,
+  error
 }: InputTextFieldProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
@@ -80,6 +84,8 @@ export function InputText({
         multiline={multiline}
         rows={rows}
         variant="filled"
+        type={type}
+        error={error}
       ></TextField>
     </div>
   );

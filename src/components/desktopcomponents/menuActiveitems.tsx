@@ -18,10 +18,14 @@ export function MenuActiveItems({ id } : Props) {
           className="p-2 rounded-full hover:bg-[#E9DDCE] mr-[6px]"
           color="#ff7600"
           width="42"
-          height="42"
+          height="42" 
+          onClick={() => {
+            setOpen(!opene);
+          }
+          }
         />
       </Menu.Target>
-      <Menu.Dropdown className="p-0">
+      <Menu.Dropdown className="p-0" >
           <Menu.Item onClick={(e) => closeRequests(id)}>
             <h1 className="p-[2px] font-light text-black">Mark As Bought</h1>
           </Menu.Item>

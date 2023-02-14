@@ -47,7 +47,7 @@ export default function Register() {
             <InputText label="ელ. ფოსტა *" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="relative rounded-[4px] group p-4">
-            <InputText label="პაროლი *" onChange={(e) => setPassword(e.target.value)} />
+            <InputText type="password" label="პაროლი *" onChange={(e) => setPassword(e.target.value)} />
           </div>
           <Buttons text="რეგისტრაცია" onClick={register} />
         </div>

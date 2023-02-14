@@ -5,14 +5,23 @@ import { Layout } from "@/hooks/Layout";
 import { useState } from "react";
 import { login } from "@/lib/api";
 import { useUser } from "@/hooks/useUser";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { retry } = useUser();
+  const router = useRouter();
 
   const auth = () => {
-    login(email, password).then(() => retry());
+    login(email, password)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.user) {
+          retry();
+          router.push("/profile");
+        }
+      });
   };
 
   return (
@@ -24,7 +33,7 @@ export default function Login() {
             <InputText onChange={(e) => setEmail(e.target.value)} label="ელ ფოსტა *" />
           </div>
           <div className="grid mt-5">
-            <InputText onChange={(e) => setPassword(e.target.value)} label="პაროლი *" />
+            <InputText error type="password" onChange={(e) => setPassword(e.target.value)} label="პაროლი *" />
           </div>
           <div className="flex justify-end mt-8">
             <Buttons text="შესვლა" onClick={auth} />
