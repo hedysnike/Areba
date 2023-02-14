@@ -2,7 +2,6 @@ import { Buttons } from "@/components/desktopcomponents/buttons";
 import { InputText } from "@/components/desktopcomponents/inputs";
 import { LLogin } from "@/components/desktopcomponents/registertoggle";
 import { Layout } from "@/hooks/Layout";
-import { useState } from "react";
 import { login } from "@/lib/api";
 import { useUser } from "@/hooks/useUser";
 import { useRouter } from "next/router";
@@ -45,7 +44,7 @@ export default function Login() {
           >
             <div className="grid mt-5">
               <TextField
-                label="Email"
+                label="იმეილი *"
                 helperText={form.errors.email}
                 {...form.getInputProps("email")}
               />
