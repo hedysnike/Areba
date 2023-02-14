@@ -1,10 +1,16 @@
-import { Autocomplete, createTheme, Select, SxProps, TextField } from "@mui/material";
+import {
+  Autocomplete,
+  createTheme,
+  Select,
+  SxProps,
+  TextField,
+} from "@mui/material";
 
 interface InputAutoCompleteProps {
   sx?: SxProps;
   key?: string;
   className?: string;
-  options?: { id: string; label: string }[] 
+  options?: { id: string; label: string }[];
   label?: string;
   value?: any;
   onChange?: (item: { id: string; label: string } | null) => void;
@@ -23,7 +29,14 @@ interface InputTextFieldProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function InputAutoComplete({ className, options, label, onChange, value, key }: InputAutoCompleteProps) {
+export function InputAutoComplete({
+  className,
+  options,
+  label,
+  onChange,
+  value,
+  key,
+}: InputAutoCompleteProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
       <Autocomplete
@@ -47,7 +60,13 @@ export function InputAutoComplete({ className, options, label, onChange, value, 
   );
 }
 
-export function InputSelect({ className, options, label, value, onChange }: InputAutoCompleteProps) {
+export function InputSelect({
+  className,
+  options,
+  label,
+  value,
+  onChange,
+}: InputAutoCompleteProps) {
   return (
     <div>
       <Select></Select>
@@ -67,10 +86,10 @@ export function InputText({
   disabled,
   defaultValue,
   type,
-  error
+  error,
 }: InputTextFieldProps) {
   return (
-    <div className="w-[100%] mr-auto ml-auto ring-1 ring-[#C2C2C2] rounded hover:ring-black focus-within:ring-2 focus-within:ring-black">
+    <div className="w-[100%] mr-auto ml-auto">
       <TextField
         required={requried}
         disabled={disabled}
@@ -83,7 +102,6 @@ export function InputText({
         label={label}
         multiline={multiline}
         rows={rows}
-        variant="filled"
         type={type}
         error={error}
       ></TextField>
