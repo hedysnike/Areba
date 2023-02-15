@@ -24,6 +24,11 @@ export default function Chat() {
       .then((res) => setRequest(res.request));
   }, [id]);
 
+  if (!request) {
+    return <div>Loading...</div>;
+  }
+
+
   return (
     <div className="h-full min-h-[93vh] pt-5 bg-[#E0E0E0] ">
       <div className="w-3/4 max-w-6xl ml-auto mr-auto rounded-md shadow shadow-[#1d1d1d81] overflow-hidden">
@@ -52,10 +57,10 @@ export default function Chat() {
                 </div>
               </div>
               <div className="flex justify-center gap-4">
-                <button  className="bg-[#FF7600] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
+                <button onClick={(e) => closeRequests(request.id)} className="bg-[#FF7600] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
                   <h1>BOUGHT</h1>
                 </button>
-                <button  className="bg-[#FF5722] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
+                <button onClick={(e) => deleteRequest(request.id)} className="bg-[#FF5722] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
                   <h1>DELETE</h1>
                 </button>
               </div>
