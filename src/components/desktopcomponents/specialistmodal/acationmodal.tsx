@@ -1,6 +1,5 @@
-import { closeRequests } from "@/lib/api";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 interface ModalProps {
   open: boolean;
@@ -61,7 +60,7 @@ export function ActionModal({ openModal, onClose, onClick }: Props) {
           <button className="text-[#FFC107] text-sm hover:bg-[#3D3829] px-[10px] pt-[6px] pb-[10px] rounded-sm" onClick={(e) => onClose()}>
             <h1>CANCEL</h1>
           </button>
-          <button className="text-[#FFC107] text-sm hover:bg-[#3D3829] px-[22px] pt-[6px] pb-[10px] rounded-sm" onClick={onClick}>
+          <button className="text-[#FFC107] text-sm hover:bg-[#3D3829] px-[22px] pt-[6px] pb-[10px] rounded-sm" onClick={() => {onClick(); onClose();}}>
             <h1>OK</h1>
           </button>
         </div>

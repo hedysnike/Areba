@@ -108,7 +108,7 @@ export default function Requests() {
                       <h1>Closed</h1>
                     </button>
                     <div onClick={(e) => e.preventDefault()}>
-                      <MenuClosedItems />
+                      <MenuClosedItems id={r.id} />
                     </div>
                   </div>
                 </Link>
