@@ -7,12 +7,14 @@ import { getRequestMeta } from "next/dist/server/request-meta";
 import { Requests as IRequests } from "@prisma/client";
 import { getRequests } from "@/lib/api";
 import Link from "next/link";
+import { useUser } from "@/hooks/useUser";
 
 
 
 export default function Requests() {
   const [requests, setrequests] = useState<IRequests[]>();
-
+  const { user } = useUser();
+  
   useEffect(() => {
     getRequests()
       .then((r) => r.json())
@@ -21,13 +23,11 @@ export default function Requests() {
 
   
   const openRequests = () => {
-    return requests?.filter((r) => r.status === "Open");
+    return requests?.filter((r) => r.status === "Open" && r.userId == user?.id);
   };
   const closedRequests = () => {
-    return requests?.filter((r) => r.status === "Closed");
+    return requests?.filter((r) => r.status === "Closed" && r.userId == user?.id);
   };
-  
-
   return (
     <div className="bg-[#FFFDF7] min-h-[85vh] h-auto w-full">
       <div className="flex flex-col w-3/4 max-w-6xl ml-auto mr-auto">
@@ -41,6 +41,7 @@ export default function Requests() {
                 <h1>OLD/CLOSED</h1>
               </Tabs.Tab>
             </Tabs.List>
+            
 
             <Tabs.Panel value="first">
               {openRequests()?.map((r) => (

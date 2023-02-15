@@ -1,4 +1,4 @@
-import { InputSelect, InputText } from "@/components/desktopcomponents/inputs";
+import { InputText } from "@/components/desktopcomponents/inputs";
 import { Layout } from "@/hooks/Layout";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";

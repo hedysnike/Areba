@@ -6,30 +6,34 @@ import { Layout } from "@/hooks/Layout";
 import { useUser } from "@/hooks/useUser";
 import { createRequests } from "@/lib/api";
 import { useForm } from "@mantine/form";
+import { useRouter } from "next/router";
 
 export default function Add() {
+  const router = useRouter();
+  
   const form = useForm({
     initialValues: {
       type: { id: "", label: "" },
-      make: { _id: "", title: "" },
-      model: { _id: "", title: "" },
+      make: { id: "", label: "" },
+      model: { id: "", label: "" },
       year: { id: "", label: "" },
       details: "",
     },
     validate: {
-      type: (value) => (value.label.length > 2 ? null : "შეავსეთ საჭირო ველი"),
+      type: (value) => (value.label.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
       year: (value) => (Number(value.label) > 1970 ? null : "შეავსეთ საჭირო ველი"),
+      make: (value) => (value.label.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
+      model: (value) => (value.label.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
+      details: (value) => (value.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
     },
   });
 
-  const { user } = useUser();
 
-  console.log(form.values);
+  const { user } = useUser();
 
   const filterModels = Models as Array<typeof Models[number]>;
   const filteredModels = filterModels.filter((model) => model.make_id === form.values.make?.id);
 
-  console.log(filteredModels);
   const years = Array.from({ length: 55 }, (_, i) => 2023 - i);
 
   return (
@@ -48,13 +52,16 @@ export default function Add() {
               if (!year) return;
 
               createRequests({
-                make: make.title,
-                model: model.title,
+                make: make.label,
+                model: model.label,
                 userId: user?._id,
                 details: details,
                 type: type.label,
-                year: year.label,
+                year: Number(year.label), 
+              }).then((res) => {
+                  router.push("/requests");
               });
+
             })}
           >
             <h1 className="justify-center mb-10 text-xl text-center">
@@ -62,7 +69,6 @@ export default function Add() {
             </h1>
             <div className="w-[95%] mt-5">
               <InputAutoComplete
-                error={form.errors.type}
                 label="ნაწილის მდგომარეობა"
                 options={[
                   { id: "ახალი", label: "ახალი" },
@@ -96,6 +102,7 @@ export default function Add() {
             </div>
             <div className="w-[95%] mt-5">
               <InputText
+                helperText={form.errors.email}
                 multiline
                 rows={4}
                 label="დეტალური ინფორმაცია"
