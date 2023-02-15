@@ -21,7 +21,7 @@ export function register(email: string, password: string, name: string, surname:
 interface CreateRequestBody {
   type: string;
   details: string;
-  year: number;
+  year: string;
   make: string;
   model: string;
   userId: string;

@@ -1,4 +1,4 @@
-import { Autocomplete, SxProps, TextField } from "@mui/material";
+import { Autocomplete, BaseTextFieldProps, SxProps, TextField } from "@mui/material";
 
 interface InputAutoCompleteProps {
   sx?: SxProps;
@@ -9,7 +9,7 @@ interface InputAutoCompleteProps {
   value?: any;
   onChange?: (item: { id: string; label: string } | null) => void;
 }
-interface InputTextFieldProps {
+interface InputTextFieldProps extends BaseTextFieldProps {
   placeholder?: string;
   multiline?: boolean;
   rows?: number;
@@ -23,7 +23,15 @@ interface InputTextFieldProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function InputAutoComplete({ className, options, label, onChange, value, key }: InputAutoCompleteProps) {
+export function InputAutoComplete({
+  className,
+  options,
+  label,
+  onChange,
+  value,
+  key,
+  ...props
+}: InputAutoCompleteProps) {
   return (
     <div className="w-[100%] mr-auto ml-auto">
       <Autocomplete
@@ -34,6 +42,7 @@ export function InputAutoComplete({ className, options, label, onChange, value, 
         options={options || []}
         renderInput={(params) => (
           <TextField
+            {...props}
             value={value}
             key={key}
             sx={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}

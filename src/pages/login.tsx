@@ -68,5 +68,3 @@ export default function Login() {
 }
 
 Login.Layout = Layout;
-
-// text-[#9CA3AF]
