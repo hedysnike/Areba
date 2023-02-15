@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import {  Menu } from "@mantine/core";
-import Link from "next/link";
 import { useState } from "react";
 
 export function MenuClosedItems() {
