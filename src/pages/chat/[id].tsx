@@ -52,10 +52,10 @@ export default function Chat() {
                 </div>
               </div>
               <div className="flex justify-center gap-4">
-                <button onClick={(e) => closeRequests(request.id)} className="bg-[#FF7600] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
+                <button  className="bg-[#FF7600] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
                   <h1>BOUGHT</h1>
                 </button>
-                <button onClick={(e) => deleteRequest(request.id)} className="bg-[#FF5722] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
+                <button  className="bg-[#FF5722] shadow-[#3434349e] shadow-sm pt-[6px] pb-[10px] text-white rounded text-sm px-4">
                   <h1>DELETE</h1>
                 </button>
               </div>
