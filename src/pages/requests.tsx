@@ -3,9 +3,8 @@ import { MenuClosedItems } from "@/components/desktopcomponents/menucloseditems"
 import { Layout } from "@/hooks/Layout";
 import { Tabs } from "@mantine/core";
 import { useEffect, useState } from "react";
-import { getRequestMeta } from "next/dist/server/request-meta";
 import { Requests as IRequests } from "@prisma/client";
-import { closeRequests, getRequests } from "@/lib/api";
+import {  getRequests } from "@/lib/api";
 import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
 
@@ -107,7 +106,7 @@ export default function Requests() {
                     <button className="px-[6px] bg-[#E57373] pt-[1px] pb-[3px] rounded">
                       <h1>Closed</h1>
                     </button>
-                    <div onClick={(e) => e.preventDefault()}>
+                    <div onClick={(e) => e.preventDefault()} >
                       <MenuClosedItems id={r.id} />
                     </div>
                   </div>

@@ -3,9 +3,10 @@ import { LLogin } from "@/components/desktopcomponents/registertoggle";
 import { Layout } from "@/hooks/Layout";
 import * as api from "@/lib/api";
 import { useUser } from "@/hooks/useUser";
-import { InputText } from "@/components/desktopcomponents/inputs";
+import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inputs";
 import { useRouter } from "next/router";
 import { useForm } from "@mantine/form";
+import { Role } from "@prisma/client";
 
 export default function Register() {
   const router = useRouter();
@@ -18,6 +19,7 @@ export default function Register() {
       name: "",
       surname: "",
       phone: "",
+      role: {} as { id: Role; label: string },
     },
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "არასწორე იმეილია .!"),
@@ -35,10 +37,10 @@ export default function Register() {
         <div className="grid w-full h-auto grid-cols-1 bg-white">
           <form
             onSubmit={form.onSubmit((values) => {
-              const { email, password, name, surname, phone } = values;
+              const { email, password, name, surname, phone, role } = values;
 
               api
-                .register(email, password, name, surname, phone)
+                .register(email, password, name, surname, phone, role.id)
                 .then((r) => r.json())
                 .then((data) => {
                   if (data.user) {
@@ -48,6 +50,17 @@ export default function Register() {
                 });
             })}
           >
+            <div className="relative rounded-[4px] group m-4">
+              <InputAutoComplete
+                options={[
+                  { id: "Buyer", label: "მომხმარებელი" },
+                  { id: "Seller", label: "მიმწოდებელი" },
+                ]}
+                label="როლი *"
+                {...form.getInputProps("role")}
+              />
+            </div>
+
             <div className="relative rounded-[4px] group m-4">
               <InputText label="სახელი *" {...form.getInputProps("name")} />
             </div>

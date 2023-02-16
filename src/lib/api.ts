@@ -1,3 +1,5 @@
+import { Role } from "@prisma/client";
+
 export function login(email: string, password: string) {
   return fetch("/api/login", {
     method: "POST",
@@ -8,13 +10,13 @@ export function login(email: string, password: string) {
   });
 }
 
-export function register(email: string, password: string, name: string, surname: string, phone: string) {
+export function register(email: string, password: string, name: string, surname: string, phone: string, role: Role) {
   return fetch("/api/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password, name, surname, phone }),
+    body: JSON.stringify({ email, password, name, surname, phone, role }),
   });
 }
 

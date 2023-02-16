@@ -2,9 +2,12 @@ import { Icon } from "@iconify/react";
 import { Menu } from "@mantine/core";
 import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
-import { useEffect } from "react";
 
-export function ProfileMenu() {
+
+
+
+
+export function ProfileMenu({ href1, href2, first, second }: { first: string, second: string, href1: string, href2: string }) {
   const { user, isLoggedIn } = useUser();
 
 
@@ -25,19 +28,19 @@ export function ProfileMenu() {
             </Menu.Item>
           </Link>
           <Menu.Divider />
-          <Link href="/add">
+          <Link href={href1}>
             <Menu.Item>
               <div className="flex items-center justify-start px-3">
                 <Icon icon="ic:outline-plus" width={24} height={24} className="text-[#616161] " />
-                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">დამატება </h1>
+                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">{first} </h1>
               </div>
             </Menu.Item>
           </Link>
-          <Link href="/requests">
+          <Link href={href2}>
             <Menu.Item>
               <div className="flex items-center justify-start px-3">
                 <Icon icon="mdi:clipboard-outline" width={24} height={24} className="text-[#616161] " />
-                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">ჩემი მოთხოვნები </h1>
+                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">{second} </h1>
               </div>
             </Menu.Item>
           </Link>

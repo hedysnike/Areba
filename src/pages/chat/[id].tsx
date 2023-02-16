@@ -3,6 +3,7 @@ import { closeRequests, deleteRequest } from "@/lib/api";
 import { Icon } from "@iconify/react";
 import { Tabs } from "@mantine/core";
 import { Requests } from "@prisma/client";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -37,7 +38,9 @@ export default function Chat() {
             <div>
               <div className="py-3 px-7">
                 <div className="flex items-center">
+                  <Link href="/requests">
                   <Icon icon="ic:baseline-arrow-back-ios-new" color="black" width="16" height="16" />
+                  </Link>
                   <h1 className="ml-2 text-sm ">
                     {request?.make} - {request?.year}
                   </h1>

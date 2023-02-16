@@ -1,4 +1,3 @@
-import { closeRequests } from "@/lib/api";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 

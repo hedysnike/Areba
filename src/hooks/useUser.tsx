@@ -1,3 +1,4 @@
+import { Role } from "@prisma/client";
 import { createContext, useContext, useEffect, useState } from "react";
 
 export interface User {
@@ -9,6 +10,7 @@ export interface User {
   surname: string;
   phone: string;
   token: string;
+  role: Role;
 }
 
 interface UserContext {

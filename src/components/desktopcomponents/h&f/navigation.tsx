@@ -10,7 +10,6 @@ import { useUser } from "@/hooks/useUser";
 export function Navigation() {
   const [openModal, setOpenModal] = useState(false);
   const { user, isLoggedIn } = useUser();
-  
 
   return (
     <div className="border-b">
@@ -46,9 +45,11 @@ export function Navigation() {
 
           <hr className="h-10 w-[1px] bg-[#bbbbbb] mr-2" />
 
-          {isLoggedIn ? (
+          {!isLoggedIn ? (
+            <div></div>
+          ) : user?.role === "Buyer" ? (
             <>
-              <ProfileMenu />
+              <ProfileMenu href1="/add" href2="/requests" first="დამატება" second="ჩემი მოთხოვნები" />
               <Link href="/add">
                 <button className="flex  px-[13px] text-white flex-col sm:flex-row bg-[#FF7600] sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FD8824] py-[6px] rounded-[4px]">
                   <Icon icon="material-symbols:add-circle" color="white" width="24" height="24" />
@@ -57,15 +58,26 @@ export function Navigation() {
               </Link>
               <hr className="h-10 w-[1px] ml-2 bg-[#bbbbbb]" />
             </>
-          ) : (
-            <div></div>
-          )}
+          ) : user?.role === "Seller" ? (
+            <>
+              <ProfileMenu href1="/allrequests" href2="/settings" first="მოთხოვნები" second="პარამეტრები" />
+              <Link href="/allrequests">
+                <button className="flex  px-[13px] text-white flex-col sm:flex-row bg-[#FF7600] sm:gap-2 items-center justify-center h-fit border border-solid border-[#FF7600] hover:bg-[#FD8824] py-[6px] rounded-[4px]">
+                  <Icon icon="material-symbols:add-circle" color="white" width="24" height="24" />
+                  <h1>მოთხოვნები</h1>
+                </button>
+              </Link>
+              <hr className="h-10 w-[1px] ml-2 bg-[#bbbbbb]" />
+            </>
+          ) : user?.role === "Admin" ? (
+            <div>Admin Page</div>
+          ) : null}
 
           <div className="flex py-2">
             {isLoggedIn ? (
               <div className="ml-2 mr-[20px]">
                 <Link href="/requests">
-                <Icon icon="ic:baseline-message" color="#616161" width="24" height="24" />
+                  <Icon icon="ic:baseline-message" color="#616161" width="24" height="24" />
                 </Link>
               </div>
             ) : (

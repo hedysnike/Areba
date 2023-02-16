@@ -7,7 +7,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  Admin
+  Buyer
+  Seller
+}
+
 model User {
+  role     Role       @default(Buyer)
   id       String     @id @default(uuid()) @map("_id")
   email    String     @unique
   name     String
@@ -23,6 +30,7 @@ enum Status {
   Old
   Closed
 }
+
 model Requests {
   id      String  @id @default(uuid()) @map("_id")
   type    String?

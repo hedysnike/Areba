@@ -8,21 +8,14 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  SelectChangeEvent,
   TextField,
 } from "@mui/material";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Profile() {
-  const [age, setAge] = useState("");
   const { user, isLoggedIn } = useUser();
-  const [name, setName] = useState(user ? user.name : "");
-  const [surname, setSurname] = useState(user?.surname);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
 
   useEffect(() => {
     if (!isLoggedIn) {

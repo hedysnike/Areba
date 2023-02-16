@@ -11,7 +11,7 @@ export default async function register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { email, password, name, surname, phone } = req.body;
+  const { email, password, name, surname, phone, role } = req.body;
 
   const token = generateRandomString();
 
@@ -23,6 +23,7 @@ export default async function register(
       phone: phone,
       password: password,
       token: token,
+      role: role,
     },
   });
 
