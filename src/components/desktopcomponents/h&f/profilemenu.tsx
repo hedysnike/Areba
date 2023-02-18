@@ -4,11 +4,8 @@ import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
 
 
-
-
-
 export function ProfileMenu({ href1, href2, first, second }: { first: string, second: string, href1: string, href2: string }) {
-  const { user, isLoggedIn } = useUser();
+  const { user } = useUser();
 
 
   return (
