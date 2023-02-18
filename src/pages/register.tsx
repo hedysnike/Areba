@@ -22,11 +22,11 @@ export default function Register() {
       role: {} as { id: Role; label: string },
     },
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "არასწორე იმეილია .!"),
-      name: (value) => (value.length > 1 ? null : "შეავსეთ საჭირო ველი .!"),
-      phone: (value) => (value.length > 8 ? null : "ნომერი არასწორეა .!"),
-      surname: (value) => (value.length > 1 ? null : "შეავსეთ საჭირო ველი .!"),
-      password: (value) => (value.length > 5 ? null : "Password must be at least 6 characters"),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "აუცილებელია სწორად ველის შევსება .!"),
+      name: (value) => (value.length > 1 ? null : "აუცილებელია ველის შევსება .!"),
+      phone: (value) => (value.length > 8 ? null : "აუცილებელია სწორად ველის შევსება .!"),
+      surname: (value) => (value.length > 1 ? null : "აუცილებელია ველის შევსება .!"),
+      password: (value) => (value.length > 5 ? null : "პაროლი უნდა იყოს სულ მცირე 6 ასო"),
     },
   });
 

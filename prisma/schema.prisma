@@ -14,15 +14,16 @@ enum Role {
 }
 
 model User {
-  role     Role       @default(Buyer)
-  id       String     @id @default(uuid()) @map("_id")
-  email    String     @unique
-  name     String
-  surname  String
-  phone    String     @unique
-  password String
-  token    String     @unique
-  requests Requests[]
+  role            Role              @default(Buyer)
+  id              String            @id @default(uuid()) @map("_id")
+  email           String            @unique
+  name            String
+  surname         String
+  phone           String            @unique
+  password        String
+  token           String            @unique
+  requests        Requests[]
+  supportedModels SupportedModels[]
 }
 
 enum Status {
@@ -41,4 +42,11 @@ model Requests {
   status  Status  @default(Open)
   user    User    @relation(fields: [userId], references: [id])
   userId  String
+}
+
+model SupportedModels {
+  makes_id String
+  model_id String @id @map("_id")
+  year     Int
+  user     User[]
 }

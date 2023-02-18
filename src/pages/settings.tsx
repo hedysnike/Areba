@@ -3,7 +3,6 @@ import { Models } from "@/assets/models";
 import { Layout } from "@/hooks/Layout";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
-import { Tabs } from "@mantine/core";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -61,7 +60,7 @@ export default function Settings() {
           <div className="w-full p-[14px] text-sm overflow-y-scroll max-h-[80vh]">
             {filteredModels.map((model) => (
               <div className="text-base " key={model.id}>
-                {model.title}
+                {model.title} <button onClick={}>Click</button>
               </div>
             ))}
           </div>

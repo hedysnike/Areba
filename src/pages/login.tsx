@@ -1,5 +1,4 @@
 import { Buttons } from "@/components/desktopcomponents/buttons";
-import { InputText } from "@/components/desktopcomponents/inputs";
 import { LLogin } from "@/components/desktopcomponents/registertoggle";
 import { Layout } from "@/hooks/Layout";
 import { login } from "@/lib/api";
@@ -17,9 +16,9 @@ export default function Login() {
       password: "",
     },
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "აუცილებელია ველის შევსება"),
       password: (value) =>
-        value.length > 5 ? null : "Password must be at least 6 characters",
+        value.length > 5 ? null : "აუცილებელია ველის შევსება",
     },
   });
 
@@ -44,17 +43,17 @@ export default function Login() {
           >
             <div className="grid mt-5">
               <TextField
-                label="იმეილი *"
+                label="ელ-ფოსტა *"
                 helperText={form.errors.email}
-                {...form.getInputProps("email")}
+                {...form.getInputProps("email")}  
               />
             </div>
-            <div className="grid mt-5"></div>
             <div className="grid mt-5">
-              <InputText
+              <TextField
                 type="password"
                 label="პაროლი *"
                 {...form.getInputProps("password")}
+                helperText={form.errors.password}
               />
             </div>
             <div className="flex justify-end mt-8">
