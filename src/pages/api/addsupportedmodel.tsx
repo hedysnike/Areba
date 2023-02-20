@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/lib/db/prisma";
 
 export default async function addSupportedModel(req: NextApiRequest, res: NextApiResponse) {
-  const { type, details, year, make, model, userId } = req.body;
+  const { startingyear, endingyear, model } = req.body;
 
   const token = req.cookies.token;
 
@@ -22,16 +22,14 @@ export default async function addSupportedModel(req: NextApiRequest, res: NextAp
     return;
   }
 
-  const requests = await prisma.requests.create({
+  const addsupportedmodel = await prisma.supportedModels.create({
     data: {
-      type: type,
-      year: year,
-      make: make,
-      model: model,
-      details: details,
+      startingyear: startingyear,
+      endingyear: endingyear,
+      model_id: model,
       userId: user?.id,
     },
   });
-  res.status(200).json({ requests });
+  res.status(200).json({ addsupportedmodel });
 }
 

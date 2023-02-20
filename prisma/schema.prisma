@@ -26,6 +26,14 @@ model User {
   supportedModels SupportedModels[]
 }
 
+model SupportedModels {
+  model_id     String  @id @map("_id")
+  startingyear Int
+  endingyear   Int
+  User         User   @relation(fields: [userId], references: [id])
+  userId       String
+}
+
 enum Status {
   Open
   Old
@@ -42,11 +50,4 @@ model Requests {
   status  Status  @default(Open)
   user    User    @relation(fields: [userId], references: [id])
   userId  String
-}
-
-model SupportedModels {
-  makes_id String
-  model_id String @id @map("_id")
-  year     Int
-  user     User[]
 }

@@ -1,5 +1,6 @@
 import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
+import { SettingsMap } from "@/components/desktopcomponents/h&f/settingsmap";
 import { Layout } from "@/hooks/Layout";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
@@ -7,8 +8,9 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 export default function Settings() {
-  const { user, isLoggedIn } = useUser();
+  const { isLoggedIn } = useUser();
   const [activeMake, setActiveMake] = useState<string>("");
+  const [activeTitle, setActiveTitle] = useState<string>("");
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -18,6 +20,8 @@ export default function Settings() {
 
   const filterModels = Models as Array<typeof Models[number]>;
   const filteredModels = useMemo(() => filterModels.filter((model) => model.make_id === activeMake), [activeMake]);
+
+  const years = Array.from({ length: 55 }, (_, i) => 2023 - i);
 
   return (
     <div className="min-h-[80vh] bg-[#E0E0E0] text-black">
@@ -39,7 +43,7 @@ export default function Settings() {
             {Makes.map((make) => (
               <div
                 key={make._id}
-                onClick={() => setActiveMake(make._id)}
+                onClick={() => {setActiveMake(make._id); setActiveTitle(make.title)}}
                 className="p-4 text-sm hover:bg-[#E8E8E8] flex flex-row w-full"
               >
                 <div>LOGO</div>
@@ -54,14 +58,12 @@ export default function Settings() {
         <div className="w-[74%] bg-white">
           <div className="bg-[#EEEEEE]  h-[49px] px-4 py-[9px] text-sm shadow-b flex items-center flex-row shadow-md shadow-[#b2b2b2]">
             მარკის ლოგო
-            <h2 className="pl-4">მაკრა</h2>
+            <h2 className="pl-4">{activeTitle}</h2>
           </div>
 
           <div className="w-full p-[14px] text-sm overflow-y-scroll max-h-[80vh]">
             {filteredModels.map((model) => (
-              <div className="text-base " key={model.id}>
-                {model.title} <button onClick={}>Click</button>
-              </div>
+              <SettingsMap key={model.id} title={model.title} id={model._id} />
             ))}
           </div>
         </div>

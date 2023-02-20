@@ -1,8 +1,10 @@
+import { DefaultValue } from "@mantine/core/lib/MultiSelect/DefaultValue/DefaultValue";
 import { Autocomplete, BaseTextFieldProps, SxProps, TextField } from "@mui/material";
 
 interface InputAutoCompleteProps {
   sx?: SxProps;
   key?: string;
+  defaultValue?: any;
   className?: string;
   options?: { id: string; label: string }[];
   label?: string;
@@ -13,7 +15,7 @@ interface InputTextFieldProps extends BaseTextFieldProps {
   placeholder?: string;
   multiline?: boolean;
   rows?: number;
-  defaultValue?: string;
+  defaultValue?: any;
   requried?: boolean;
   disabled?: boolean;
   label?: string;
@@ -25,6 +27,7 @@ interface InputTextFieldProps extends BaseTextFieldProps {
 
 export function InputAutoComplete({
   className,
+  defaultValue,
   options,
   label,
   onChange,
@@ -40,6 +43,7 @@ export function InputAutoComplete({
         id="tags-filled"
         sx={{ width: "100%" }}
         options={options || []}
+        defaultValue={defaultValue}
         renderInput={(params) => (
           <TextField
             {...props}
