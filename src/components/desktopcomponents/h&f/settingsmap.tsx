@@ -1,7 +1,7 @@
 import { addSupportedModel, deleteSupport } from "@/lib/api";
-import { Switch } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select, Switch } from "@mui/material";
 import { useState } from "react";
-import { InputAutoComplete } from "../inputs";
+import { NativeSelect } from "@mantine/core";
 
 export function SettingsMap({ title, id }: { title: string; id: string }) {
   const [checked, setChecked] = useState<boolean>(false);
@@ -26,25 +26,60 @@ export function SettingsMap({ title, id }: { title: string; id: string }) {
 
   return (
     <div className="flex justify-between my-2 text-base">
-      <div className="">{title} </div>
+      <div className="w-[31%]">{title} </div>
+      <FormControl variant="standard" sx={{ m: 0, minWidth: 120, width: "27%" }} size="small">
+        <InputLabel id="demo-simple-select-standard-label">დან</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={startingYear}
+          onChange={(e) => setStartingYear(Number(e?.target.value))}
+        >
+          {years.map((y) => (
+            <MenuItem key={y} value={y}>
+              {y}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
 
-      <InputAutoComplete
-        sx={{ width: "100%", marginRight: "auto", marginLeft: "auto" }}
-        label="აირჩიეთ წელი"
-        value={startingYear}
-        defaultValue={startingYear}
-        onChange={(e) => setStartingYear(Number(e?.label))}
-        options={years.map((y) => ({ id: y.toString(), label: y.toString() }))}
-      />
-      <InputAutoComplete
-        sx={{ width: "100%", marginRight: "auto", marginLeft: "auto" }}
-        label="აირჩიეთ წელი"
-        value={endingYear}
-        defaultValue={endingYear}
-        onChange={(e) => setEndingYear(Number(e?.label))}
-        options={years.map((y) => ({ id: y.toString(), label: y.toString() }))}
-      />
-      <Switch checked={checked} onChange={handleChange} />
+      <FormControl variant="standard" sx={{ m: 0, minWidth: 120, width: "27%" }} size="small">
+        <InputLabel id="demo-simple-select-standard-label">მდე</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={endingYear}
+          onChange={(e) => setEndingYear(Number(e?.target.value))}
+        >
+          {years.map((y) => (
+            <MenuItem key={y} value={y}>
+              {y}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <div className="w-[9%] flex justify-end">
+        <Switch checked={checked} onChange={handleChange} />
+      </div>
     </div>
   );
 }
+
+
+
+
+{
+  /* <NativeSelect
+data={years.map((y) => ({ id: y.toString(), label: y.toString() }))}
+value={endingYear}
+onChange={(e) => setEndingYear(Number(e?.target.value))}
+className="w-[30%] px-1"
+/> */
+}
+
+{/* <NativeSelect
+data={years.map((y) => ({ id: y.toString(), label: y.toString() }))}
+value={startingYear}
+onChange={(e) => setStartingYear(Number(e?.target.value))}
+className="w-[30%] px-1"
+/> */}
