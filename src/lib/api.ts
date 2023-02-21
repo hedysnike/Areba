@@ -58,6 +58,16 @@ export function getRequests() {
   });
 }
 
+export function getSupportedModels() {
+  return fetch("/api/supportedmodels", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+
 export function deleteRequest(id: string) {
   return fetch(`/api/deleteRequests`, {
     method: "DELETE",
