@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 export function Footer() {
   return (
-    <div className="w-5/6 ml-auto mr-auto mt-2 text-[#464646] flex items-center border-t border-solid border-black">
+    <div className="w-5/6 ml-auto mr-auto text-[#464646] flex items-center border-t border-solid border-black">
       <div className="text-xs ml-auto mr-auto w-[20%]">Areba © 2023</div>
       <div className="flex justify-end ml-auto mr-auto w-[60%]">
         <a href="https://www.facebook.com/areba.geo" target="_blank" rel="noreferrer">

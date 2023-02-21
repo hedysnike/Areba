@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Drawer } from "@mantine/core";
+import Link from "next/link";
 import { useState } from "react";
 
 export function MobileTop() {
@@ -11,8 +12,10 @@ export function MobileTop() {
         <div className="w-full">
           <div className="flex items-center flex-col w-full h-auto">
             <div  className="h-[150px] w-full bg-cover bg-center overflow-hidden bg-[url('https://areba.ge/images/bg-l-t.jpg')] flex items-center justify-center">
-            <div><button className="bg-[#FF7600] py-2 px-4 shadow-md shadow-[#00000077]  text-white flex text-sm items-center rounded outline-none"><Icon icon="ic:baseline-person" color="white" width="24" height="24" /> ავტორიზაცია</button></div>
-            </div>
+            <Link href="/login" >
+              <button className="bg-[#FF7600] py-2 px-4 shadow-md shadow-[#00000077]  text-white flex text-sm items-center rounded outline-none"><Icon icon="ic:baseline-person" color="white" width="24" height="24" /> ავტორიზაცია</button>             
+               </Link>
+</div>
             <div className="text-xs text-black fomt-semibold border-b border-solid border-[#e9e9e9] w-full flex items-center py-5 pl-2">ქართული</div>
             <div className="text-sm text-black fomt-semibold pl-2 flex w-full py-5">ჩვენს შესახებ</div>
             <div className="text-sm text-black fomt-semibold pl-2 flex w-full">კონტაქტი</div>
@@ -31,8 +34,6 @@ export function MobileTop() {
         />
         <img className="w-auto h-[35px] ml-4 cursor-pointer " src="https://i.imgur.com/K5vhBw4.png" />
       </div>
-
-      <div></div>
     </div>
   );
 }
