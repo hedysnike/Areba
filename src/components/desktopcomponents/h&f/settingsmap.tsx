@@ -1,7 +1,6 @@
 import { addSupportedModel, deleteSupport } from "@/lib/api";
 import { FormControl, InputLabel, MenuItem, Select, Switch } from "@mui/material";
 import { useState } from "react";
-import { NativeSelect } from "@mantine/core";
 
 export function SettingsMap({ title, id }: { title: string; id: string }) {
   const [checked, setChecked] = useState<boolean>(false);

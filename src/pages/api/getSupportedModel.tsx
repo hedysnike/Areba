@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/lib/db/prisma";
 
-export default async function getSupportedModel(req: NextApiRequest, res: NextApiResponse) {
-  const { model_id } = req.body;
+export default async function getsupportedmodel(req: NextApiRequest, res: NextApiResponse) {
+  const { id } = req.body;
 
-  if (typeof model_id !== "string") {
+  if (typeof id !== "string") {
     res.status(400).json({ message: "არასწორი მოთხოვნა" });
     return;
   }
@@ -27,10 +27,10 @@ export default async function getSupportedModel(req: NextApiRequest, res: NextAp
     return;
   }
 
-  const supportedModel = await prisma.supportedModels.findFirst({
+  const request = await prisma.supportedModels.findFirst({
     where: {
-        model_id: model_id,
+        model_id: id,
     },
   });
-  res.status(200).json({ supportedModel });
+  res.status(200).json({ request });
 }

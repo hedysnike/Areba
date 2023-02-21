@@ -58,7 +58,7 @@ export function getRequests() {
   });
 }
 
-export function getSupportedModels() {
+export function getsupportedmodel() {
   return fetch("/api/supportedmodels", {
     method: "GET",
     headers: {

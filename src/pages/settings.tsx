@@ -21,7 +21,6 @@ export default function Settings() {
   const filterModels = Models as Array<typeof Models[number]>;
   const filteredModels = useMemo(() => filterModels.filter((model) => model.make_id === activeMake), [activeMake]);
 
-  const years = Array.from({ length: 55 }, (_, i) => 2023 - i);
 
   return (
     <div className="min-h-[80vh] bg-[#E0E0E0] text-black">
