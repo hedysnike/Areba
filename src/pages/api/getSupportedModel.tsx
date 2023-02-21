@@ -1,8 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/lib/db/prisma";
 
-export default async function createRequests(req: NextApiRequest, res: NextApiResponse) {
-  const { type, details, year, make, model } = req.body;
+export default async function getSupportedModel(req: NextApiRequest, res: NextApiResponse) {
+  const { model_id } = req.body;
+
+  if (typeof model_id !== "string") {
+    res.status(400).json({ message: "არასწორი მოთხოვნა" });
+    return;
+  }
 
   const token = req.cookies.token;
 
@@ -22,16 +27,10 @@ export default async function createRequests(req: NextApiRequest, res: NextApiRe
     return;
   }
 
-  const requests = await prisma.requests.create({
-    data: {
-      type: type,
-      year: year,
-      make: make,
-      model: model,
-      details: details,
-      userId: user?.id,
+  const supportedModel = await prisma.supportedModels.findFirst({
+    where: {
+        model_id: model_id,
     },
   });
-  res.status(200).json({ requests });
+  res.status(200).json({ supportedModel });
 }
-

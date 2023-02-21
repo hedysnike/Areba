@@ -17,13 +17,15 @@ export default function AllRequests() {
       .then((res) => setrequests(res.requests));
   }, []);
 
+  console.log(getSupportedModels)
+
+
   useEffect(() => {
     getSupportedModels()
       .then((r) => r.json())
-      .then((res) => setsupported(res.requests));
+      .then((res) => setsupported(res.getSupportedModels));
   }, []);
   
-  console.log(supported)
   
   const getSupported = () => {
     return supported?.filter((r) => r.userId == user?.id);
