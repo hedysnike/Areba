@@ -24,7 +24,7 @@ export function RequestsPage() {
     return requests?.filter((r) => r.status === "Closed" && r.userId == user?.id);
   };
   return (
-    <div className="bg-[#FFFDF7] min-h-[90vh] h-auto w-full">
+    <div className="bg-[#FFFDF7] md:min-h-[90vh] h-auto w-full">
       <div className="flex flex-col max-w-6xl ml-auto mr-auto">
         <div className="w-full pb-5">
           <Tabs defaultValue="first">
@@ -118,4 +118,3 @@ export function RequestsPage() {
     </div>
   );
 }
-
