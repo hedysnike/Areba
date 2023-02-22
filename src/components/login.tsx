@@ -23,8 +23,8 @@ const form = useForm({
 });
 
 return (
-  <div className="min-h-[84vh] h-full bg-[#FFFDF7]">
-    <div className="w-3/4 mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
+  <div className="min-h-[84vh] h-full py-[50px] bg-[#FFFDF7]">
+    <div className="md:w-3/4 w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
       <div className="h-auto">{LLogin()}</div>
       <div className="grid ml-auto mr-auto h-auto grid-cols-1 w-[90%] ">
         <form
