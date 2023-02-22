@@ -14,7 +14,7 @@ export function Navigation() {
   return (
     <div className="border-b">
       <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
-      <div className="lg:w-3/4 w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
+      <div className="xl:w-3/4 w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
         <div className="absolute hidden p-1 pl-2 sm:block">
           <Link href="/">
             <img className="w-auto h-[43px] cursor-pointer " src="https://i.imgur.com/K5vhBw4.png" />
