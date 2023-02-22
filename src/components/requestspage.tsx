@@ -66,7 +66,7 @@ export function RequestsPage() {
                       <h2>02-02-2023 08:07:48</h2>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center mr-3" onClick={(e) => e.preventDefault()}>
+                  <div className="flex items-center justify-center mr-2" onClick={(e) => e.preventDefault()}>
                     <MenuActiveItems id={r.id} />
                   </div>
                 </Link>
@@ -101,7 +101,7 @@ export function RequestsPage() {
                       <h2>02-02-2023 08:07:48</h2>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center mr-3 text-xs text-white">
+                  <div className="flex flex-col items-center justify-center mr-2 text-xs text-white">
                     <button className="px-[6px] bg-[#E57373] pt-[1px] pb-[3px] rounded">
                       <h1>Closed</h1>
                     </button>
