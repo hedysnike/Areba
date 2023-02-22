@@ -42,7 +42,7 @@ export function RequestsPage() {
                 <Link
                   href={`/chat/${r.id}`}
                   key={r.id}
-                  className="flex w-auto max-h-28 hover:bg-[#E8E6E1] hover:bg-opacity-90 py-2 px-4 md:mx-2 md:w-3/4"
+                  className="flex w-auto max-h-28 hover:bg-[#E8E6E1] hover:bg-opacity-90 py-2 px-4"
                 >
                   <div className="flex items-center justify-start w-[72px]">
                     <img className="w-10 h-auto" src="https://i.imgur.com/Kxwkh93.png" alt="car logo" />
@@ -77,7 +77,7 @@ export function RequestsPage() {
                 <Link
                   href={`/chat/${r.id}`}
                   key={r.id}
-                  className="flex w-auto max-h-28 hover:bg-[#E8E6E1] hover:bg-opacity-90 py-2 px-4 md:mx-2 md:w-3/4"
+                  className="flex w-auto max-h-28 hover:bg-[#E8E6E1] hover:bg-opacity-90 py-2 px-4"
                 >
                   <div className="flex items-center justify-start w-[72px]">
                     <img className="w-10 h-auto" src="https://i.imgur.com/Kxwkh93.png" alt="car logo" />
