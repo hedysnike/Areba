@@ -17,7 +17,7 @@ export function ProfileMenu({ href1, href2, first, second }: { first: string, se
             <h1>ჩემი გვერდი</h1>
           </button>
         </Menu.Target>
-        <Menu.Dropdown className="p-0">
+        <Menu.Dropdown className="p-0 ">
           <Link href="/profile">
             <Menu.Item>
               <h1 className="text-[#FF7600] text-xl text-center">{user?.name} {user?.surname}</h1>

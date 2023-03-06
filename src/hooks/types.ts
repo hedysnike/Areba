@@ -1,4 +1,3 @@
-import { Code, SegmentedControl } from "@mantine/core";
 
 export interface Profile {
   id: number;

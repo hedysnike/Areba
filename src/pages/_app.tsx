@@ -1,7 +1,6 @@
 import { UserProvider } from "@/hooks/useUser";
 import "@/styles/globals.css";
 import { createTheme, ThemeProvider } from "@mui/material";
-import type { AppProps } from "next/app";
 
 const theme = createTheme({
   components: {

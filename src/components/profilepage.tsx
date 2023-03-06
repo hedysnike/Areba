@@ -8,24 +8,19 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import Link from "next/link";
-import { useEffect } from "react";
 import { InputText } from "./desktopcomponents/inputs";
 
 export function ProfilePage() {
-  const { user, isLoggedIn } = useUser();
+  const { user } = useUser();
 
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      window.location.href = "/login";
-    }
-  }, [isLoggedIn]);
 
+  
+  
   return (
     <div className="min-h-[90vh] h-auto py-[50px] bg-[#E0E0E0] text-black">
     <div className="md:w-3/4 w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
-        <div className=" bg-white">
+        <div className="bg-white ">
           <div className="bg-[#EEEEEE] w-full px-4 py-[9px] text-sm shadow-b flex items-center flex-row shadow-md shadow-[#b2b2b2]">
             <Icon icon="ic:baseline-person" color="black" width="32" height="32" />{" "}
             <h2 className="pl-4">პირადი ინფორმაცია</h2>
