@@ -1,3 +1,4 @@
+import { Layout } from "@/hooks/Layout";
 import { UserProvider } from "@/hooks/useUser";
 import "@/styles/globals.css";
 import { createTheme, ThemeProvider } from "@mui/material";
@@ -72,13 +73,9 @@ export default function App({ Component, pageProps }: any) {
     <>
       <ThemeProvider theme={theme}>
         <UserProvider>
-          {Component.Layout ? (
-            <Component.Layout>
+            <Layout>
               <Component {...pageProps} />
-            </Component.Layout>
-          ) : (
-            <Component {...pageProps} />
-          )}
+            </Layout>
         </UserProvider>
       </ThemeProvider>
     </>
