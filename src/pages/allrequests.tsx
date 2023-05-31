@@ -8,8 +8,6 @@ export default function AllRequests() {
   const [requests, setrequests] = useState<IRequests[]>();
   const [supported, setSupported] = useState<ISupportedModels[]>();
   const { user,  } = useUser();
-
-
   
   
   useEffect(() => {

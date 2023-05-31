@@ -1,25 +1,15 @@
-import { InputText } from "@/components/desktopcomponents/inputs";
+import { InputText } from "@/components/inputs";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
-import {
-  FormControl,
-  InputAdornment,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
 
 export default function Login() {
   const { user } = useUser();
 
-  
-  
   return (
     <div className="min-h-[90vh] h-auto py-[50px] bg-[#E0E0E0] text-black">
-    <div className="md:w-3/4 w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
+      <div className="md:w-3/4 w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
         <div className="bg-white ">
           <div className="bg-[#EEEEEE] w-full px-4 py-[9px] text-sm shadow-b flex items-center flex-row shadow-md shadow-[#b2b2b2]">
             <Icon icon="ic:baseline-person" color="black" width="32" height="32" />{" "}
@@ -74,7 +64,6 @@ export default function Login() {
     </div>
   );
 }
-
 
 export async function getStaticProps({ locale }: { locale: any }) {
   return {

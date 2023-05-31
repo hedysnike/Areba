@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Layout } from "@/hooks/Layout";
-import { InputText } from "../desktopcomponents/inputs";
+import { InputText } from "../inputs";
 
 export function SpecialistModal3() {
   return (

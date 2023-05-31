@@ -1,17 +1,16 @@
 import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
-import { Buttons } from "@/components/desktopcomponents/buttons";
-import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inputs";
+import { Buttons } from "@/components/buttons";
+import { InputAutoComplete, InputText } from "@/components/inputs";
 import { useUser } from "@/hooks/useUser";
 import { createRequests } from "@/lib/api";
 import { useForm } from "@mantine/form";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
-
-export default function Login() {
+export default function Add() {
   const router = useRouter();
-  
+
   const form = useForm({
     initialValues: {
       type: { id: "", label: "" },
@@ -21,18 +20,17 @@ export default function Login() {
       details: "",
     },
     validate: {
-      type: (value) => (value.label.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
+      type: (value) => (value.label.length < 2 ? "შეავსეთ საჭირო ველი" : null),
       year: (value) => (Number(value.label) > 1970 ? null : "შეავსეთ საჭირო ველი"),
-      make: (value) => (value.label.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
-      model: (value) => (value.label.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
-      details: (value) => (value.length < 2 ? 'შეავსეთ საჭირო ველი' : null),
+      make: (value) => (value.label.length < 2 ? "შეავსეთ საჭირო ველი" : null),
+      model: (value) => (value.label.length < 2 ? "შეავსეთ საჭირო ველი" : null),
+      details: (value) => (value.length < 2 ? "შეავსეთ საჭირო ველი" : null),
     },
   });
 
-
   const { user } = useUser();
 
-  const filterModels = Models as Array<typeof Models[number]>;
+  const filterModels = Models as Array<(typeof Models)[number]>;
   const filteredModels = filterModels.filter((model) => model.make_id === form.values.make?.id);
 
   const years = Array.from({ length: 55 }, (_, i) => 2023 - i);
@@ -58,11 +56,10 @@ export default function Login() {
                 userId: user?._id,
                 details: details,
                 type: type.label,
-                year: Number(year.label), 
+                year: Number(year.label),
               }).then((res) => {
-                  router.push("/requests");
+                router.push("/requests");
               });
-
             })}
           >
             <h1 className="justify-center mb-10 text-xl text-center">
@@ -123,7 +120,6 @@ export default function Login() {
     </div>
   );
 }
-
 
 export async function getStaticProps({ locale }: { locale: any }) {
   return {

@@ -1,7 +1,7 @@
 import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
 import { useForm } from "@mantine/form";
-import { InputAutoComplete, InputText } from "../desktopcomponents/inputs";
+import { InputAutoComplete, InputText } from "../inputs";
 
 const years = Array.from({ length: 50 }, (_, i) => 2023 - i);
 

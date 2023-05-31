@@ -15,7 +15,7 @@ export function MobileTop() {
           <div className="flex flex-col items-center w-full h-auto">
             <div className="h-[150px] w-full bg-cover bg-center overflow-hidden bg-[url('/images/bg-l-t.jpg')] flex items-center justify-center">
               {isLoggedIn ? (
-                <Link href="/profile" className="flex flex-row text-white">
+                <Link href="/profile" className="flex flex-row text-white outline-none">
                   <div className="my-[2px] mx-4">
                     <div className="p-3 bg-white rounded-full">
                       <Icon icon="material-symbols:person" color="#FF7600" width="21" height="21" />

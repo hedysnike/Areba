@@ -8,7 +8,7 @@ import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { Layout } from "@/hooks/Layout";
 import { MobileDatePicker } from "@mui/x-date-pickers";
-import { InputText } from "../desktopcomponents/inputs";
+import { InputText } from "../inputs";
 
 export function SpecialistModal1() {
   const [value, setValue] = React.useState<Dayjs | null>(dayjs("2023-01-30T21:11:54"));

@@ -2,8 +2,8 @@ import { PropsWithChildren } from "react";
 import { Navigation } from "@/components/desktopcomponents/h&f/navigation";
 import { Assistant } from "@/components/desktopcomponents/h&f/assistant";
 import { Footer } from "@/components/desktopcomponents/h&f/Footer";
-import { MobileTop } from "@/components/mobilecomponents/Menu/mobiletop";
-import { MobileBottom } from "@/components/mobilecomponents/Menu/mobilebottom";
+import { MobileTop } from "@/components/desktopcomponents/h&f/mobiletop";
+import { MobileBottom } from "@/components/desktopcomponents/h&f/mobilebottom";
 
 export function Layout({ children }: PropsWithChildren) {
   

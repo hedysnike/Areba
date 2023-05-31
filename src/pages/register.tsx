@@ -3,9 +3,9 @@ import { useUser } from "@/hooks/useUser";
 import { useRouter } from "next/router";
 import { useForm } from "@mantine/form";
 import { Role } from "@prisma/client";
-import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inputs";
-import { Buttons } from "@/components/desktopcomponents/buttons";
-import { LLogin } from "@/components/desktopcomponents/registertoggle";
+import { InputAutoComplete, InputText } from "@/components/inputs";
+import { Buttons } from "@/components/buttons";
+import { LLogin } from "@/components/registertoggle";
 import React, { useState } from "react";
 import { IMaskInput } from "react-imask";
 import { Input } from "@mui/material";
@@ -16,19 +16,10 @@ interface CustomProps {
   name: string;
 }
 
-const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
-  function TextMaskCustom(props, ref) {
-    const { onChange, ...other } = props;
-    return (
-      <IMaskInput
-        {...other}
-        mask="500 000 000"
-        definitions={{'#': /[1-9]/,}}
-      />
-    );
-  },
-);
-
+const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(function TextMaskCustom(props, ref) {
+  const { onChange, ...other } = props;
+  return <IMaskInput {...other} mask="500 000 000" definitions={{ "#": /[1-9]/ }} />;
+});
 
 export default function Profile({ isMobile }: { isMobile: boolean }) {
   const router = useRouter();
@@ -53,7 +44,7 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
 
   return (
     <div className="min-h-[84vh] h-full py-[50px] bg-[#FFFDF7] mb-10">
-    <div className="md:w-3/4 w-[90%] mr-auto ml-auto min-h-[75vh] h-auto mt-5 border border-solid border-[#dcdcdcaf] bg-white">
+      <div className="md:w-3/4 w-[90%] mr-auto ml-auto min-h-[75vh] h-auto mt-5 border border-solid border-[#dcdcdcaf] bg-white">
         <div className="h-auto"> {LLogin()}</div>
         <div className="grid w-full h-auto grid-cols-1 bg-white">
           <form
@@ -72,11 +63,7 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
             })}
           >
             <div className="relative rounded-[4px] group m-4">
-            <Input
-          name="textmask"
-          {...form.getInputProps("phone")}
-          inputComponent={TextMaskCustom as any}
-        />
+              <Input name="textmask" {...form.getInputProps("phone")} inputComponent={TextMaskCustom as any} />
               <InputAutoComplete
                 options={[
                   { id: "Buyer", label: "მომხმარებელი" },
@@ -103,7 +90,7 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
               <InputText type="password" {...form.getInputProps("password")} label="პაროლი *" />
             </div>
             <div className="flex justify-end pt-5 pb-10">
-            <Buttons type="submit" text="რეგისტრაცია" />
+              <Buttons type="submit" text="რეგისტრაცია" />
             </div>
           </form>
         </div>
@@ -111,8 +98,6 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
     </div>
   );
 }
-
-
 
 export async function getStaticProps({ locale }: { locale: any }) {
   return {

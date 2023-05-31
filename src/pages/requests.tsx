@@ -1,11 +1,11 @@
 import { Tabs } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Requests as IRequests } from "@prisma/client";
-import {  getRequests } from "@/lib/api";
+import { getRequests } from "@/lib/api";
 import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
-import { MenuActiveItems } from "@/components/desktopcomponents/menuActiveitems";
-import { MenuClosedItems } from "@/components/desktopcomponents/menucloseditems";
+import { MenuActiveItems } from "@/components/menuActiveitems";
+import { MenuClosedItems } from "@/components/menucloseditems";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function RequestsPage() {
@@ -106,7 +106,7 @@ export default function RequestsPage() {
                     <button className="px-[6px] bg-[#E57373] pt-[1px] pb-[3px] rounded">
                       <h1>Closed</h1>
                     </button>
-                    <div onClick={(e) => e.preventDefault()} >
+                    <div onClick={(e) => e.preventDefault()}>
                       <MenuClosedItems id={r.id} />
                     </div>
                   </div>
@@ -119,7 +119,6 @@ export default function RequestsPage() {
     </div>
   );
 }
-
 
 export async function getStaticProps({ locale }: { locale: any }) {
   return {

@@ -8,7 +8,7 @@ import { Makes } from "@/assets/makes";
 import { SpecialistModal2 } from "./specialistmodal2";
 import { SpecialistModal1 } from "./specialistmodal1";
 import { SpecialistModal3 } from "./specialistmodal3";
-import { Buttons } from "../desktopcomponents/buttons";
+import { Buttons } from "../buttons";
 
 interface ModalProps {
   open: boolean;
