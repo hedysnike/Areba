@@ -4,6 +4,7 @@ import { SettingsMap } from "@/components/desktopcomponents/h&f/settingsmap";
 import { Layout } from "@/hooks/Layout";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -71,4 +72,10 @@ export default function Settings() {
   );
 }
 
-Settings.Layout = Layout;
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
+}

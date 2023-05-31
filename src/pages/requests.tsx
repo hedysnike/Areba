@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
 import { MenuActiveItems } from "@/components/desktopcomponents/menuActiveitems";
 import { MenuClosedItems } from "@/components/desktopcomponents/menucloseditems";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function RequestsPage() {
   const [requests, setrequests] = useState<IRequests[]>();
@@ -117,4 +118,13 @@ export default function RequestsPage() {
       </div>
     </div>
   );
+}
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }

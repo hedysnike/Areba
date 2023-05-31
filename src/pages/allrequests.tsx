@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Requests as IRequests, SupportedModels as ISupportedModels } from "@prisma/client";
 import { getRequests, getsupportedmodel } from "@/lib/api";
 import { useUser } from "@/hooks/useUser";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function AllRequests() {
   const [requests, setrequests] = useState<IRequests[]>();
@@ -43,4 +44,13 @@ export default function AllRequests() {
       </div>
     </div>
   );
+}
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }

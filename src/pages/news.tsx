@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function News() {
     return (
@@ -33,3 +34,10 @@ export default function News() {
     );
   }
   
+  export async function getStaticProps({ locale }: { locale: any }) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common", "footer"])),
+      },
+    };
+  }

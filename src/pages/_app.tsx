@@ -2,6 +2,7 @@ import { Layout } from "@/hooks/Layout";
 import { UserProvider } from "@/hooks/useUser";
 import "@/styles/globals.css";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { appWithTranslation } from "next-i18next";
 import type { AppType } from 'next/app'
 
 const theme = createTheme({

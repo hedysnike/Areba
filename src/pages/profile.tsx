@@ -9,6 +9,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 
 export default function Login() {
@@ -72,4 +73,13 @@ export default function Login() {
       </div>
     </div>
   );
+}
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }

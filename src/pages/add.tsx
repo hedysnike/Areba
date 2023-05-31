@@ -5,6 +5,7 @@ import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inp
 import { useUser } from "@/hooks/useUser";
 import { createRequests } from "@/lib/api";
 import { useForm } from "@mantine/form";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
 
@@ -121,4 +122,13 @@ export default function Login() {
       </div>
     </div>
   );
+}
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }

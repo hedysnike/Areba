@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Contact() {
     return (
@@ -7,3 +8,11 @@ export default function Contact() {
     );
   }
   
+
+  export async function getStaticProps({ locale }: { locale: any }) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common", "footer"])),
+      },
+    };
+  }

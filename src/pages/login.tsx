@@ -5,6 +5,7 @@ import { LLogin } from "@/components/desktopcomponents/registertoggle";
 import { useForm } from "@mantine/form";
 import { useUser } from "@/hooks/useUser";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 
 export default function Login() {
@@ -64,4 +65,12 @@ export default function Login() {
       </div>
     </div>
   );
+  }
+
+  export async function getStaticProps({ locale }: { locale: any }) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common", "footer"])),
+      },
+    };
   }

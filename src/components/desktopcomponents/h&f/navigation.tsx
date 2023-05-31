@@ -12,25 +12,6 @@ export function Navigation() {
   const [openModal, setOpenModal] = useState(false);
   const { user, isLoggedIn } = useUser();
   const [opened, setOpened] = useState(false);
-  const { t } = useTranslation("common");
-  const [localeChanged, setLocaleChanged] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (localeChanged) {    
-      setLocaleChanged(false);
-    }
-  }, [localeChanged, t]);
-
-  const changeLanguage = async (language: any) => {
-    try {
-      await router.push(router.pathname, router.asPath, { locale: language });
-      setLocaleChanged(true);
-    } catch (error) {
-      console.error('Error changing language:', error);
-    }
-  };
-
 
   return (
     <>

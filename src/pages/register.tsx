@@ -9,6 +9,7 @@ import { LLogin } from "@/components/desktopcomponents/registertoggle";
 import React, { useState } from "react";
 import { IMaskInput } from "react-imask";
 import { Input } from "@mui/material";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 interface CustomProps {
   onChange: (event: { target: { name: string; value: string } }) => void;
@@ -109,4 +110,14 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
       </div>
     </div>
   );
+}
+
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }

@@ -1,6 +1,7 @@
 import { SpecialistModal } from "@/components/desktopcomponents/specialistmodal/specialistmodal";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
@@ -57,4 +58,13 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }
