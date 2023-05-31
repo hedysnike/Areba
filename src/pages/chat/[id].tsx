@@ -3,6 +3,7 @@ import { closeRequests, deleteRequest } from "@/lib/api";
 import { Icon } from "@iconify/react";
 import { Tabs } from "@mantine/core";
 import { Requests } from "@prisma/client";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
