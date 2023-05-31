@@ -2,6 +2,7 @@ import { SpecialistModal } from "@/components/specialistmodal/specialistmodal";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Link from "next/link";
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
@@ -55,8 +56,13 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center w-full">
-        <h1 className="mt-10 text-4xl font-normal mb-80">სიახლეები</h1>
-        <h1 className="mb-10 text-4xl font-normal pb-52">პარტნიორები</h1>
+      <Link href="/contact" className="mt-10 p-2 mb-80 lg:text-4xl text-lg font-normal border border-solid border-[#FF7600] text-black">
+          იხილეთ სიახლეები
+        </Link>
+        <Link href="/contact" className=" p-2 mb-52 lg:text-4xl text-lg font-normal border border-solid border-[#FF7600] text-black">
+          იხილეთ პარტნიორები
+        </Link>
+
       </div>
     </div>
   );
