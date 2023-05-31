@@ -51,7 +51,7 @@ export default function Home() {
           <img src="https://i.imgur.com/9DiOqVS.png" alt="Service Image" />
           <span>
             <h1 className="text-2xl font-medium">დაგიბრუნებთ</h1>
-            <h6 className="text-sm text-[#000039]">შეკეთებულ ავტომობილს დაგიბრუნებთ სასურველ ლოკაციაზე.</h6>
+            <h6 className="text-sm text-[#000039]"> შეკეთებულ ავტომობილს დაგიბრუნებთ სასურველ ლოკაციაზე.</h6>
           </span>
         </div>
       </div>

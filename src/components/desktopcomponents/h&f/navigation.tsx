@@ -6,7 +6,6 @@ import { LanguageMenu } from "./languagemodal";
 import { Menuicon } from "./Menu";
 import { ProfileMenu } from "./profilemenu";
 import { useUser } from "@/hooks/useUser";
-import { Drawer } from "@mantine/core";
 
 export function Navigation() {
   const [openModal, setOpenModal] = useState(false);
@@ -16,6 +15,7 @@ export function Navigation() {
   return (
     <>
       <div className="border-b">
+      <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
         <div className="xl:w-3/4 w-full max-w-6xl ml-auto mr-auto relative h-[50px]">
           <div className="absolute hidden p-1 pl-2 sm:block">
             <Link href="/">
