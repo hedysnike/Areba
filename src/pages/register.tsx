@@ -6,6 +6,27 @@ import { Role } from "@prisma/client";
 import { InputAutoComplete, InputText } from "@/components/desktopcomponents/inputs";
 import { Buttons } from "@/components/desktopcomponents/buttons";
 import { LLogin } from "@/components/desktopcomponents/registertoggle";
+import React, { useState } from "react";
+import { IMaskInput } from "react-imask";
+import { Input } from "@mui/material";
+
+interface CustomProps {
+  onChange: (event: { target: { name: string; value: string } }) => void;
+  name: string;
+}
+
+const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
+  function TextMaskCustom(props, ref) {
+    const { onChange, ...other } = props;
+    return (
+      <IMaskInput
+        {...other}
+        mask="500 000 000"
+        definitions={{'#': /[1-9]/,}}
+      />
+    );
+  },
+);
 
 
 export default function Profile({ isMobile }: { isMobile: boolean }) {
@@ -24,7 +45,6 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "აუცილებელია სწორად ველის შევსება .!"),
       name: (value) => (value.length > 1 ? null : "აუცილებელია ველის შევსება .!"),
-      phone: (value) => (value.length > 8 ? null : "აუცილებელია სწორად ველის შევსება .!"),
       surname: (value) => (value.length > 1 ? null : "აუცილებელია ველის შევსება .!"),
       password: (value) => (value.length > 5 ? null : "პაროლი უნდა იყოს სულ მცირე 6 ასო"),
     },
@@ -51,6 +71,11 @@ export default function Profile({ isMobile }: { isMobile: boolean }) {
             })}
           >
             <div className="relative rounded-[4px] group m-4">
+            <Input
+          name="textmask"
+          {...form.getInputProps("phone")}
+          inputComponent={TextMaskCustom as any}
+        />
               <InputAutoComplete
                 options={[
                   { id: "Buyer", label: "მომხმარებელი" },

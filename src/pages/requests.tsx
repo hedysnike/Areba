@@ -7,7 +7,7 @@ import { useUser } from "@/hooks/useUser";
 import { MenuActiveItems } from "@/components/desktopcomponents/menuActiveitems";
 import { MenuClosedItems } from "@/components/desktopcomponents/menucloseditems";
 
-export function RequestsPage() {
+export default function RequestsPage() {
   const [requests, setrequests] = useState<IRequests[]>();
   const { user } = useUser();
 
