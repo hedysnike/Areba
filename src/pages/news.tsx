@@ -1,11 +1,10 @@
-import { Layout } from "@/hooks/Layout";
 
 export default function News() {
     return (
-      <div className="min-h-screen h-auto ">
-        <div className="text-center text-xl my-10">ჩვენი მეორე ფოსტი</div>
+      <div className="h-auto min-h-screen ">
+        <div className="my-10 text-xl text-center">ჩვენი მეორე ფოსტი</div>
         <div>
-          <div className="text-black w-5/6 mr-auto ml-auto">
+          <div className="w-5/6 ml-auto mr-auto text-black">
             Introducing the newest and most convenient way to get your car fixed!
             <br />
             <br />
@@ -34,5 +33,3 @@ export default function News() {
     );
   }
   
-
-News.Layout = Layout;

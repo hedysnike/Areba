@@ -2,6 +2,7 @@ import { Layout } from "@/hooks/Layout";
 import { UserProvider } from "@/hooks/useUser";
 import "@/styles/globals.css";
 import { createTheme, ThemeProvider } from "@mui/material";
+import type { AppType } from 'next/app'
 
 const theme = createTheme({
   components: {
@@ -68,7 +69,7 @@ const theme = createTheme({
   },
 });
 
-export default function App({ Component, pageProps }: any) {
+const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -81,3 +82,5 @@ export default function App({ Component, pageProps }: any) {
     </>
   );
 }
+
+export default appWithTranslation(MyApp);

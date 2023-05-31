@@ -1,12 +1,11 @@
-import { Layout } from "@/hooks/Layout";
 
 export default function About() {
     return (
-      <div className="min-h-screen h-auto text-black mr-auto ml-auto w-3/4">
+      <div className="w-3/4 h-auto min-h-screen ml-auto mr-auto text-black">
         <div>
-          <h1 className="my-11 text-3xl">ჩვენს შესახებ</h1>
+          <h1 className="text-3xl my-11">ჩვენს შესახებ</h1>
           <div className="text-[#333333] text-sm">
-            <span className="font-bold inline-block"> „არება“</span>
+            <span className="inline-block font-bold"> „არება“</span>
               წარმოადგენს საინფორმაციო და დამხმარე ვებ-პორტალს, რომლის უმთავრესი მიზანია ავტო მომსახურების გარემოს
               გაუმჯობესება. დინამიური განვითარების უზრუნველსაყოფად, ჩვენი გუნდი აერთიანებს სამ კომპონენტს:
           </div>
@@ -24,5 +23,3 @@ export default function About() {
       </div>
     );
   }
-
-About.Layout = Layout;

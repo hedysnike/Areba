@@ -1,4 +1,3 @@
-import { Layout } from "@/hooks/Layout";
 import { useEffect, useState } from "react";
 import { Requests as IRequests, SupportedModels as ISupportedModels } from "@prisma/client";
 import { getRequests, getsupportedmodel } from "@/lib/api";
@@ -45,5 +44,3 @@ export default function AllRequests() {
     </div>
   );
 }
-
-AllRequests.Layout = Layout;
