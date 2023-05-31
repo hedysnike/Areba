@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Layout } from "@/hooks/Layout";
-import { InputText } from "../inputs";
+import { InputText } from "../desktopcomponents/inputs";
 
 export function SpecialistModal3() {
   return (
@@ -16,7 +16,9 @@ export function SpecialistModal3() {
       <div className="flex w-full ">
         <div className="relative rounded-[4px] mr-[5px] p-[2px] w-[50%]">
           <InputText label="მობილური" />
-          <div className="text-xs text-[#757575] mt-[2px]"><h2>+995 (###) ### - ###</h2></div>
+          <div className="text-xs text-[#757575] mt-[2px]">
+            <h2>+995 (###) ### - ###</h2>
+          </div>
         </div>
         <div className="relative rounded-[4px] ml-[5px] p-[2px] w-[50%]">
           <InputText label="ელ-ფოსტა" />

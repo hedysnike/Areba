@@ -2,18 +2,18 @@ import { deleteRequest, closeRequests } from "@/lib/api";
 import { Icon } from "@iconify/react";
 import { Menu } from "@mantine/core";
 import { useState } from "react";
-import { ActionModal } from "./specialistmodal/acationmodal";
-import { DeleteModal } from "./specialistmodal/deletemodal";
+import { ActionModal } from "../specialistmodal/acationmodal";
+import { DeleteModal } from "../specialistmodal/deletemodal";
 
 interface Props {
   id: string;
 }
 
-export function MenuActiveItems({  id }: Props) {
+export function MenuActiveItems({ id }: Props) {
   const [opene, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
-  
+
   return (
     <Menu
       shadow="md"
@@ -23,8 +23,12 @@ export function MenuActiveItems({  id }: Props) {
         setOpen(e);
       }}
     >
-      <ActionModal openModal={openModal}  onClick={() => closeRequests(id)} onClose={() => setOpenModal(false)} />
-      <DeleteModal openModal={openModal2}  onClick={(_e: any) => deleteRequest(id)} onClose={() => setOpenModal2(false)} />
+      <ActionModal openModal={openModal} onClick={() => closeRequests(id)} onClose={() => setOpenModal(false)} />
+      <DeleteModal
+        openModal={openModal2}
+        onClick={(_e: any) => deleteRequest(id)}
+        onClose={() => setOpenModal2(false)}
+      />
       <Menu.Target>
         <Icon
           icon="ic:round-more-vert"
@@ -38,7 +42,7 @@ export function MenuActiveItems({  id }: Props) {
         />
       </Menu.Target>
       <Menu.Dropdown className="p-0">
-        <Menu.Item onClick={(e) => setOpenModal(true)} >
+        <Menu.Item onClick={(e) => setOpenModal(true)}>
           <h1 className="p-[2px] font-light text-black">Mark As Bought</h1>
         </Menu.Item>
         <Menu.Item onClick={(e) => setOpenModal2(true)}>

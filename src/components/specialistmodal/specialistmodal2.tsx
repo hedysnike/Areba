@@ -1,7 +1,7 @@
 import { Makes } from "@/assets/makes";
 import { Models } from "@/assets/models";
 import { useForm } from "@mantine/form";
-import { InputAutoComplete, InputText } from "../inputs";
+import { InputAutoComplete, InputText } from "../desktopcomponents/inputs";
 
 const years = Array.from({ length: 50 }, (_, i) => 2023 - i);
 
@@ -13,7 +13,7 @@ export function SpecialistModal2() {
     },
   });
 
-  const filterModels = Models as Array<typeof Models[number]>;
+  const filterModels = Models as Array<(typeof Models)[number]>;
   const filteredModels = filterModels.filter((model) => model.make_id === form.values.make?.id);
 
   return (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SpecialistModal } from "@/components/desktopcomponents/specialistmodal/specialistmodal";
+import { SpecialistModal } from "@/components/specialistmodal/specialistmodal";
 
 export function Assistant() {
   const [openModal, setOpenModal] = useState(false);

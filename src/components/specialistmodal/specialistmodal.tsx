@@ -8,7 +8,7 @@ import { Makes } from "@/assets/makes";
 import { SpecialistModal2 } from "./specialistmodal2";
 import { SpecialistModal1 } from "./specialistmodal1";
 import { SpecialistModal3 } from "./specialistmodal3";
-import { Buttons } from "../buttons";
+import { Buttons } from "../desktopcomponents/buttons";
 
 interface ModalProps {
   open: boolean;
@@ -111,7 +111,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 <div className="flex flex-col w-full overflow-hidden">
                   <SpecialistModal2 />
                   <div className="flex justify-start w-full px-6 mb-7">
-                  <Buttons text="გაგრძელება" onClick={nextStep}/>
+                    <Buttons text="გაგრძელება" onClick={nextStep} />
 
                     <button className="p-2 ml-[10px] text-[#FF7600] text-sm" onClick={prevStep}>
                       <h1>უკან</h1>

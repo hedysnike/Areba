@@ -8,7 +8,7 @@ import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { Layout } from "@/hooks/Layout";
 import { MobileDatePicker } from "@mui/x-date-pickers";
-import { InputText } from "../inputs";
+import { InputText } from "../desktopcomponents/inputs";
 
 export function SpecialistModal1() {
   const [value, setValue] = React.useState<Dayjs | null>(dayjs("2023-01-30T21:11:54"));
@@ -23,9 +23,7 @@ export function SpecialistModal1() {
         <InputText label="ჩაწერეთ რისი გაკეთება გსურთ მანქანაზე?" />
       </div>
       <div className="mb-5">
-        <InputText
-          label="ჩაწერეთ სად მოვიდეს სპეციალისტი?"
-        />
+        <InputText label="ჩაწერეთ სად მოვიდეს სპეციალისტი?" />
       </div>
       <div className="flex w-full mb-4">
         <div className="relative rounded-[4px] mr-0   w-[60%]">

@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import { SpecialistModal } from "../desktopcomponents/specialistmodal/specialistmodal";
+import { SpecialistModal } from "../specialistmodal/specialistmodal";
 import Link from "next/link";
 
 export function MobileIndex() {
@@ -8,20 +8,9 @@ export function MobileIndex() {
 
   return (
     <div className="min-h-screen h-auto w-full pt-[50px]">
-      <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
-      <div>
-        <img src="https://i.imgur.com/sfB255D.png" className="w-full" alt="" />
-      </div>
-      <div className="flex items-center justify-center mt-6 mb-8">
-        <button
-          onClick={() => setOpenModal(true)}
-          className=" bg-[#FF7600] hover:bg-[#ff8c27] text-white text-base p-4 px-5 flex items-center gap-2 rounded"
-        >
-          <Icon icon="ic:baseline-send" color="white" width="30" height="25" />
-          <h1>სპეციალისტის გამოძახება</h1>
-        </button>
-      </div>
-      <h1 className="text-3xl font-medium text-center">ჩვენ გთავაზობთ</h1>
+
+      
+      <h1 className="">ჩვენ გთავაზობთ</h1>
       <div className="w-5/6 ml-auto mr-auto text-center ">
         <div className="flex flex-col items-center justify-center">
           <img src="https://i.imgur.com/Y8Di5eV.png" alt="Service Image" />
@@ -63,4 +52,3 @@ export function MobileIndex() {
     </div>
   );
 }
-

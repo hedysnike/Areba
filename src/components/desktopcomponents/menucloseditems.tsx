@@ -2,7 +2,7 @@ import { deleteRequest } from "@/lib/api";
 import { Icon } from "@iconify/react";
 import { Menu } from "@mantine/core";
 import { useState } from "react";
-import { DeleteModal } from "./specialistmodal/deletemodal";
+import { DeleteModal } from "../specialistmodal/deletemodal";
 
 interface Props {
   id: string;
@@ -30,7 +30,7 @@ export function MenuClosedItems({ id }: Props) {
         />
       </Menu.Target>
       <Menu.Dropdown className="p-0">
-      <Menu.Item onClick={(e) => setOpenModal2(true)}>
+        <Menu.Item onClick={(e) => setOpenModal2(true)}>
           <h1 className="p-[2px] font-light text-black">Delete</h1>
         </Menu.Item>
       </Menu.Dropdown>

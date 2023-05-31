@@ -1,4 +1,4 @@
-import { SpecialistModal } from "@/components/desktopcomponents/specialistmodal/specialistmodal";
+import { SpecialistModal } from "@/components/specialistmodal/specialistmodal";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -7,22 +7,24 @@ export default function Home() {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div className="min-h-screen h-auto bg-[#FFFDF7]">
+    <div className="min-h-screen h-auto bg-[#FFFDF7] pt-[50px] lg:pt-0">
       <SpecialistModal openModal={openModal} onClose={() => setOpenModal(false)} />
       <div>
-        <img src="https://i.imgur.com/sfB255D.png" className="w-full h-96" alt="" />
+        <img src="https://i.imgur.com/sfB255D.png" className="w-full lg:h-96" alt="" />
       </div>
-      <div className="flex items-center justify-center mb-10 mt-7">
+      <div className="flex items-center justify-center mt-6 mb-8 lg:mb-10 lg:mt-7">
         <button
           onClick={() => setOpenModal(true)}
-          className="p-3 pr-7 pl-6 rounded bg-[#FF7600] hover:bg-[#ff8c27] text-white text-2xl  flex items-center gap-5"
+          className="p-4 px-5 lg:p-3 lg:pr-7 lg:pl-6 rounded bg-[#FF7600] hover:bg-[#ff8c27] text-white lg:text-2xl  flex items-center gap-2 lg:gap-5"
         >
           <Icon icon="ic:baseline-send" color="white" width="25" height="25" />
           <h1>სპეციალისტის გამოძახება</h1>
         </button>
       </div>
-      <h1 className="mb-8 text-[34px] font-normal text-center">ჩვენ გთავაზობთ</h1>
-      <div className="grid grid-cols-4 gap-3 w-5/6 ml-auto mr-auto text-center max-w-[1200px]">
+
+      
+      <h1 className="lg:mb-8 text-3xl lg:text-[34px] font-normal text-center">ჩვენ გთავაზობთ</h1>
+      <div className="lg:grid lg:grid-cols-4 lg:gap-3 w-5/6 ml-auto mr-auto text-center max-w-[1200px]">
         <div className="flex flex-col items-center justify-center bg-white">
           <img src="https://i.imgur.com/Y8Di5eV.png" alt="Service Image" />
           <span>
@@ -59,7 +61,6 @@ export default function Home() {
     </div>
   );
 }
-
 
 export async function getStaticProps({ locale }: { locale: any }) {
   return {
