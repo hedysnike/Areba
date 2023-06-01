@@ -6,11 +6,12 @@ import { LanguageMenu } from "./languagemodal";
 import { Menuicon } from "./Menu";
 import { ProfileMenu } from "./profilemenu";
 import { useUser } from "@/hooks/useUser";
+import { useTranslation } from "next-i18next";
 
 export function Navigation() {
   const [openModal, setOpenModal] = useState(false);
   const { user, isLoggedIn } = useUser();
-  const [opened, setOpened] = useState(false);
+  const { t } = useTranslation("common");
 
   return (
     <>

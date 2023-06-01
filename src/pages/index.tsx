@@ -3,9 +3,11 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
+  const { t } = useTranslation("common");
 
   return (
     <div className="min-h-screen h-auto bg-[#FFFDF7] pt-[50px] lg:pt-0">

@@ -9,7 +9,7 @@ export function LanguageMenu() {
   const router = useRouter();
 
   useEffect(() => {
-    if (localeChanged) {    
+    if (localeChanged) {
       setLocaleChanged(false);
     }
   }, [localeChanged, t]);
@@ -19,24 +19,23 @@ export function LanguageMenu() {
       await router.push(router.pathname, router.asPath, { locale: language });
       setLocaleChanged(true);
     } catch (error) {
-      console.error('Error changing language:', error);
+      console.error("Error changing language:", error);
     }
   };
-
 
   return (
     <Menu shadow="md" width={60}>
       <Menu.Target>
-        <button onClick={() => changeLanguage("ge")}>GE</button>
+        <button>{t("navigationlanguage")}</button>
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Item>
-          <button onClick={() => changeLanguage("en")}>
-          ENG
-          </button>
-          </Menu.Item>
-
+        <Menu.Item className="p-0 py-2 text-center w-full h-full flex items-center justify-center">
+          <button onClick={() => changeLanguage("en")}>En</button>
+        </Menu.Item>
+        <Menu.Item className="p-0 py-2 w-full text-center h-full flex items-center justify-center">
+            <button onClick={() => changeLanguage("ge")}>Ge</button>
+        </Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );
