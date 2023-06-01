@@ -27,7 +27,7 @@ export function SpecialistModal2() {
         });
       })}
     >
-      <div className="flex flex-col w-full px-6 mb-6 animate-in slide-in-from-right">
+      <div className="flex flex-col w-full px-6 mb-6">
         <div className="flex items-center justify-center ">
           <div className="w-[50%] mt-6 mb-5 pr-2 ">
             <InputAutoComplete

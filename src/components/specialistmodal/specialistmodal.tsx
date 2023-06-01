@@ -1,6 +1,11 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Step, StepLabel, Stepper } from "@mui/material";
 import { Fragment, useState } from "react";
+import { SpecialistModal1 } from "./specialistmodal1";
+import { SpecialistModal2 } from "./specialistmodal2";
+import { SpecialistModal3 } from "./specialistmodal3";
+import { Stepper } from "@mantine/core";
+import { Icon } from "@iconify/react";
+import { Buttons } from "../buttons";
 
 interface ModalProps {
   open: boolean;
@@ -45,88 +50,40 @@ function Modal({ open, onClose, children }: ModalProps) {
   );
 }
 
-const steps = ['HELLO WORLD 1', 'HELLO WORLD 2', '3'];
+
 
 export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
-  // const [active, setActive] = useState(0);
+  const [active, setActive] = useState(0);
 
-  // const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
-  // const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-  const [activeStep, setActiveStep] = useState(0);
-  const [skipped, setSkipped] = useState(new Set());
-  const isStepOptional = (step: any) => {
-    return step === 1;
-  };
-
-  const isStepSkipped = (step: any) => {
-    return skipped.has(step);
-  };
-
-  const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
+  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
+  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 
   return (
     <Modal open={openModal} onClose={onClose}>
       <div className="z-30 flex flex-col items-center justify-center w-full text-black">
         <div className="w-full mt-3 ">
-          {/* <Stepper
+          <Stepper
             color="#FF7600"
-            sx={{
-              ".mantine-Stepper-stepIcon": {
-                backgroundColor: "#424242",
-              },
-            }}
             iconSize={24}
             completedIcon={
-              <Icon className="bg-transparent" icon="material-symbols:check" color="#fff" width="14" height="14" />
+              <Icon  icon="material-symbols:check" color="#fff" width="14" height="14" />
             }
             progressIcon={
+              <div className="h-full w-full bg-[#3E4428] rounded-full flex items-center justify-center">
               <Icon
-                className="w-6 h-6 p-[3px] rounded-full bg-transparent"
                 icon="ic:sharp-edit"
                 color="#fff"
                 width="14"
                 height="14"
-              />
+                />
+                
+                </div>
             }
             active={active}
             onStepClick={setActive}
-            breakpoint="sm"
           >
             <Stepper.Step
               className="py-3 pl-5"
-              completedIcon={<Icon className="" icon="material-symbols:check" color="#fff" width="14" height="14" />}
             >
               <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                 სპეციალისტის გამოძახება - 20 ლარი
@@ -140,7 +97,11 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-            <Stepper.Step className="py-3">
+            <Stepper.Step className="py-3" icon={
+            <div className="bg-[#9E9E9E] w-full rounded-full flex items-center justify-center h-full">
+              <Icon icon="mdi:paper" color="white"/>
+            </div>
+               }>
               <div>
                 <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                   სპეციალისტის გამოძახება - 20 ლარი
@@ -157,7 +118,14 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-            <Stepper.Step className="px-2 py-3">
+            <Stepper.Step className="px-2 py-3"
+            icon={
+              <div className="bg-[#9E9E9E] w-full rounded-full flex items-center justify-center h-full">
+            <Icon icon="mdi:account-outline" color="white" />
+              </div>
+                 }
+            
+            >
               <div>
                 <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                   სპეციალისტის გამოძახება - 20 ლარი
@@ -187,63 +155,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-          </Stepper> */}
-
-          <Stepper activeStep={activeStep}>
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <div>gw</div>
-            );
-          }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
-          return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
-
-      {activeStep === steps.length ? (
-        <div>
-          <div>
-            All steps completed - you&apos;re finished
-          </div>
-          <div>
-            <div />
-            <button onClick={handleReset}>Reset</button>
-          </div>
-        </div>
-      ) : (
-        <div>
-          <div>Step {activeStep + 1}</div>
-          <div>
-            <button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-            >
-              Back
-            </button>
-            <div />
-            {isStepOptional(activeStep) && (
-              <button color="inherit" onClick={handleSkip} >
-                Skip
-              </button>
-            )}
-
-            <button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-            </button>
-          </div>
-        </div>
-      )}
-
+          </Stepper>
 
           <div className="flex items-center justify-center m-2"></div>
         </div>
