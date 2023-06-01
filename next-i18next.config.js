@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
     i18n: {
-      locales: ['lang0', 'lang1' ],
-      defaultLocale: 'lang0',
+      locales: ['ge', 'en' ],
+      defaultLocale: 'ge',
       localeDetection: false,
     },
-    fallbackLng: { default: ['lang0', 'lang1' ]},
+    fallbackLng: { default: ['ge', 'en' ]},
     defaultNs: 'shared',
     localePath: path.resolve('./public/locales'),
   };
