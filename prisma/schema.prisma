@@ -8,19 +8,18 @@ datasource db {
 }
 
 enum Role {
-  Admin
-  Buyer
-  Seller
+  BUYER
+  SELLER
 }
 
 model User {
-  role            Role              @default(Buyer)
+  role            Role              @default(BUYER)
   id              String            @id @default(uuid()) @map("_id")
   email           String            @unique
-  name            String
-  surname         String
   phone           String            @unique
   password        String
+  name            String
+  surname         String
   token           String            @unique
   requests        Requests[]
   supportedModels SupportedModels[]
@@ -62,3 +61,190 @@ model SpecialistRequests {
   status  Status  @default(Open)
   userId  String
 }
+
+
+
+model Admin {
+  id              String            @id @default(uuid()) @map("_id")
+  email           String            @unique
+  phone           String            @unique
+  password        String    
+  status          String
+  token           String
+  name            String
+  surname         String
+  info            String
+
+}
+
+
+
+
+// Areba Default
+
+
+// requests
+
+// model Request {
+//   id          String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+//   user_id     String
+//   make_id     String?
+//   make_name   String?
+//   model_id    String?
+//   model_name  String?
+//   type_id     String?
+//   type_name   Translations?
+//   country_code  String?
+//   country_name  Translations?
+//   city_id       String?
+//   city_name     Translations?
+//   year          String?
+//   comment       String?
+//   vin           String?
+//   phone         String?
+//   img           String?
+//   active        Boolean @default(true)
+//   sort          Int     @default(9999)
+//   createdAt     DateTime @default(now()) @map("createdAt") @db.Date
+//   updatedAt     DateTime @updatedAt @map("updatedAt") @db.Date
+//   deletedAt     DateTime? @map("deletedAt") @db.Date
+// }
+
+// model Translations {
+//   ge String?
+//   en String?
+//   ru String?
+//   ua String?
+//   az String?
+
+//   @@embedded
+// }
+
+// // Specialist
+
+
+// model Specialist {
+//   id            String       @id @default(uuid()) @map("_id")
+//   name          String
+//   surname       String
+//   phone         String       @unique
+//   email         String       @unique
+//   password      String
+//   role          Role         @default(SPECIALIST)
+//   img           String?
+//   level         Level        @default(JUNIOR)
+//   percentage    String       @default("30")
+//   supervisorId  String?      @map("supervisor")
+//   supervisor    Specialist?  @relation(fields: [supervisorId], references: [id])
+//   status        String       @default("active")
+//   token         String?
+//   info          Info
+//   createdAt     DateTime     @default(now()) @map("createdAt")
+//   updatedAt     DateTime     @updatedAt @map("updatedAt")
+// }
+
+// model Info {
+//   id            String      @id @default(uuid())
+//   country       String?
+//   city          String?
+//   skills        String?
+//   text          String?
+//   specialistId  String
+//   specialist    Specialist  @relation(fields: [specialistId], references: [id])
+// }
+
+// enum SpecialistRole {
+//   SPECIALIST
+//   SUPERVISOR
+// }
+
+// enum Level {
+//   ZERO
+//   JUNIOR
+//   ADVENCED
+//   PROFESSIONAL
+//   GODLIKE
+// }
+
+
+// AREBA USER
+
+
+// model AREBAUser {
+//   id            String     @id @default(uuid()) @map("_id")
+//   name          String     @unique
+//   surname       String
+//   phone         String     @unique
+//   email         String     @unique
+//   password      String
+//   role          Role       @default(BUYER)
+//   status        Status     @default(ACTIVE)
+//   token         String?   
+//   type          String?    @default("5fbb8493e8ac353b1c9010d5")
+//   package       Package
+//   info          Info
+//   fcm_token     String?
+//   confirm       Confirm
+//   createdAt     DateTime   @default(now()) @map("createdAt")
+//   updatedAt     DateTime   @updatedAt @map("updatedAt")
+// }
+
+// model Package {
+//   id            String     @id @default(uuid())
+//   name          String     @default("Standard")
+//   type          String?
+//   from          DateTime?
+//   to            DateTime?
+//   userId        String
+//   user          User       @relation(fields: [userId], references: [id])
+// }
+
+// model UserInfo {
+//   id            String     @id @default(uuid())
+//   country       String?
+//   city          String?
+//   zip           String?
+//   address       String?
+//   company_name  String?
+//   id_number     String?
+//   logo          String?
+//   img           String?
+//   text          String?
+//   userId        String
+//   user          User       @relation(fields: [userId], references: [id])
+// }
+
+// model Confirm {
+//   id            String     @id @default(uuid())
+//   phone         Boolean?
+//   mail          Boolean?
+//   phone_code    String?
+//   mail_code     String?
+//   userId        String
+//   user          User       @relation(fields: [userId], references: [id])
+// }
+
+
+
+
+// // MODEL ORDER
+
+// model Offer {
+//   id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+//   name      Json
+//   text      Json
+//   meta_desc Json
+//   meta_key  Json
+//   slug      String   @unique
+//   img       String?
+//   featured  String   @default("0")
+//   views     Int?
+//   date_from DateTime?
+//   date_to   DateTime?
+//   active    Boolean  @default(true)
+//   sort      Int      @default(9999)
+//   createdAt DateTime @default(now()) @map("createdAt") @db.Date
+//   updatedAt DateTime @updatedAt @map("updatedAt") @db.Date
+// }
+
+// // 
