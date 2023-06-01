@@ -1,6 +1,9 @@
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function About() {
+  const { t } = useTranslation("common");
+
     return (
       <div className="w-3/4 h-auto min-h-screen ml-auto mr-auto text-black">
         <div>

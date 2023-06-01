@@ -3,12 +3,14 @@ import { Requests as IRequests, SupportedModels as ISupportedModels } from "@pri
 import { getRequests, getsupportedmodel } from "@/lib/api";
 import { useUser } from "@/hooks/useUser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function AllRequests() {
   const [requests, setrequests] = useState<IRequests[]>();
   const [supported, setSupported] = useState<ISupportedModels[]>();
   const { user,  } = useUser();
-  
+  const { t } = useTranslation("common");
+
   
   useEffect(() => {
     getsupportedmodel()

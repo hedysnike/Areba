@@ -5,11 +5,13 @@ import { InputAutoComplete, InputText } from "@/components/inputs";
 import { useUser } from "@/hooks/useUser";
 import { createRequests } from "@/lib/api";
 import { useForm } from "@mantine/form";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
 export default function Add() {
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   const form = useForm({
     initialValues: {

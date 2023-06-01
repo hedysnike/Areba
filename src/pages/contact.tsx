@@ -1,6 +1,9 @@
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Contact() {
+  const { t } = useTranslation("common");
+
     return (
       <div className="h-auto min-h-screen text-black">
         <h1 className="flex items-center justify-center mt-40 text-xl">დაგვიკავშირდით ელ-ფოსტაზე: <span className="inline-block text-[#FF7600]" >info@areba.ge</span></h1>

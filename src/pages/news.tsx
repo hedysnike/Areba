@@ -1,6 +1,9 @@
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function News() {
+  const { t } = useTranslation("common");
+
     return (
       <div className="h-auto min-h-screen ">
         <div className="my-10 text-xl text-center">ჩვენი მეორე ფოსტი</div>

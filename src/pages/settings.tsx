@@ -4,6 +4,7 @@ import { SettingsMap } from "@/components/desktopcomponents/h&f/settingsmap";
 import { Layout } from "@/hooks/Layout";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -12,6 +13,7 @@ export default function Settings() {
   const { isLoggedIn } = useUser();
   const [activeMake, setActiveMake] = useState<string>("");
   const [activeTitle, setActiveTitle] = useState<string>("");
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     if (!isLoggedIn) {

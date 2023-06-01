@@ -6,10 +6,13 @@ import { useForm } from "@mantine/form";
 import { useUser } from "@/hooks/useUser";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function Login() {
   const router = useRouter();
   const { retry } = useUser();
+  const { t } = useTranslation("common");
+
   const form = useForm({
     initialValues: {
       email: "",

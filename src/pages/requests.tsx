@@ -7,10 +7,12 @@ import { useUser } from "@/hooks/useUser";
 import { MenuActiveItems } from "@/components/menuActiveitems";
 import { MenuClosedItems } from "@/components/menucloseditems";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function RequestsPage() {
   const [requests, setrequests] = useState<IRequests[]>();
   const { user } = useUser();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     getRequests()

@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import { IMaskInput } from "react-imask";
 import { Input } from "@mui/material";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 interface CustomProps {
   onChange: (event: { target: { name: string; value: string } }) => void;
@@ -24,6 +25,7 @@ const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(function TextM
 export default function Profile({ isMobile }: { isMobile: boolean }) {
   const router = useRouter();
   const { retry } = useUser();
+  const { t } = useTranslation("common");
 
   const form = useForm({
     initialValues: {

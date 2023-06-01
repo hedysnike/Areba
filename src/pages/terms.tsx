@@ -1,5 +1,7 @@
-export default function Terms() {
+import { useTranslation } from "next-i18next";
 
+export default function Terms() {
+    const { t } = useTranslation("common");
 
 
 

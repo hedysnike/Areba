@@ -2,10 +2,12 @@ import { InputText } from "@/components/inputs";
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
 import { FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Login() {
   const { user } = useUser();
+  const { t } = useTranslation("common");
 
   return (
     <div className="min-h-[90vh] h-auto py-[50px] bg-[#E0E0E0] text-black">
