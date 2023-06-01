@@ -54,11 +54,11 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
   // const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-  const isStepOptional = (step) => {
+  const isStepOptional = (step: any) => {
     return step === 1;
   };
 
-  const isStepSkipped = (step) => {
+  const isStepSkipped = (step: any) => {
     return skipped.has(step);
   };
 
