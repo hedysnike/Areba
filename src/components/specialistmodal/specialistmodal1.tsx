@@ -16,7 +16,7 @@ export function SpecialistModal1() {
   };
 
   return (
-    <div className="flex flex-col w-full px-6 mb-6 duration-300 animate-in slide-in-from-left">
+    <div className="flex flex-col w-full px-6 mb-6">
       <div className="mt-6 mb-4">
         <InputText label="ჩაწერეთ რისი გაკეთება გსურთ მანქანაზე?" />
       </div>

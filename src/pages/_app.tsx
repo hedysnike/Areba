@@ -1,6 +1,7 @@
 import { Layout } from "@/hooks/Layout";
 import { UserProvider } from "@/hooks/useUser";
 import "@/styles/globals.css";
+import { ScrollArea } from "@mantine/core";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { appWithTranslation } from "next-i18next";
 import type { AppType } from 'next/app'
@@ -76,7 +77,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <ThemeProvider theme={theme}>
         <UserProvider>
             <Layout>
+            <ScrollArea className="h-auto">
               <Component {...pageProps} />
+            </ScrollArea>
             </Layout>
         </UserProvider>
       </ThemeProvider>

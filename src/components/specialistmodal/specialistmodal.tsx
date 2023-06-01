@@ -54,9 +54,26 @@ function Modal({ open, onClose, children }: ModalProps) {
 
 export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
   const [active, setActive] = useState(0);
+  const [lastStep, setLastStep] = useState(null);
 
-  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
-  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+  const nextStep = () => {
+    setLastStep(active);
+    setActive((current) => (current < 2 ? current + 1 : current));
+  };
+
+  const prevStep = () => {
+    setLastStep(active);
+    setActive((current) => (current > 0 ? current - 1 : current));
+  };
+
+
+  const getAnimationClass = () => {
+    if (lastStep === null){ return ''};
+    return active > lastStep ? 'slide-in-from-right' : 'slide-in-from-left';
+  };
+
+  console.log(active)
+  console.log(lastStep)
 
   return (
     <Modal open={openModal} onClose={onClose}>
@@ -66,8 +83,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
             color="#FF7600"
             iconSize={24}
             completedIcon={
-              <Icon  icon="material-symbols:check" color="#fff" width="14" height="14" />
-            }
+              <Icon  icon="material-symbols:check" color="#fff" width="14" height="14" />}
             progressIcon={
               <div className="h-full w-full bg-[#3E4428] rounded-full flex items-center justify-center">
               <Icon
@@ -76,9 +92,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 width="14"
                 height="14"
                 />
-                
-                </div>
-            }
+                </div>}
             active={active}
             onStepClick={setActive}
           >
@@ -89,7 +103,9 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 სპეციალისტის გამოძახება - 20 ლარი
               </h1>
               <div className="flex flex-col w-full overflow-hidden">
+                <div className={`duration-300 animate-in ${getAnimationClass()}`}>
                 <SpecialistModal1 />
+                </div>
                 <div className="flex justify-start w-full px-6 mb-7">
                   <button className="bg-[#FF7600] text-white py-2 px-4 rounded flex text-sm" onClick={nextStep}>
                     <h1>გაგრძელება</h1>
@@ -107,7 +123,9 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                   სპეციალისტის გამოძახება - 20 ლარი
                 </h1>
                 <div className="flex flex-col w-full overflow-hidden">
+                <div className={`duration-300 animate-in ${getAnimationClass()}`}>
                   <SpecialistModal2 />
+                  </div>
                   <div className="flex justify-start w-full px-6 mb-7">
                     <Buttons text="გაგრძელება" onClick={nextStep} />
 
@@ -123,15 +141,15 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
               <div className="bg-[#9E9E9E] w-full rounded-full flex items-center justify-center h-full">
             <Icon icon="mdi:account-outline" color="white" />
               </div>
-                 }
-            
-            >
+                 }>
               <div>
                 <h1 className="bg-[#FF7600] w-full text-center text-white pb-[14px] pt-[14px] text-sm outline-none">
                   სპეციალისტის გამოძახება - 20 ლარი
                 </h1>
                 <div className="ml-6 mr-[30px] overflow-hidden">
+                <div className={`duration-300 animate-in ${getAnimationClass()}`}>
                   <SpecialistModal3 />
+                  </div>
                 </div>
                 <div className="flex flex-col w-full">
                   <div className="flex flex-col mx-6 mt-3">
@@ -156,8 +174,6 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
               </div>
             </Stepper.Step>
           </Stepper>
-
-          <div className="flex items-center justify-center m-2"></div>
         </div>
       </div>
     </Modal>
