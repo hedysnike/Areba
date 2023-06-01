@@ -5,7 +5,7 @@ export default function Terms() {
 
     return (
         <div className="bg-[#FFFDF7]">
-    <div className="max-w-[1100px] mr-auto ml-auto pb-28 lg:px-0 px-8 ">
+    <div className="max-w-[1100px] mr-auto ml-auto pb-28 lg:px-0 px-8">
         <h1 className="text-4xl mb-[45px] mt-[100px] lg:my-[45px]">
              წესები და პირობები
             </h1>
@@ -114,5 +114,5 @@ export default function Terms() {
 </span> 
 </div>
     </div>
-    )
+    );
 }
