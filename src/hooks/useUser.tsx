@@ -21,7 +21,7 @@ interface UserContext {
 
 const UserContext = createContext<UserContext>({
   user: null,
-  isLoggedIn: true,
+  isLoggedIn: false,
   retry: async () => {},
 });
 
@@ -29,7 +29,7 @@ export const useUser = () => useContext(UserContext);
 
 function useUserProvider() {
   const [user, setUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const fetchUser = async () => {
     try {

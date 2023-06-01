@@ -49,7 +49,7 @@ export function Navigation() {
 
             {!isLoggedIn ? (
               <div></div>
-            ) : user?.role === "Buyer" ? (
+            ) : user?.role === "BUYER" ? (
               <>
                 <ProfileMenu href1="/add" href2="/requests" first="დამატება" second="ჩემი მოთხოვნები" />
                 <Link href="/add">
@@ -60,7 +60,7 @@ export function Navigation() {
                 </Link>
                 <hr className="h-10 w-[1px] ml-2 bg-[#bbbbbb]" />
               </>
-            ) : user?.role === "Seller" ? (
+            ) : user?.role === "SELLER" ? (
               <>
                 <ProfileMenu href1="/allrequests" href2="/settings" first="მოთხოვნები" second="პარამეტრები" />
                 <Link href="/allrequests">
