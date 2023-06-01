@@ -51,4 +51,3 @@ export function SpecialistModal1() {
   );
 }
 
-SpecialistModal1.Layout = Layout;

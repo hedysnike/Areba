@@ -28,4 +28,3 @@ export function SpecialistModal3() {
   );
 }
 
-SpecialistModal3.Layout = Layout;

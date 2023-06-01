@@ -6,6 +6,8 @@ import { SpecialistModal3 } from "./specialistmodal3";
 import { Stepper } from "@mantine/core";
 import { Icon } from "@iconify/react";
 import { Buttons } from "../buttons";
+import { Switch } from "@mui/material";
+import Link from "next/link";
 
 interface ModalProps {
   open: boolean;
@@ -153,14 +155,15 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
                 <div className="flex flex-col w-full">
                   <div className="flex flex-col mx-6 mt-3">
-                    <div className="flex justify-start w-full text-xs">
-                      <h2>დაეთანხმეთ წესებსა და პირობებს</h2>
-                    </div>
-                    <div className="flex justify-end w-full text-[12px] text-[#FF7600] hover:bg-[#FDF2E8] pt-[10px] pb-5 pr-3">
+                  <div className="flex items-center text-xs">
+                <Switch    />
+                დაეთანხმე წესებს და პირობებს
+                  </div>
+                    <Link href="/terms" className="flex justify-end w-full text-[12px] text-[#FF7600] hover:bg-[#FDF2E8] pt-[10px] pb-5 pr-3">
                       <h2>
                         <u>წესები და პირობები</u>
                       </h2>
-                    </div>
+                    </Link>
                   </div>
                   <div className="flex justify-start w-full px-6 mb-7">
                     <button className="bg-[#FF7600] text-white p-2 rounded mt-7 flex text-sm" onClick={onClose}>
