@@ -3,6 +3,7 @@ import { closeRequests, deleteRequest } from "@/lib/api";
 import { Icon } from "@iconify/react";
 import { Tabs } from "@mantine/core";
 import { Requests } from "@prisma/client";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,6 +13,7 @@ export default function Chat() {
   const router = useRouter();
   const { id } = router.query;
   const [request, setRequest] = useState<Requests>();
+  const { t } = useTranslation("common");
 
 
   useEffect(() => {
