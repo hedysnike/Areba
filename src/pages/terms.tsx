@@ -5,8 +5,8 @@ export default function Terms() {
 
     return (
         <div className="bg-[#FFFDF7]">
-    <div className="max-w-[1100px] mr-auto ml-auto ">
-        <h1 className="text-4xl my-[45px]">
+    <div className="max-w-[1100px] mr-auto ml-auto pb-28 lg:px-0 px-8 ">
+        <h1 className="text-4xl mb-[45px] mt-[100px] lg:my-[45px]">
              წესები და პირობები
             </h1>
         <span className="text-sm leading-none">

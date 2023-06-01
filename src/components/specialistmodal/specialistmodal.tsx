@@ -54,7 +54,7 @@ function Modal({ open, onClose, children }: ModalProps) {
 
 export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
   const [active, setActive] = useState(0);
-  const [lastStep, setLastStep] = useState(null);
+  const [lastStep, setLastStep] = useState<number | null>(null);
 
   const nextStep = () => {
     setLastStep(active);
