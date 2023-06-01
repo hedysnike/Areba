@@ -1,14 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { Step, StepLabel, Stepper } from "@mui/material";
 import { Fragment, useState } from "react";
-import { Stepper } from "@mantine/core";
-import { Icon } from "@iconify/react";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
-import { Combobox } from "@headlessui/react";
-import { Makes } from "@/assets/makes";
-import { SpecialistModal2 } from "./specialistmodal2";
-import { SpecialistModal1 } from "./specialistmodal1";
-import { SpecialistModal3 } from "./specialistmodal3";
-import { Buttons } from "../buttons";
 
 interface ModalProps {
   open: boolean;
@@ -53,17 +45,62 @@ function Modal({ open, onClose, children }: ModalProps) {
   );
 }
 
-export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
-  const [active, setActive] = useState(0);
+const steps = ['HELLO WORLD 1', 'HELLO WORLD 2', '3'];
 
-  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
-  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+export function SpecialistModal({ openModal, onClose }: { openModal: boolean; onClose: () => void }) {
+  // const [active, setActive] = useState(0);
+
+  // const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
+  // const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set());
+  const isStepOptional = (step) => {
+    return step === 1;
+  };
+
+  const isStepSkipped = (step) => {
+    return skipped.has(step);
+  };
+
+  const handleNext = () => {
+    let newSkipped = skipped;
+    if (isStepSkipped(activeStep)) {
+      newSkipped = new Set(newSkipped.values());
+      newSkipped.delete(activeStep);
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped(newSkipped);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleSkip = () => {
+    if (!isStepOptional(activeStep)) {
+      // You probably want to guard against something like this,
+      // it should never occur unless someone's actively trying to break something.
+      throw new Error("You can't skip a step that isn't optional.");
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped((prevSkipped) => {
+      const newSkipped = new Set(prevSkipped.values());
+      newSkipped.add(activeStep);
+      return newSkipped;
+    });
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   return (
     <Modal open={openModal} onClose={onClose}>
       <div className="z-30 flex flex-col items-center justify-center w-full text-black">
         <div className="w-full mt-3 ">
-          <Stepper
+          {/* <Stepper
             color="#FF7600"
             sx={{
               ".mantine-Stepper-stepIcon": {
@@ -150,7 +187,64 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
                 </div>
               </div>
             </Stepper.Step>
-          </Stepper>
+          </Stepper> */}
+
+          <Stepper activeStep={activeStep}>
+        {steps.map((label, index) => {
+          const stepProps = {};
+          const labelProps = {};
+          if (isStepOptional(index)) {
+            labelProps.optional = (
+              <div>gw</div>
+            );
+          }
+          if (isStepSkipped(index)) {
+            stepProps.completed = false;
+          }
+          return (
+            <Step key={label} {...stepProps}>
+              <StepLabel {...labelProps}>{label}</StepLabel>
+            </Step>
+          );
+        })}
+      </Stepper>
+
+      {activeStep === steps.length ? (
+        <div>
+          <div>
+            All steps completed - you&apos;re finished
+          </div>
+          <div>
+            <div />
+            <button onClick={handleReset}>Reset</button>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div>Step {activeStep + 1}</div>
+          <div>
+            <button
+              color="inherit"
+              disabled={activeStep === 0}
+              onClick={handleBack}
+            >
+              Back
+            </button>
+            <div />
+            {isStepOptional(activeStep) && (
+              <button color="inherit" onClick={handleSkip} >
+                Skip
+              </button>
+            )}
+
+            <button onClick={handleNext}>
+              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+            </button>
+          </div>
+        </div>
+      )}
+
+
           <div className="flex items-center justify-center m-2"></div>
         </div>
       </div>
