@@ -58,7 +58,7 @@ export function SpecialistModal({ openModal, onClose }: { openModal: boolean; on
 
   const nextStep = () => {
     setLastStep(active);
-    setActive((current) => (current < 2 ? current + 1 : current));
+    setActive((current) => (current < 3 ? current + 1 : current));
   };
 
   const prevStep = () => {
