@@ -1,11 +1,13 @@
 import { Icon } from "@iconify/react";
 import { Burger, Menu } from "@mantine/core";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useState } from "react";
 
 export function Menuicon() {
   const [opene, setOpen] = useState(false);
   const title = opene ? "Close menu" : "Open menu";
+  const { t } = useTranslation("common");
 
   return (
     <Menu shadow="md" width={150} opened={opene} onChange={(e) => setOpen(e)}>

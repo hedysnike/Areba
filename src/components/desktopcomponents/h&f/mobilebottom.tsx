@@ -1,7 +1,10 @@
 import { Icon } from "@iconify/react";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 export function MobileBottom() {
+  const { t } = useTranslation("common");
+
   return (
     <div className="bg-white bottom-0 fixed w-full h-[58px] border-t border-black border-opacity-10 border-solid">
         <div className="flex opacity-90 w-[89%] ml-auto mr-auto h-full">

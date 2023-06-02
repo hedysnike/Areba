@@ -1,12 +1,14 @@
 import { useUser } from "@/hooks/useUser";
 import { Icon } from "@iconify/react";
 import { Drawer } from "@mantine/core";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useState } from "react";
 
 export function MobileTop() {
   const [opened, setOpened] = useState(false);
   const { user, isLoggedIn } = useUser();
+  const { t } = useTranslation("common");
 
   return (
     <div className="bg-white h-[50px] fixed w-full">

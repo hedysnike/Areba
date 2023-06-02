@@ -2,10 +2,12 @@ import { Icon } from "@iconify/react";
 import { Menu } from "@mantine/core";
 import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
+import { useTranslation } from "next-i18next";
 
 
 export function ProfileMenu({ href1, href2, first, second }: { first: string, second: string, href1: string, href2: string }) {
   const { user } = useUser();
+  const { t } = useTranslation("common");
 
 
   return (
@@ -47,7 +49,7 @@ export function ProfileMenu({ href1, href2, first, second }: { first: string, se
             <Menu.Item>
               <div className="flex items-center justify-start px-3">
                 <Icon icon="material-symbols:person" width={24} height={24} className="text-[#616161] " />
-                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">პროფილი </h1>
+                <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">{t("profile")} </h1>
               </div>
             </Menu.Item>
           </Link>
@@ -55,7 +57,7 @@ export function ProfileMenu({ href1, href2, first, second }: { first: string, se
           <Menu.Item>
             <div className="flex items-center justify-start px-3" >
               <Icon icon="ic:baseline-logout" width={24} height={24} className="text-[#616161] " />
-              <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">გასვლა </h1>
+              <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">{t('logout')}გასვლა </h1>
             </div>
           </Menu.Item>
         </Menu.Dropdown>

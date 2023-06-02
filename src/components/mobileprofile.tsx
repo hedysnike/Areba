@@ -3,9 +3,11 @@ import { Icon } from "@iconify/react";
 import { FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { useEffect } from "react";
 import { InputText } from "./inputs";
+import { useTranslation } from "next-i18next";
 
 export function MobileProfile() {
   const { user, isLoggedIn } = useUser();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     if (!isLoggedIn) {
