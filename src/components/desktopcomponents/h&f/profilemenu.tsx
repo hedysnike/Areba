@@ -3,12 +3,18 @@ import { Menu } from "@mantine/core";
 import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 
 export function ProfileMenu({ href1, href2, first, second }: { first: string, second: string, href1: string, href2: string }) {
-  const { user } = useUser();
+  const { user, logout } = useUser();
   const { t } = useTranslation("common");
+  const router = useRouter();
 
+  const handleLogout = async () => {
+    await logout();
+    router.push("/");
+  };
 
   return (
     <>
@@ -55,7 +61,7 @@ export function ProfileMenu({ href1, href2, first, second }: { first: string, se
           </Link>
           <Menu.Divider />
           <Menu.Item>
-            <div className="flex items-center justify-start px-3" >
+            <div className="flex items-center justify-start px-3" onClick={handleLogout}>
               <Icon icon="ic:baseline-logout" width={24} height={24} className="text-[#616161] " />
               <h1 className=" pl-7 text-sm font-semibold text-[#616161]  ">{t('logout')}გასვლა </h1>
             </div>

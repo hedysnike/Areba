@@ -17,12 +17,14 @@ interface UserContext {
   user: User | null;
   isLoggedIn: boolean;
   retry: () => Promise<void>;
+  logout: any;
 }
 
 const UserContext = createContext<UserContext>({
   user: null,
   isLoggedIn: false,
   retry: async () => {},
+  logout: async () => {},
 });
 
 export const useUser = () => useContext(UserContext);
@@ -46,15 +48,30 @@ function useUserProvider() {
     }
   };
 
+  const logout = async () => {
+    try {
+      const res = await fetch("/api/logout", {
+        method: "POST",
+      });
+  
+      if (!res.ok) throw res;
+      
+      setUser(null);
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   useEffect(() => {
     fetchUser();
   }, []);
 
-  return { user, isLoggedIn, retry: fetchUser };
+  return { user, isLoggedIn, retry: fetchUser, logout  };
 }
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
-  const { user, isLoggedIn, retry } = useUserProvider();
+  const { user, isLoggedIn, retry, logout } = useUserProvider();
 
-  return <UserContext.Provider value={{ user, isLoggedIn, retry }}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={{ user, isLoggedIn, retry, logout  }}>{children}</UserContext.Provider>;
 }
