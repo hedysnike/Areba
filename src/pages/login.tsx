@@ -13,6 +13,7 @@ import { useForm } from '@mantine/form';
 import { InputAutoComplete, InputText } from '@/components/inputs';
 import { IMaskInput } from 'react-imask';
 import { Role } from "@prisma/client";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -181,4 +182,13 @@ export default function Loginn() {
     </div>
     </div>
   );
+}
+
+
+export async function getStaticProps({ locale }: { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
 }
