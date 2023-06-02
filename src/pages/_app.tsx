@@ -76,11 +76,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     <>
       <ThemeProvider theme={theme}>
         <UserProvider>
-            <Layout>
             <ScrollArea className="h-auto">
+            <Layout>
               <Component {...pageProps} />
-            </ScrollArea>
             </Layout>
+            </ScrollArea>
         </UserProvider>
       </ThemeProvider>
     </>
