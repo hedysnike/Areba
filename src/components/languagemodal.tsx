@@ -30,11 +30,11 @@ export function LanguageMenu() {
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Item className="p-0 py-2 text-center w-full h-full flex items-center justify-center">
-          <button onClick={() => changeLanguage("en")}>En</button>
+        <Menu.Item className="p-0 py-2 text-center w-full h-full flex items-center justify-center" onClick={() => changeLanguage("en")}>
+          <button>En</button>
         </Menu.Item>
-        <Menu.Item className="p-0 py-2 w-full text-center h-full flex items-center justify-center">
-            <button onClick={() => changeLanguage("ge")}>Ge</button>
+        <Menu.Item className="p-0 py-2 w-full text-center h-full flex items-center justify-center" onClick={() => changeLanguage("ge")}>
+            <button>Ge</button>
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

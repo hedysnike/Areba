@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { SpecialistModal } from "../../specialistmodal/specialistmodal";
 import { useState } from "react";
-import { LanguageMenu } from "./languagemodal";
+import { LanguageMenu } from "../../languagemodal";
 import { Menuicon } from "./Menu";
 import { ProfileMenu } from "./profilemenu";
 import { useUser } from "@/hooks/useUser";
