@@ -49,8 +49,8 @@ export default function Loginn() {
         <Box sx={{ width: "100%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth" textColor="secondary" indicatorColor="secondary">
-              <Tab label="Login" className="w-full" {...a11yProps(0)} />
-              <Tab label="Register" className="w-full" {...a11yProps(1)} />
+              <Tab label={t("authorization")} className="w-full" {...a11yProps(0)} />
+              <Tab label={t("registration")} className="w-full" {...a11yProps(1)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>

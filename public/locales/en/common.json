@@ -1,6 +1,8 @@
 {
     "home": "Home",
     "navigationlanguage": "En",
+    "authorization": "Login",
+    "registration": "Register",
 
 
     "okay": "okay"
