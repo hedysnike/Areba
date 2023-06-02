@@ -7,6 +7,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { LoginForm } from "@/components/loginform";
 import { RegisterForm } from "@/components/registerform";
+import Head from "next/head";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -44,24 +45,49 @@ export default function Loginn() {
   };
 
   return (
-    <div className="min-h-[84vh] h-full pb-[50px] bg-[#FFFDF7]">
-      <div className="md:w-3/4 max-w-[1050px] w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
-        <Box sx={{ width: "100%" }}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth" textColor="secondary" indicatorColor="secondary">
-              <Tab label={t("authorization")} className="w-full" {...a11yProps(0)} />
-              <Tab label={t("registration")} className="w-full" {...a11yProps(1)} />
-            </Tabs>
+    <>
+      <Head>
+        <style type="text/css">
+          {`
+        .css-1aquho2-MuiTabs-indicator {
+          background-color: #ff7600 !important;
+        }
+        .css-1ujykiq-MuiButtonBase-root-MuiTab-root.Mui-selected {
+          color: #ff7600 !important;
+        }
+    .MuiFilledInput-input {
+      background-color: #1E1E1E !important;
+      color: white;
+    }
+
+    .MuiFilledInput-input:focus {
+      background-color: #1E1E1E !important  ;
+      color: white;
+    }
+    `}
+        </style>
+      </Head>
+
+      <div className="min-h-[84vh] h-full pb-[50px] bg-[#FFFDF7]">
+        <div className="md:w-3/4 max-w-[1050px] w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
+          <Box sx={{ width: "100%" }}>
+            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <Tabs value={value} onChange={handleChange} variant="fullWidth"
+              >
+                <Tab label={t("authorization")} className="w-full" {...a11yProps(0)} />
+                <Tab label={t("registration")} className="w-full" {...a11yProps(1)} />
+              </Tabs>
+            </Box>
+            <TabPanel value={value} index={0}>
+              <LoginForm />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <RegisterForm />
+            </TabPanel>
           </Box>
-          <TabPanel value={value} index={0}>
-            <LoginForm />
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <RegisterForm />
-          </TabPanel>
-        </Box>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

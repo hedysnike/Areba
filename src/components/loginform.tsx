@@ -23,7 +23,7 @@ export function LoginForm() {
   });
 
   return (
-    <div className="grid ml-auto mr-auto h-auto grid-cols-1 w-[90%] ">
+    <div className="grid ml-auto mr-auto h-auto grid-cols-1">
       <form
         onSubmit={form.onSubmit((values) => {
           const { email, password } = values;
@@ -38,10 +38,10 @@ export function LoginForm() {
             });
         })}
       >
-        <div className="grid mt-5">
+        <div className="grid m-4">
           <TextField label="ელ-ფოსტა *" helperText={form.errors.email} {...form.getInputProps("email")} />
         </div>
-        <div className="grid mt-5">
+        <div className="grid m-4">
           <TextField type="password" label="პაროლი *" {...form.getInputProps("password")} helperText={form.errors.password} />
         </div>
         <div className="flex justify-end mt-8">
