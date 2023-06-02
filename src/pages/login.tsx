@@ -48,7 +48,7 @@ export default function Loginn() {
       <div className="md:w-3/4 max-w-[1050px] w-[90%] mr-auto ml-auto h-[75vh] mt-5 border border-solid border-[#dcdcdcaf] bg-white">
         <Box sx={{ width: "100%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" className="w-full flex" textColor="secondary" indicatorColor="secondary">
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth" textColor="secondary" indicatorColor="secondary">
               <Tab label="Login" className="w-full" {...a11yProps(0)} />
               <Tab label="Register" className="w-full" {...a11yProps(1)} />
             </Tabs>
